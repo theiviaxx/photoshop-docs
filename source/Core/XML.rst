@@ -1,0 +1,193 @@
+.. _XML:
+
+================================================
+XML
+================================================
+
+
+Description
+-----------
+
+Wraps XML into an object.
+
+
+
+
+
+
+Static Properties
+^^^^^^^^^^^^^^^^^
+
++--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`ignoreComments<XML.ignoreComments>` readonly                             | Controls whether XML comments should be parsed (false) or ignored (true).                   |
++--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`ignoreProcessingInstructions<XML.ignoreProcessingInstructions>` readonly | Controls whether XML preprocessing instructions should be parsed (false) or ignored (true). |
++--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`ignoreWhitespace<XML.ignoreWhitespace>` readonly                         | Controls whether whitespace should be parsed (false) or ignored (true).                     |
++--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`prettyIndent<XML.prettyIndent>` readonly                                 | The number of spaces used to indent pretty-printed XML.                                     |
++--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`prettyPrinting<XML.prettyPrinting>` readonly                             | When true, XML is pretty-printed when converting to a string.                               |
++--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+
+
+Constructors
+^^^^^^^^^^^^
+
++------------------------------+----------------------------------------------------------------+
+| :ref:`XML<XML.XML>` readonly | Parses an XML string. Throws an error if the XML is incorrect. |
++------------------------------+----------------------------------------------------------------+
+
+
+Methods
+^^^^^^^
+
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`addNamespace<XML.addNamespace>` readonly                     | Adds a namespace declaration to the node. Returns the XML object itself.                                                                                                |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`appendChild<XML.appendChild>` readonly                       | Appends the given XML to this XML as a child. Returns the XML object itself.                                                                                            |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`attribute<XML.attribute>` readonly                           | Returns a list containing all attribute elements matching the given name.                                                                                               |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`attributes<XML.attributes>` readonly                         | Returns a list containing all attribute elements.                                                                                                                       |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`child<XML.child>` readonly                                   | Returns a list containing all children of this XML matching the given element name.                                                                                     |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`childIndex<XML.childIndex>` readonly                         | Returns a number representing the ordinal position of this XML object within the context of its parent.                                                                 |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`children<XML.children>` readonly                             | Returns an XML object containing all the properties of this XML object in order.                                                                                        |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`comments<XML.comments>` readonly                             | Returns an XML object containing the properties of this XML object that represent XML comments.                                                                         |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`contains<XML.contains>` readonly                             | Checks if this XML object contains the given XML object.                                                                                                                |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`copy<XML.copy>` readonly                                     | Creates a copy of this XML object.                                                                                                                                      |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`descendants<XML.descendants>` readonly                       | Returns all the XML-valued descendants of this XML object with the given name.                                                                                          |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`elements<XML.elements>` readonly                             | Returns a list of XML children that are elements with a given name, or all children that are XML elements.                                                              |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`hasComplexContent<XML.hasComplexContent>` readonly           | Reports whether this XML object contains complex content.                                                                                                               |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`hasSimpleContent<XML.hasSimpleContent>` readonly             | Reports whether this XML object contains simple content.                                                                                                                |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`inScopeNamespaces<XML.inScopeNamespaces>` readonly           | Returns an array of Namespace objects mirroring the current list of valid namespaces at this element.                                                                   |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`insertChildAfter<XML.insertChildAfter>` readonly             | Inserts the given child2 after the given child1 in this XML object and returns this XML object.                                                                         |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`insertChildBefore<XML.insertChildBefore>` readonly           | Inserts the given child2 before the given child1 in this XML object and returns this XML object.                                                                        |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`length<XML.length>` readonly                                 | Returns the number of elements contained in an XML list. If this XML object is not a list, returns 1.                                                                   |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`localName<XML.localName>` readonly                           | Returns the local name of this XML object.                                                                                                                              |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`name<XML.name>` readonly                                     | Returns a QName object containing the URI and the local name of the element.                                                                                            |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`namespace<XML.namespace>` readonly                           | Returns a Namespace object containing the namespace URI of the current element.                                                                                         |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`namespaceDeclarations<XML.namespaceDeclarations>` readonly   | Returns an array containing all namespace declarations of this XML object.                                                                                              |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`nodeKind<XML.nodeKind>` readonly                             | Returns the type of this XML object as one of the strings "element", "attribute", "comment", "processing-instruction", or "text".                                       |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`normalize<XML.normalize>` readonly                           | Puts all text nodes in this and all descendant XML objects into a normal form by merging adjacent text nodes and eliminating empty text nodes. Returns this XML object. |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`parent<XML.parent>` readonly                                 | Returns the parent object of this XML object.                                                                                                                           |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`prependChild<XML.prependChild>` readonly                     | Inserts a given child into this object before its existing XML properties, and returns this XML object.                                                                 |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`processingInstructions<XML.processingInstructions>` readonly | Returns a list of preprocessing instructions.                                                                                                                           |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`removeNamespace<XML.removeNamespace>` readonly               | Removes the given namespace from this XML, and returns this XML.                                                                                                        |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`replace<XML.replace>` readonly                               | Replaces the value of specified XML properties of this XML object returns this XML object.                                                                              |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`setChildren<XML.setChildren>` readonly                       | Replaces all of the XML-valued properties in this object with a new value, and returns this XML object.                                                                 |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`setLocalName<XML.setLocalName>` readonly                     | Replaces the local name of this XML object  with a string constructed from the given name                                                                               |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`setName<XML.setName>` readonly                               | Replaces the name of this XML object with the given QName object.                                                                                                       |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`setNamespace<XML.setNamespace>` readonly                     | Sets the namespace for this XML element.                                                                                                                                |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`text<XML.text>` readonly                                     | Returns an XML list containing all XML properties of this XML object that represent XML text nodes.                                                                     |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`toString<XML.toString>` readonly                             | Returns the string representation of this object.                                                                                                                       |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`toXMLString<XML.toXMLString>` readonly                       | Returns an XML-encoded string representation of this XML object.                                                                                                        |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`xpath<XML.xpath>` readonly                                   | Evaluates the given XPath expression in accordance with the W3C XPath recommendation, using this XML object as the context node.                                        |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Static Methods
+^^^^^^^^^^^^^^
+
++------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`defaultSettings<XML.defaultSettings>` readonly | Returns an object containing the default parsing and print settings for XML.                  |
++------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`setSettings<XML.setSettings>` readonly         | Sets the parsing and print setting for XML using an object returned by the settings() method. |
++------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`settings<XML.settings>` readonly               | Returns an object containing the current parsing and print settings for XML.                  |
++------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+
+
+
+
+.. container:: hide
+
+   .. toctree::
+      :hidden:
+      :maxdepth: 1
+
+      
+      XML/ignoreComments.rst
+      XML/ignoreProcessingInstructions.rst
+      XML/ignoreWhitespace.rst
+      XML/prettyPrinting.rst
+      XML/prettyIndent.rst
+      
+
+      XML/addNamespace.rst
+      XML/appendChild.rst
+      XML/attribute.rst
+      XML/attributes.rst
+      XML/child.rst
+      XML/childIndex.rst
+      XML/children.rst
+      XML/comments.rst
+      XML/contains.rst
+      XML/copy.rst
+      XML/descendants.rst
+      XML/elements.rst
+      XML/hasComplexContent.rst
+      XML/hasSimpleContent.rst
+      XML/inScopeNamespaces.rst
+      XML/insertChildAfter.rst
+      XML/insertChildBefore.rst
+      XML/length.rst
+      XML/localName.rst
+      XML/name.rst
+      XML/namespace.rst
+      XML/namespaceDeclarations.rst
+      XML/nodeKind.rst
+      XML/normalize.rst
+      XML/parent.rst
+      XML/processingInstructions.rst
+      XML/prependChild.rst
+      XML/removeNamespace.rst
+      XML/replace.rst
+      XML/setChildren.rst
+      XML/setLocalName.rst
+      XML/setName.rst
+      XML/setNamespace.rst
+      XML/text.rst
+      XML/toString.rst
+      XML/toXMLString.rst
+      XML/xpath.rst
+      
+      XML/settings.rst
+      XML/setSettings.rst
+      XML/defaultSettings.rst
+      
+      
+      XML/XML.rst
+      

@@ -1,0 +1,28 @@
+.. _Function.apply:
+
+================================================
+Function.apply
+================================================
+
+   any **apply** (:ref:`Object` **thisObj**, :ref:`Array` **args**)
+
+
+Parameters
+----------
+
++-------------+------------------------+
+| **thisObj** |                        |
++-------------+------------------------+
+| **args**    | An array of arguments. |
++-------------+------------------------+
+
+
+
+Description
+-----------
+
+Apply a?this?object and an argument list to a function.
+
+This function is different from?call(); here, the arguments are suppliedas an Array object.
+
+

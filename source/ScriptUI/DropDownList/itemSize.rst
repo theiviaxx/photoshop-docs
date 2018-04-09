@@ -1,0 +1,15 @@
+.. _DropDownList.itemSize:
+
+================================================
+DropDownList.itemSize
+================================================
+
+   :ref:`Dimension` **itemSize**
+
+
+Description
+-----------
+
+The width and height in pixels of each item in the list.
+
+Used by auto-layout to determine the?preferredSize?of the list, if not otherwise specified. If not set explicitly, the size of each item is set to match the largest height and width among all items in the list

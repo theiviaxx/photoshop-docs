@@ -1,0 +1,58 @@
+.. _ScriptUIPen:
+
+================================================
+ScriptUIPen
+================================================
+
+
+Description
+-----------
+
+A drawing pen that defines a color and line width used to stroke paths.
+
+Create with?ScriptUIGraphics.newPen(). Use as a value of ?foregroundColor?properties, and pass as an argument to?drawString()?and?strokePath()?methods.
+
+
+Properties
+^^^^^^^^^^
+
++--------------------------------------------------+--------------------------------------+
+| :ref:`color<ScriptUIPen.color>` readonly         | The pen color.                       |
++--------------------------------------------------+--------------------------------------+
+| :ref:`lineWidth<ScriptUIPen.lineWidth>` readonly | The pixel width of the drawing line. |
++--------------------------------------------------+--------------------------------------+
+| :ref:`theme<ScriptUIPen.theme>` readonly         | The theme name.                      |
++--------------------------------------------------+--------------------------------------+
+| :ref:`type<ScriptUIPen.type>` readonly           | The pen type, solid or theme.        |
++--------------------------------------------------+--------------------------------------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.. container:: hide
+
+   .. toctree::
+      :hidden:
+      :maxdepth: 1
+
+      ScriptUIPen/color.rst
+      ScriptUIPen/theme.rst
+      ScriptUIPen/type.rst
+      ScriptUIPen/lineWidth.rst
+      
+      
+
+      
+      
+      
+      

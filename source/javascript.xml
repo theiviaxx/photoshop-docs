@@ -1,0 +1,5115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dictionary>
+	<map title="Core JavaScript Classes">
+		<topicref navtitle="JavaScript">
+			<topicref navtitle="$" href="#/$"/>
+			<topicref navtitle="Object" href="#/Object"/>
+			<topicref navtitle="Array" href="#/Array"/>
+			<topicref navtitle="Math" href="#/Math"/>
+			<topicref navtitle="Date" href="#/Date"/>
+			<topicref navtitle="Function" href="#/Function"/>
+			<topicref navtitle="Global Elements" href="#/global"/>
+			<topicref navtitle="String" href="#/String"/>
+			<topicref navtitle="Number" href="#/Number"/>
+			<topicref navtitle="Boolean" href="#/Boolean"/>
+			<topicref navtitle="RegExp" href="#/RegExp"/>
+			<topicref navtitle="Error" href="#/Error"/>
+			<topicref navtitle="File" href="#/File"/>
+			<topicref navtitle="Folder" href="#/Folder"/>
+			<topicref navtitle="Socket" href="#/Socket"/>
+			<topicref navtitle="ReflectionInfo" href="#/ReflectionInfo"/>
+			<topicref navtitle="Reflection" href="#/Reflection"/>
+			<topicref navtitle="QName" href="#/QName"/>
+			<topicref navtitle="Namespace" href="#/Namespace"/>
+			<topicref navtitle="XML" href="#/XML"/>
+			<topicref navtitle="XMLList" href="#/XMLList"/>
+			<topicref navtitle="UnitValue" href="#/UnitValue"/>
+		</topicref>
+	</map>
+	<package>
+		<classdef name="$" dynamic="true">
+			<shortdesc>The $ object provides a number of debugging facilities and informational methods.</shortdesc>
+			<elements type="class">
+				<property name="error">
+					<shortdesc>The most recent run-time error information.</shortdesc>
+					<description>
+						Assigning error text to this property generates a run-time error; however, the preferred way to generate a run-time error is to throw an&#160;<a href="#/Error">Error</a>&#160;object.
+					</description>
+					<datatype>
+						<type href="#/Error">Error</type>
+					</datatype>
+				</property>
+				<property name="version" rwaccess="readonly">
+					<shortdesc>The version number of the ExtendScript engine.</shortdesc>
+					<description>Formatted as a three-part number and description; for example: "3.92.95 (debug)".</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="build" rwaccess="readonly">
+					<shortdesc>The ExtendScript build information.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="buildDate" rwaccess="readonly">
+					<shortdesc>The ExtendScript build date.</shortdesc>
+					<datatype>
+						<type href="#/Date">Date</type>
+					</datatype>
+				</property>
+				<property name="global" rwaccess="readonly">
+					<shortdesc>A reference to the global object, which contains the JavaScript global namespace.</shortdesc>
+					<datatype>
+						<type href="#/global">Object</type>
+					</datatype>
+				</property>
+				<property name="stack" rwaccess="readonly">
+					<shortdesc>The current stack trace.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="level">
+					<shortdesc>The current debugging level, which enables or disables the JavaScript debugger.</shortdesc>
+					<description>One of 0 (no debugging), 1 (break on runtime errors), or 2 (full debug mode).</description>
+					<datatype>
+						<type>number</type>
+					</datatype>
+				</property>
+				<property name="flags">
+					<shortdesc>Gets or sets low-level debug output flags.</shortdesc>
+					<description>
+						A logical AND of bit flag values:
+						<li>0x0002 (2): Displays each line with its line number as it is executed.</li>
+						<li>0x0040 (64): Enables excessive garbage collection. Usually, garbage collection starts when the number of objects has increased by a certain amount since the last garbage collection. This flag causes ExtendScript to garbage collect after almost every statement. This impairs performance severely, but is useful when you suspect that an object gets released too soon.</li>
+						<li>0x0080 (128): Displays all calls with their arguments and the return value.</li>
+						<li>
+							0x0100 (256): Enables extended error handling (see&#160;<a href="#/$/class/strict">strict</a>).
+						</li>
+						<li>0x0200 (512): Enables the localization feature of the toString method. Equivalent to the localize property.</li>
+					</description>
+					<datatype>
+						<type>number</type>
+					</datatype>
+				</property>
+				<property name="strict">
+					<shortdesc>Sets or clears strict mode for object modification.</shortdesc>
+					<description>When true, any attempt to write to a read-only property causes a runtime error. Some objects do not permit the creation of new properties when true.</description>
+					<datatype>
+						<type>any</type>
+					</datatype>
+				</property>
+				<property name="locale">
+					<shortdesc>Gets or sets the current locale.</shortdesc>
+					<description>
+						The string contains five characters in the form LL_RR, where LL is an ISO 639 language specifier, and RR is an ISO 3166 region specifier.<br/>Initially, this is the value that the application or the platform returns for the current user. You can set it to temporarily change the locale for testing. To return to the application or platform setting, set to undefined, null, or the empty string.
+					</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="localize">
+					<shortdesc>Set to true to enable the extended localization features of the built-in toString() method.</shortdesc>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</property>
+				<property name="decimalPoint">
+					<shortdesc>The character used as the decimal point character in formatted numeric output.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="memCache">
+					<shortdesc>The ExtendScript memory cache size, in bytes.</shortdesc>
+					<datatype>
+						<type>number</type>
+					</datatype>
+				</property>
+				<property name="screens" rwaccess="readonly">
+					<shortdesc>An array of objects containing information about the display screens attached to your computer.</shortdesc>
+					<description>
+						Each object has the properties&#160;<i>left, top, right, bottom</i>, which contain the four corners of each screen in global coordinates.<br/>A property&#160;<i>primary</i>&#160;is true if that object describes the primary display.
+					</description>
+					<datatype>
+						<type>Object</type>
+						<array/>
+					</datatype>
+				</property>
+				<property name="os" rwaccess="readonly">
+					<shortdesc>The current operating system version information.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+					<example>
+						<font face="_typewriter">
+							$.os<br/>Result: Windows XP 5.1 Service Pack 2
+						</font>
+					</example>
+				</property>
+				<property name="fileName" rwaccess="readonly">
+					<shortdesc>The file name of the current script.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="line" rwaccess="readonly">
+					<shortdesc>The current line number of the currently executing script.</shortdesc>
+					<datatype>
+						<type>number</type>
+					</datatype>
+				</property>
+				<property name="hiresTimer" rwaccess="readonly">
+					<shortdesc>
+						A high-resolution timer, measuring the time in microseconds. The timer starts when ExtendScript is
+						initialized during the application startup sequence. Every read access resets the timer to Zero.
+					</shortdesc>
+					<datatype>
+						<type>number</type>
+					</datatype>
+				</property>
+				<property name="engineName" rwaccess="readonly">
+					<shortdesc>The name of the current ExtendScript engine, if set.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="includePath" rwaccess="readonly">
+					<shortdesc>The path for include files for the current script.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<method name="about">
+					<shortdesc>Shows an About box for the ExtendScript component, and returns the text for the box.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="toString">
+					<shortdesc>Converts this object to a string.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="write">
+					<shortdesc>Prints text to the Console.</shortdesc>
+					<parameters>
+						<parameter name="text">
+							<shortdesc>The text to print. All arguments are concatenated.</shortdesc>
+							<datatype>
+								<type>any</type>
+							</datatype>
+						</parameter>
+					</parameters>
+				</method>
+				<method name="writeln">
+					<shortdesc>Prints text to the Console, and adds a newline character.</shortdesc>
+					<parameters>
+						<parameter name="text">
+							<shortdesc>The text to print. All arguments are concatenated.</shortdesc>
+							<datatype>
+								<type>any</type>
+							</datatype>
+						</parameter>
+					</parameters>
+				</method>
+				<method name="bp">
+					<shortdesc>Breaks execution at the current position.</shortdesc>
+					<parameters>
+						<parameter name="condition" optional="true">
+							<shortdesc>A string containing a JavaScript statement to be used as a condition. If the statement evaluates to true or nonzero when this point is reached, execution stops.</shortdesc>
+							<datatype>
+								<type>any</type>
+							</datatype>
+						</parameter>
+					</parameters>
+				</method>
+				<method name="getenv">
+					<shortdesc>Retrieves the value of an environment variable.</shortdesc>
+					<parameters>
+						<parameter name="name">
+							<shortdesc>The name of the variable.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="setenv">
+					<shortdesc>Sets the value of an environment variable.</shortdesc>
+					<parameters>
+						<parameter name="name">
+							<shortdesc>The name of the variable.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+						<parameter name="value">
+							<shortdesc>The value of the variable.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+				</method>
+				<method name="sleep">
+					<shortdesc>Suspends the calling thread for a number of milliseconds.</shortdesc>
+					<description>During a sleep period, checks at 100 millisecond intervals to see whether the sleep should be terminated. This can happen if there is a break request, or if the script timeout has expired.</description>
+					<parameters>
+						<parameter name="msecs">
+							<shortdesc>Number of milliseconds to sleep.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+				</method>
+				<method name="colorPicker">
+					<shortdesc>Invokes the platform-specific color selection dialog, and returns the selected color.</shortdesc>
+					<parameters>
+						<parameter name="color">
+							<shortdesc>The color to be preselected in the dialog, as 0xRRGGBB, or -1 for the platform default.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+				</method>
+				<method name="evalFile">
+					<shortdesc>Loads and evaluates a file.</shortdesc>
+					<parameters>
+						<parameter name="file">
+							<shortdesc>The file to load.</shortdesc>
+							<datatype>
+								<type href="#/File">File</type>
+							</datatype>
+						</parameter>
+						<parameter name="timeout" optional="true">
+							<shortdesc>An optional timeout in milliseconds.</shortdesc>
+							<datatype>
+								<type>number</type>
+								<value>10000</value>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>any</type>
+					</datatype>
+				</method>
+				<method name="gc">
+					<shortdesc>Initiates garbage collection in the ExtendScript engine.</shortdesc>
+				</method>
+			</elements>
+		</classdef>
+		<classdef name="Object" dynamic="true">
+			<shortdesc>The base class of all JavaScript objects.</shortdesc>
+			<elements type="constructor">
+				<method name="Object">
+					<shortdesc>Creates and returns a new object of a given type.</shortdesc>
+					<parameters>
+						<parameter name="what">
+							<shortdesc>The object type.</shortdesc>
+							<datatype>
+								<type>any</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>Object</type>
+					</datatype>
+					<example>new Object()</example>
+				</method>
+			</elements>
+			<elements type="class">
+				<method name="isValid">
+					<shortdesc>Reports whether an object is still valid.</shortdesc>
+					<parameters>
+						<parameter name="what">
+							<shortdesc>The object to check.</shortdesc>
+							<datatype>
+								<type>Object</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</method>
+			</elements>
+			<elements type="instance">
+				<property name="prototype" rwaccess="readonly">
+					<shortdesc>Points to the prototype object for this object.</shortdesc>
+					<description>Note that this property is treated as an XML element in the XML class.</description>
+					<datatype>
+						<type>Object</type>
+					</datatype>
+				</property>
+				<property name="constructor" rwaccess="readonly">
+					<shortdesc>Points to the constructor function that created this object.</shortdesc>
+					<description>Note that this property is treated as an XML element in the XML class.</description>
+					<datatype>
+						<type href="#/Function">Function</type>
+					</datatype>
+				</property>
+				<property name="reflect" rwaccess="readonly">
+					<shortdesc>Retrieves and returns the Reflection object associated with this method or a property.</shortdesc>
+					<description>Note that this property is treated as an XML element in the XML class.</description>
+					<datatype>
+						<type href="#/Reflection">Reflection</type>
+					</datatype>
+				</property>
+				<method name="toString">
+					<shortdesc>Creates and returns a string representing this object.</shortdesc>
+					<description>
+						Many objects (such as&#160;<a href="#/Date">Date</a>) override this method in favor of their own implementation. If an object has no string value and no user-defined toString() method, the default method returns [object type], where&#160;<i>type</i>&#160;is the object type or the name of the constructor function that created the object.
+					</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+					<example>obj.toString()</example>
+				</method>
+				<method name="toLocaleString">
+					<shortdesc>
+						Creates and returns a string representing this object, localized for the current locale. See&#160;<a href="#/Object/instance/toString">toString()</a>.
+					</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="hasOwnProperty">
+					<shortdesc>Reports whether a given property is defined with an instance or within the prototype chain.</shortdesc>
+					<parameters>
+						<parameter name="name">
+							<shortdesc>The name of the property to check.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</method>
+				<method name="propertyIsEnumerable">
+					<shortdesc>Reports whether a given property is enumerable.</shortdesc>
+					<parameters>
+						<parameter name="name">
+							<shortdesc>The name of the property to check.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</method>
+				<method name="isPrototypeOf">
+					<shortdesc>Checks whether the given object is a prototype of this object.</shortdesc>
+					<parameters>
+						<parameter name="what">
+							<shortdesc>The object to check.</shortdesc>
+							<datatype>
+								<type>Object</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</method>
+				<method name="valueOf">
+					<shortdesc>Retrieves and returns the primitive value of this object.</shortdesc>
+					<description>If the object has no primitive value, returns the object itself.  Note that you rarely need to call this method yourself.  The JavaScript interpreter automatically invokes it when encountering an object where a primitive value is expected.</description>
+					<datatype>
+						<type>Object</type>
+					</datatype>
+					<example>obj.valueOf()</example>
+				</method>
+				<method name="toSource">
+					<shortdesc>Creates and returns a string representation of this object.</shortdesc>
+					<description>
+						This function serializes the object, so that it can, for example, be passed between engines. Pass the returned string back to&#160;<a href="#/global/instance/eval">eval()</a>&#160;to recreate the object. Works only with built-in classes.
+					</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="unwatch">
+					<shortdesc>Removes the watch function of a property.</shortdesc>
+					<parameters>
+						<parameter name="name">
+							<shortdesc>The name of the property to unwatch.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+				</method>
+				<method name="watch">
+					<shortdesc>Adds a watch function to a property, which is called when the value changes.</shortdesc>
+					<description>This function can accept, modify, or reject a new value that the user, application, or a script has attempted to place in a property.</description>
+					<parameters>
+						<parameter name="name">
+							<shortdesc>The name of the property to watch.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+						<parameter name="func">
+							<shortdesc>The function to be called when the value of this property changes.</shortdesc>
+							<description>
+								This function must three arguments, and return as its result the value to be stored in the property. The arguments are:
+								<li>name: the name of the property that changes.</li>
+								<li>oldValue: The old property value.</li>
+								<li>newValue: The new property value that was specified.</li>
+							</description>
+							<datatype>
+								<type href="#/Function">Function</type>
+							</datatype>
+						</parameter>
+					</parameters>
+				</method>
+			</elements>
+		</classdef>
+		<classdef name="Array" dynamic="true">
+			<shortdesc>
+				An array with integer indexing and a&#160;<i>length</i>&#160;property.
+			</shortdesc>
+			<elements type="constructor">
+				<method name="Array">
+					<shortdesc>Creates and returns a new array.</shortdesc>
+					<description>Takes any number of parameters, which become the elements of the array, or a single value which becomes the length of an empty array. Note that you cannot create a one-element array, as the single parameter value is interpreted as the length. Returns the new array.</description>
+					<parameters>
+						<parameter name="length">
+							<shortdesc>If no other parameters are passed, the initial length of the empty array.</shortdesc>
+							<description>Otherwise, the first element.</description>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+						<parameter name="element" optional="true">
+							<shortdesc>If there is more than one parameter, the array is initialized with the given parameters.</shortdesc>
+							<datatype>
+								<type>any</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>Array</type>
+					</datatype>
+					<example>
+						new Array()<br/>
+						new Array (length)<br/>
+						new Array (11, 22, 33, 44)
+					</example>
+				</method>
+			</elements>
+			<elements type="instance">
+				<property name="length">
+					<shortdesc>The length of the array</shortdesc>
+					<datatype>
+						<type>number</type>
+					</datatype>
+				</property>
+				<method name="concat">
+					<shortdesc>Returns a new array created by concatenating the given values to the end of the original array.</shortdesc>
+					<description>The original array is unchanged.  If an array is provided as a parameter to concat(), each of its elements are appended as separate array elements at the end of the new array.  Returns a new array, the result of concatenation the given values to the end of the original array.</description>
+					<parameters>
+						<parameter name="value">
+							<shortdesc>Any number of values to be added to the end of the array.</shortdesc>
+							<description>Can also be arrays.</description>
+							<datatype>
+								<type>any</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>Array</type>
+					</datatype>
+					<example>array.concat(value1,...valueN)</example>
+				</method>
+				<method name="join">
+					<shortdesc>Joins all elements of the array into a string; optionally, each element is separated by delimiter.</shortdesc>
+					<description>Returns the string containing the joined elements and delimiters.</description>
+					<parameters>
+						<parameter name="delimiter" optional="true">
+							<shortdesc>A string used to separate each element of the array.</shortdesc>
+							<description>If omitted, the array elements are separated with a comma.</description>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+					<example>array.join(delimiter)</example>
+				</method>
+				<method name="reverse">
+					<shortdesc>Reverses the order of the elements in the array.</shortdesc>
+					<description>Returns the reversed array.</description>
+					<datatype>
+						<type>Array</type>
+					</datatype>
+					<example>array.reverse()</example>
+				</method>
+				<method name="slice">
+					<shortdesc>Creates a new array, which contains a subset of the original array's elements.</shortdesc>
+					<description>The slice begins with the index start, and continues up to, but not including the index, end.  If start or end is a negative number, the indexed is resolved counting backwards from the end of the array resulting in the element array[array. length + negativeIndex]. Returns a new array containing elements array[start] through array[end-1].</description>
+					<datatype>
+						<type>Array</type>
+					</datatype>
+					<example>array.slice(start, end)</example>
+				</method>
+				<method name="sort">
+					<shortdesc>Sorts the elements of the array in place, using the given function to compare to elements.</shortdesc>
+					<description>If no function is provided, the elements are sorted alphabetically.  Returns no return value.</description>
+					<parameters>
+						<parameter name="userFunction">
+							<shortdesc>A user-supplied function of the form userFunction(a, b) which returns less than 0 if a is greater than b, 0 if a and b are equal, and greater than 0 if b is greater than a.</shortdesc>
+							<datatype>
+								<type>Function</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<example>array.sort(userFunction)</example>
+				</method>
+				<method name="pop">
+					<shortdesc>Removes the last element from the array, decreases the length by 1, and returns the value of the element.</shortdesc>
+					<description>Returns the value of the deleted array element.</description>
+					<datatype>
+						<type>any</type>
+					</datatype>
+					<example>array.pop()</example>
+				</method>
+				<method name="push">
+					<shortdesc>Places one or more values onto the end of the array and increases length by n.</shortdesc>
+					<description>Returns the new length of the array.</description>
+					<parameters>
+						<parameter name="value">
+							<shortdesc>Any number of values to be pushed onto the end of the array.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>array.push(value1,...valueN)</example>
+				</method>
+				<method name="splice">
+					<shortdesc>Removes num elements from the array beginning with index, start.</shortdesc>
+					<description>Optionally insert new elements beginning at index start.  To ensure contiguity, elements are moved up to fill in any gaps.  Returns a new array containing any elements deleted from the original array.</description>
+					<parameters>
+						<parameter name="start">
+							<shortdesc>The index of the first element to remove. Negative values are relative to the end of the array.</shortdesc>
+							<description/>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+						<parameter name="num" optional="true">
+							<shortdesc>The number of array elements to remove, including start. If omitted, all elements from array index start to the end of the array are removed.</shortdesc>
+							<description/>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+						<parameter name="value" optional="true">
+							<shortdesc>A list of one or more values to be added to the array starting at index start.</shortdesc>
+							<description>Must specify a value for num, to use this argument.</description>
+							<datatype>
+								<type>any</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>Array</type>
+					</datatype>
+					<example>array.splice(start, num, value1, ...valuen)</example>
+				</method>
+				<method name="shift">
+					<shortdesc>Removes the first element from the array, decreases the length by 1, and returns the value of the element.</shortdesc>
+					<description>Returns the value of the deleted array element.</description>
+					<datatype>
+						<type>any</type>
+					</datatype>
+					<example>array.shift()</example>
+				</method>
+				<method name="toString">
+					<shortdesc>Converts an array to a string and returns the string.</shortdesc>
+					<description>Yields the same result as array. join() when called without a parameter.  Returns a comma-separated list of all the elements of the array.</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+					<example>array.toString()</example>
+				</method>
+				<method name="toLocaleString">
+					<shortdesc>Converts an array to a string and returns the string (localized).</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="unshift">
+					<shortdesc>Adds one or more elements to the beginning of the array.</shortdesc>
+					<description>Returns the new array length.</description>
+					<parameters>
+						<parameter name="value">
+							<shortdesc>The values of one or more elements to be added to the beginning of the array.</shortdesc>
+							<datatype>
+								<type>any</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>array.unshift(value1,...valuen)</example>
+				</method>
+				<method name="toSource">
+					<shortdesc>
+						Creates a string representation of this object that can be fed back to&#160;<a href="#/global/instance/eval">eval()</a>&#160;to re-create an object. Works only with built-in classes.
+					</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+			</elements>
+		</classdef>
+		<classdef name="Math" dynamic="true">
+			<shortdesc>A global object containing a set of math functions and constants.</shortdesc>
+			<elements type="class">
+				<property name="E" rwaccess="readonly">
+					<shortdesc>Euler's constant and the base of natural logarithms.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<value>2.7182818284590452354</value>
+					</datatype>
+				</property>
+				<property name="LN10" rwaccess="readonly">
+					<shortdesc>The natural logarithm of 10.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<value>2.302585092994046</value>
+					</datatype>
+				</property>
+				<property name="LN2" rwaccess="readonly">
+					<shortdesc>The natural logarithm of 2.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<value>0.6931471805599453</value>
+					</datatype>
+				</property>
+				<property name="LOG2E" rwaccess="readonly">
+					<shortdesc>The base 2 logarithm of e.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<value>1.4426950408886934</value>
+					</datatype>
+				</property>
+				<property name="LOG10E" rwaccess="readonly">
+					<shortdesc>The base 10 logarithm of e.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<value>0.4342944819032518</value>
+					</datatype>
+				</property>
+				<property name="PI" rwaccess="readonly">
+					<shortdesc>The ratio of the circumference of a circle to its diameter.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<value>3.14159265358979323846</value>
+					</datatype>
+				</property>
+				<property name="SQRT1_2" rwaccess="readonly">
+					<shortdesc>The reciprocal of the square root of 1/2.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<value>0.7071067811865476</value>
+					</datatype>
+				</property>
+				<property name="SQRT2" rwaccess="readonly">
+					<shortdesc>The square root of 2.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<value>1.4142135623730951</value>
+					</datatype>
+				</property>
+				<method name="abs">
+					<shortdesc>Returns the absolute value of a number.</shortdesc>
+					<parameters>
+						<parameter name="x">
+							<shortdesc>A number.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>Math.abs(x)</example>
+				</method>
+				<method name="acos">
+					<shortdesc>Returns the arc cosine(in radians) of a number.</shortdesc>
+					<parameters>
+						<parameter name="x">
+							<shortdesc>A number.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>Math.acos(x)</example>
+				</method>
+				<method name="asin">
+					<shortdesc>Returns the arc sin(in radians) of a number.</shortdesc>
+					<parameters>
+						<parameter name="x">
+							<shortdesc>A number.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>Math.asin(x)</example>
+				</method>
+				<method name="atan">
+					<shortdesc>Returns the arc tangent(in radians) of a number.</shortdesc>
+					<parameters>
+						<parameter name="x">
+							<shortdesc>A number.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>Math.atan(x)</example>
+				</method>
+				<method name="atan2">
+					<shortdesc>Returns the arc tangent of the quotient of its arguments (y/x).</shortdesc>
+					<parameters>
+						<parameter name="y">
+							<shortdesc>A number.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+						<parameter name="x">
+							<shortdesc>A number.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>Math.atan2(y,x)</example>
+				</method>
+				<method name="ceil">
+					<shortdesc>Rounds the number up to the nearest integer.</shortdesc>
+					<parameters>
+						<parameter name="x">
+							<shortdesc>A number.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>Math.ceil(x)</example>
+				</method>
+				<method name="cos">
+					<shortdesc>Returns the cosine of an angle provided in radians.</shortdesc>
+					<parameters>
+						<parameter name="x">
+							<shortdesc>An angle, in radians.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>Math.cos(x)</example>
+				</method>
+				<method name="exp">
+					<shortdesc>Returns Math.E raised to the power of a number.</shortdesc>
+					<parameters>
+						<parameter name="x">
+							<shortdesc>A number.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>Math.exp(x)</example>
+				</method>
+				<method name="floor">
+					<shortdesc>Rounds a number down to the nearest integer.</shortdesc>
+					<parameters>
+						<parameter name="x">
+							<shortdesc>A number.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>Math.floor(x)</example>
+				</method>
+				<method name="log">
+					<shortdesc>Returns the natural logarithm of a number.</shortdesc>
+					<parameters>
+						<parameter name="x">
+							<shortdesc>A number.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>Math.log(x)</example>
+				</method>
+				<method name="max">
+					<shortdesc>Returns the largest of zero or more numbers.</shortdesc>
+					<parameters>
+						<parameter name="value1, value2, ...">
+              <shortdesc>Numbers.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>Math.max(4,8,5,15,6) //returns 15</example>
+				</method>
+				<method name="min">
+					<shortdesc>Returns the smallest of zero or more numbers.</shortdesc>
+					<parameters>
+						<parameter name="value1, value2, ...">
+							<shortdesc>Numbers.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>Math.min(4,8,5,15,6) //returns 4</example>
+				</method>
+				<method name="pow">
+					<shortdesc>Returns x raised to the power of y.</shortdesc>
+					<parameters>
+						<parameter name="x">
+							<shortdesc>Numbers.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+						<parameter name="y">
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>Math.pow(x,y)</example>
+				</method>
+				<method name="random">
+					<shortdesc>Returns a pseudo-random number from 0.0 up to but not including 1.0.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<min>0.0</min>
+						<max>0.999999999999999</max>
+					</datatype>
+					<example>Math.random()</example>
+				</method>
+				<method name="round">
+					<shortdesc>Rounds a number to the nearest integer.</shortdesc>
+					<parameters>
+						<parameter name="x">
+							<shortdesc>A number.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>Math.round(x)</example>
+				</method>
+				<method name="sin">
+					<shortdesc>Returns the sine of an angle provided in radians.</shortdesc>
+					<parameters>
+						<parameter name="x">
+							<shortdesc>An angle, in radians.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>Math.sin(x)</example>
+				</method>
+				<method name="sqrt">
+					<shortdesc>Returns the square root of a number.</shortdesc>
+					<parameters>
+						<parameter name="x">
+							<shortdesc>A number.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>Math.sqrt(x)</example>
+				</method>
+				<method name="tan">
+					<shortdesc>Returns the tangent of an angle provided in radians.</shortdesc>
+					<parameters>
+						<parameter name="x">
+							<shortdesc>An angle, in radians.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>Math.tan(x)</example>
+				</method>
+			</elements>
+		</classdef>
+		<classdef name="Date" dynamic="true">
+			<shortdesc>A date/time object.</shortdesc>
+			<elements type="constructor">
+				<method name="Date">
+					<shortdesc>Returns a new Date object holding the current date and time.</shortdesc>
+					<description>If parameters are supplied, returns a new Date object holding the supplied date and time.</description>
+					<parameters>
+						<parameter name="year">
+							<shortdesc>The year expressed in four digits.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+						<parameter name="month" optional="true">
+							<shortdesc>An integer value from 0 (Jan) to 11 (Dec).</shortdesc>
+							<datatype>
+								<type>number</type>
+								<min>0</min>
+								<max>11</max>
+								<value>0</value>
+							</datatype>
+						</parameter>
+						<parameter name="day" optional="true">
+							<shortdesc>An integer value from 1 to 31, If this argument is not supplied, its value is set to 0.</shortdesc>
+							<datatype>
+								<type>number</type>
+								<min>1</min>
+								<max>31</max>
+								<value>0</value>
+							</datatype>
+						</parameter>
+						<parameter name="hours" optional="true">
+							<shortdesc>An integer value from 0 (midnight) to 23 (11 PM). If this argument is not supplied, its value is set to 0.</shortdesc>
+							<datatype>
+								<type>number</type>
+								<min>0</min>
+								<max>23</max>
+								<value>0</value>
+							</datatype>
+						</parameter>
+						<parameter name="min" optional="true">
+							<shortdesc>An integer value from 0 to 59. If this argument is not supplied, its value is set to 0.</shortdesc>
+							<datatype>
+								<type>number</type>
+								<min>0</min>
+								<max>59</max>
+								<value>0</value>
+							</datatype>
+						</parameter>
+						<parameter name="sec" optional="true">
+							<shortdesc>An Integer value from 0 to 59. If this argument is not supplied, its value is set to 0.</shortdesc>
+							<datatype>
+								<type>number</type>
+								<min>0</min>
+								<max>59</max>
+								<value>0</value>
+							</datatype>
+						</parameter>
+						<parameter name="ms" optional="true">
+							<shortdesc>An integer value from 0 to 999. If this argument is not supplied, its value is set to 0.</shortdesc>
+							<datatype>
+								<type>number</type>
+								<min>0</min>
+								<max>999</max>
+								<value>0</value>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type href="#/Date">Date</type>
+					</datatype>
+					<example>
+						new Date()<br/>new Date (2006, 9, 25, 15, 30)
+					</example>
+				</method>
+			</elements>
+			<elements type="class">
+				<method name="parse">
+					<shortdesc>Parses a string, returning a new Date object. The string should be similar to the string returned bt toString().</shortdesc>
+					<parameters>
+						<parameter name="text">
+							<shortdesc>The string to parse.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type href="#/Date">Date</type>
+					</datatype>
+				</method>
+				<method name="UTC">
+					<shortdesc>Returns the number of milliseconds between midnight January 1, 1970, UTC, and the specified time.</shortdesc>
+					<parameters>
+						<parameter name="year">
+							<shortdesc>The year expressed in four digits, for example, 2001.</shortdesc>
+							<description>To indicate for a year from 1900 to 1999, you can specify a value from 0 to 99.</description>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+						<parameter name="month" optional="true">
+							<shortdesc>An integer value from 0 (Jan) to 11 (Dec).</shortdesc>
+							<datatype>
+								<type>number</type>
+								<min>0</min>
+								<max>11</max>
+								<value>0</value>
+							</datatype>
+						</parameter>
+						<parameter name="day" optional="true">
+							<shortdesc>An integer value from 1 to 31, If this argument is not supplied, its value is set to 0.</shortdesc>
+							<datatype>
+								<type>number</type>
+								<min>1</min>
+								<max>31</max>
+								<value>0</value>
+							</datatype>
+						</parameter>
+						<parameter name="hours" optional="true">
+							<shortdesc>An integer value from 0 (midnight) to 23 (11 PM). If this argument is not supplied, its value is set to 0.</shortdesc>
+							<datatype>
+								<type>number</type>
+								<min>0</min>
+								<max>23</max>
+								<value>0</value>
+							</datatype>
+						</parameter>
+						<parameter name="min" optional="true">
+							<shortdesc>An integer value from 0 to 59. If this argument is not supplied, its value is set to 0.</shortdesc>
+							<datatype>
+								<type>number</type>
+								<min>0</min>
+								<max>59</max>
+								<value>0</value>
+							</datatype>
+						</parameter>
+						<parameter name="sec" optional="true">
+							<shortdesc>An Integer value from 0 to 59. If this argument is not supplied, its value is set to 0.</shortdesc>
+							<datatype>
+								<type>number</type>
+								<min>0</min>
+								<max>59</max>
+								<value>0</value>
+							</datatype>
+						</parameter>
+						<parameter name="ms" optional="true">
+							<shortdesc>An integer value from 0 to 999. If this argument is not supplied, its value is set to 0.</shortdesc>
+							<datatype>
+								<type>number</type>
+								<min>0</min>
+								<max>999</max>
+								<value>0</value>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type href="#/Date">Date</type>
+					</datatype>
+					<example>Date.UTC(year , month, date, hour, min, sec, ms)</example>
+				</method>
+			</elements>
+			<elements type="instance">
+				<method name="getDate">
+					<shortdesc>Returns the day of the month of the specified Date object in local time.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<min>1</min>
+						<max>31</max>
+					</datatype>
+					<example>date.getDate()</example>
+				</method>
+				<method name="getDay">
+					<shortdesc>Returns the day of the week for the specified Date object in local time.</shortdesc>
+					<description>This is an integer from 0 (Sunday) to 6 (Saturday).  Returns the day of the week for date.</description>
+					<datatype>
+						<type>number</type>
+						<min>0</min>
+						<max>6</max>
+					</datatype>
+					<example>date.getDay()</example>
+				</method>
+				<method name="getYear">
+					<shortdesc>Returns the year of the specified Date object, as a difference from 1900, in local time.</shortdesc>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>date.getYear()</example>
+				</method>
+				<method name="getFullYear">
+					<shortdesc>Returns the four digit year of the specified Date object in local time.</shortdesc>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>date.getFullYear()</example>
+				</method>
+				<method name="getHours">
+					<shortdesc>Returns the hour of the specified Date object in local time.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<min>0</min>
+						<max>23</max>
+					</datatype>
+					<example>date.getHours()</example>
+				</method>
+				<method name="getMilliseconds">
+					<shortdesc>Returns the milliseconds of the specified Date object in local time.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<min>0</min>
+						<max>999</max>
+					</datatype>
+					<example>date.getMilliseconds()</example>
+				</method>
+				<method name="getMinutes">
+					<shortdesc>Returns the minutes of the specified Date object in local time.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<min>0</min>
+						<max>59</max>
+					</datatype>
+					<example>date.getMinutes()</example>
+				</method>
+				<method name="getMonth">
+					<shortdesc>Returns the month of the specified Date object in local time.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<min>0</min>
+						<max>11</max>
+					</datatype>
+					<example>date.getMonth()</example>
+				</method>
+				<method name="getSeconds">
+					<shortdesc>Returns the seconds of the specified Date object in local time.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<min>0</min>
+						<max>59</max>
+					</datatype>
+					<example>date.getSeconds()</example>
+				</method>
+				<method name="getTime">
+					<shortdesc>Returns the number of milliseconds since midnight January 1,1970 UTC for the specified Date object.</shortdesc>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>date.getTime()</example>
+				</method>
+				<method name="getTimezoneOffset">
+					<shortdesc>Returns the difference in minutes between the computer's local time and UTC.</shortdesc>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>date.getTimezoneOffset()</example>
+				</method>
+				<method name="getUTCDate">
+					<shortdesc>Returns the day of the month of the specified Date object according to UTC.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<min>1</min>
+						<max>31</max>
+					</datatype>
+					<example>date.getUTCDate()</example>
+				</method>
+				<method name="getUTCDay">
+					<shortdesc>Returns the day of the week for the specified Date object according to UTC.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<min>0</min>
+						<max>6</max>
+					</datatype>
+					<example>date.getUTCDay()</example>
+				</method>
+				<method name="getUTCFullYear">
+					<shortdesc>Returns the four digit year of the specified Date object according to UTC.</shortdesc>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>date.getUTCFullYear()</example>
+				</method>
+				<method name="getUTCHours">
+					<shortdesc>Returns the hour of the specified Date object according to UTC.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<min>0</min>
+						<max>23</max>
+					</datatype>
+					<example>date.getUTCHours()</example>
+				</method>
+				<method name="getUTCMilliseconds">
+					<shortdesc>Returns the milliseconds of the specified Date object according to UTC.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<min>0</min>
+						<max>999</max>
+					</datatype>
+					<example>date.getUTCMilliseconds()</example>
+				</method>
+				<method name="getUTCMinutes">
+					<shortdesc>Returns the minutes of the specified Date object according to UTC.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<min>0</min>
+						<max>59</max>
+					</datatype>
+					<example>date.getUTCMinutes()</example>
+				</method>
+				<method name="getUTCMonth">
+					<shortdesc>Returns the month of the specified Date object according to UTC.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<min>0</min>
+						<max>11</max>
+					</datatype>
+					<example>date.getUTCMonth()</example>
+				</method>
+				<method name="getUTCSeconds">
+					<shortdesc>Returns the seconds of the specified Date object according to UTC.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<min>0</min>
+						<max>59</max>
+					</datatype>
+					<example>date.getUTCSeconds()</example>
+				</method>
+				<method name="setDate">
+					<shortdesc>Sets the day of the month of a specified Date object according to local time.</shortdesc>
+					<description>Returns the number of milliseconds between the new date and midnight, January 1, 1970.</description>
+					<parameters>
+						<parameter name="date">
+							<shortdesc>An integer from 1 to 31 indicating the day of the month.</shortdesc>
+							<description/>
+							<datatype>
+								<type>number</type>
+								<min>1</min>
+								<max>31</max>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>date.setDate(date)</example>
+				</method>
+				<method name="setFullYear">
+					<shortdesc>Sets the year of a specified Date object according to local time.</shortdesc>
+					<description>This method can also set month and date if those arguments are specified. Returns the number of milliseconds between the new date and midnight, January 1, 1970.</description>
+					<parameters>
+						<parameter name="year">
+							<shortdesc>A four-digit integer value indicating the year to set.</shortdesc>
+							<description/>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>date.setFullYear(year, month, date)</example>
+				</method>
+				<method name="setHours">
+					<shortdesc>Sets the hours of a specified Date object according to local time.</shortdesc>
+					<description>Returns the number of milliseconds between the new date and midnight, January 1, 1970.</description>
+					<parameters>
+						<parameter name="hour">
+							<shortdesc>An integer value from 0 (midnight) to 23 (11 PM).</shortdesc>
+							<description/>
+							<datatype>
+								<type>number</type>
+								<min>0</min>
+								<max>23</max>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>date.setHours(hour)</example>
+				</method>
+				<method name="setMilliseconds">
+					<shortdesc>Sets the milliseconds of a specified Date object according to local time.</shortdesc>
+					<description>Returns the number of milliseconds between the new date and midnight, January 1, 1970.</description>
+					<parameters>
+						<parameter name="ms">
+							<shortdesc>An integer value from 0 to 999.</shortdesc>
+							<datatype>
+								<type>number</type>
+								<min>0</min>
+								<max>999</max>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>date.setMilliseconds(ms)</example>
+				</method>
+				<method name="setMinutes">
+					<shortdesc>Sets the minutes of a specified Date object according to local time.</shortdesc>
+					<description>Returns the number of milliseconds between the new date and midnight, January 1, 1970.</description>
+					<parameters>
+						<parameter name="minutes">
+							<shortdesc>An integer value from 0 to 59.</shortdesc>
+							<datatype>
+								<type>number</type>
+								<min>0</min>
+								<max>59</max>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>date.setMinutes(minutes)</example>
+				</method>
+				<method name="setSeconds">
+					<shortdesc>Sets the seconds of a specified Date object according to local time.</shortdesc>
+					<description>Returns the number of milliseconds between the new date and midnight, January 1, 1970.</description>
+					<parameters>
+						<parameter name="seconds">
+							<shortdesc>An integer value from 0 to 59.</shortdesc>
+							<datatype>
+								<type>number</type>
+								<min>0</min>
+								<max>59</max>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>date.setSeconds(seconds)</example>
+				</method>
+				<method name="setMonth">
+					<shortdesc>Sets the month of a specified Date object according to local time.</shortdesc>
+					<description>Returns the number of milliseconds between the new date and midnight, January 1, 1970.</description>
+					<parameters>
+						<parameter name="month">
+							<shortdesc>An integer value from 0 (Jan) to 11 (Dec).</shortdesc>
+							<description/>
+							<datatype>
+								<type>number</type>
+								<min>0</min>
+								<max>11</max>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>date.setMonth(month)</example>
+				</method>
+				<method name="setUTCDate">
+					<shortdesc>Sets the date of a specified Date object according to universal time.</shortdesc>
+					<description>Returns the number of milliseconds between the new date and midnight, January 1, 1970 in UTC time.</description>
+					<parameters>
+						<parameter name="date">
+							<shortdesc>An integer from 1 to 31 indicating the day of the month.</shortdesc>
+							<description/>
+							<datatype>
+								<type>number</type>
+								<min>1</min>
+								<max>31</max>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>date.setUTCDate(date)</example>
+				</method>
+				<method name="setUTCFullYear">
+					<shortdesc>Sets the year of a specified Date object according to UTC, can also set the month and date.</shortdesc>
+					<description>Returns the number of milliseconds between the date set and midnight, January 1, 1970, in UTC.</description>
+					<parameters>
+						<parameter name="year">
+							<shortdesc>The year expressed in four digits.</shortdesc>
+							<description/>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>date.setUTCFullYear(year, month, date)</example>
+				</method>
+				<method name="setUTCHours">
+					<shortdesc>Sets the hours of a specified Date object according to UTC.</shortdesc>
+					<description>Returns the number of milliseconds between the date set and midnight, January 1, 1970, in UTC.</description>
+					<parameters>
+						<parameter name="hours">
+							<shortdesc>An integer value from 0 (midnight) to 23 (11 PM) indicating the hour to be set.</shortdesc>
+							<description/>
+							<datatype>
+								<type>number</type>
+								<min>0</min>
+								<max>23</max>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>date.setUTCHours(hours)</example>
+				</method>
+				<method name="setUTCMilliseconds">
+					<shortdesc>Sets the milliseconds of a specified Date object according to UTC.</shortdesc>
+					<description>Returns the number of milliseconds between the date set and midnight, January 1, 1970, in UTC.</description>
+					<parameters>
+						<parameter name="ms">
+							<shortdesc>An integer value in the range of 0 to 999 indicating the number of milliseconds to set.</shortdesc>
+							<description/>
+							<datatype>
+								<type>number</type>
+								<min>0</min>
+								<max>999</max>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>date.setUTCMilliseconds(ms)</example>
+				</method>
+				<method name="setUTCMinutes">
+					<shortdesc>Sets the minutes of a specified Date object according to UTC.</shortdesc>
+					<description>Returns the number of milliseconds between the date set and midnight, January 1, 1970, in UTC.</description>
+					<parameters>
+						<parameter name="min">
+							<shortdesc>An integer value in the range 0 to 59 indicating the number of minutes to be set.</shortdesc>
+							<description/>
+							<datatype>
+								<type>number</type>
+								<min>0</min>
+								<max>59</max>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>date.setUTCMinutes(min)</example>
+				</method>
+				<method name="setUTCSeconds">
+					<shortdesc>Sets the seconds of a specified Date object according to UTC.</shortdesc>
+					<description>Returns the number of milliseconds between the date set and midnight, January 1, 1970, in UTC.</description>
+					<parameters>
+						<parameter name="sec">
+							<shortdesc>An integer value in the range 0 to 59 indicating the number of seconds to set.</shortdesc>
+							<description/>
+							<datatype>
+								<type>number</type>
+								<min>0</min>
+								<max>59</max>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>date.setUTCSeconds(sec)</example>
+				</method>
+				<method name="setUTCMonth">
+					<shortdesc>Sets the month of a specified Date object according to UTC.</shortdesc>
+					<description>Returns the number of milliseconds between the date set and midnight, January 1, 1970, in UTC.</description>
+					<parameters>
+						<parameter name="month">
+							<shortdesc>An integer value in the range 0 (Jan.) to 11 (Dec.) indicating the month to set.</shortdesc>
+							<datatype>
+								<type>number</type>
+								<min>0</min>
+								<max>11</max>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>date.setUTCMonth(month)</example>
+				</method>
+				<method name="setTime">
+					<shortdesc>Sets the date of a specified Date object in milliseconds since midnight, January 1, 1970.</shortdesc>
+					<description>Returns the value of ms.</description>
+					<parameters>
+						<parameter name="ms">
+							<shortdesc>An integer indicating the number of milliseconds between the date set and midnight, January 1, 1970.</shortdesc>
+							<description/>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>date.setTime(ms)</example>
+				</method>
+				<method name="setYear">
+					<shortdesc>Sets the year of a specified Date object according to local time, as a difference between the current year and 1900.</shortdesc>
+					<description>Returns the number of milliseconds between the date set and midnight, January 1, 1970.</description>
+					<parameters>
+						<parameter name="year">
+							<shortdesc>An integer value indicating the year to set.</shortdesc>
+							<description>The method interprets a 1- or 2- digit value to mean the 1900s; for example, 13 is interpreted to mean 1913.</description>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>date.setYear(year, month, date)</example>
+				</method>
+				<method name="toDateString">
+					<description>Returns the date as a string.</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="toTimeString">
+					<description>Returns the time as a string.</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="toLocaleString">
+					<description>Returns a string value representing the date and time stored in the Date object in human readable format (localized).</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="toLocaleDateString">
+					<description>Returns the date as a localized string.</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="toLocaleTimeString">
+					<description>Returns the time as a localized string.</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="toGMTString">
+					<description>Returns the date and time adjusted to GMT (UTC) as a string.</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="toUTCString">
+					<description>Returns the date and time adjusted to UTC as a string.</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="toString">
+					<shortdesc>Returns a string value representing the date and time stored in the Date object in human readable format.</shortdesc>
+					<description>Returns the following string is an example of the format returned by this method: Mon Aug 13, 10:54:21 GMT-0700 2001.</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+					<example>date.toString()</example>
+				</method>
+				<method name="valueOf">
+					<shortdesc>The valueOf() method returns the number of milliseconds that have passed since midnight, Returns an integer.</shortdesc>
+					<description/>
+					<datatype>
+						<type>number</type>
+					</datatype>
+				</method>
+				<method name="toSource">
+					<shortdesc>
+						Creates a string representation of this object that can be fed back to&#160;<a href="#/global/instance/eval">eval()</a>&#160;to re-create an object. Works only with built-in classes.
+					</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+			</elements>
+		</classdef>
+		<classdef name="Function" dynamic="true">
+			<shortdesc>Wraps a built-in or JavaScript function.</shortdesc>
+			<elements type="constructor">
+				<method name="Function">
+					<description>The Function constructor parses the argument list and creates a Function object.</description>
+					<parameters>
+						<parameter name="arguments">
+							<shortdesc>The list of formal arguments, separated by commas.</shortdesc>
+							<description>The formal arguments can also be supplied one by one; in this case, the last argument to the Function constructor is considered to be the function body.</description>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+						<parameter name="body">
+							<shortdesc>The body of the function to create.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>Function</type>
+					</datatype>
+				</method>
+			</elements>
+			<elements type="instance">
+				<property name="arguments">
+					<shortdesc>The function arguments, packed into an array.</shortdesc>
+					<description>This property is deprecated; use the arguments property within the function body.</description>
+					<datatype>
+						<type>Object</type>
+					</datatype>
+				</property>
+				<property name="length" rwaccess="readonly">
+					<shortdesc>The number of formal arguments.</shortdesc>
+					<datatype>
+						<type>number</type>
+					</datatype>
+				</property>
+				<property name="arity" rwaccess="readonly">
+					<shortdesc>The number of formal arguments.</shortdesc>
+					<description>This property is deprecated; use the length property instead.</description>
+					<datatype>
+						<type>number</type>
+					</datatype>
+				</property>
+				<property name="name" rwaccess="readonly">
+					<shortdesc>The function name.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<method name="apply">
+					<shortdesc>
+						Apply a&#160;<i>this</i>&#160;object and an argument list to a function.
+					</shortdesc>
+					<description>
+						This function is different from&#160;<i>call()</i>; here, the arguments are suppliedas an Array object.
+					</description>
+					<parameters>
+						<parameter name="thisObj">
+							<description>
+								The object to be used as&#160;<i>this</i>.
+							</description>
+							<datatype>
+								<type>Object</type>
+							</datatype>
+						</parameter>
+						<parameter name="args">
+							<shortdesc>An array of arguments.</shortdesc>
+							<datatype>
+								<type href="#/Array">Array</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>any</type>
+					</datatype>
+				</method>
+				<method name="call">
+					<shortdesc>
+						Apply a&#160;<i>this</i>&#160;object and arguments to a function.
+					</shortdesc>
+					<description>
+						This function is different from&#160;<i>apply()</i>; here, the arguments are supplied one by one.
+					</description>
+					<parameters>
+						<parameter name="thisObj">
+							<description>
+								The object to be used as&#160;<i>this</i>.
+							</description>
+							<datatype>
+								<type>Object</type>
+							</datatype>
+						</parameter>
+						<parameter name="argument">
+							<description>The first agument to the function. Add as many as needed.</description>
+							<datatype>
+								<type>any</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>any</type>
+					</datatype>
+				</method>
+				<method name="toSource">
+					<shortdesc>
+						Creates a string representation of this object that can be fed back to&#160;<a href="#/global/instance/eval">eval()</a>&#160;to re-create an object. Works only with JavaScript functions.
+					</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="toString">
+					<shortdesc>Returns the function definition as a string.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+			</elements>
+		</classdef>
+		<classdef name="global" dynamic="true">
+			<shortdesc>The global methods and properties for ExtendScript.</shortdesc>
+			<elements type="instance">
+				<property name="NaN">
+					<shortdesc>The NaN global property is a predefined variable with the value NaN (Not-a-Number), as specified by the IEEE-754 standard.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<value>NaN</value>
+					</datatype>
+				</property>
+				<property name="Infinity">
+					<shortdesc>The Infinity global property is a predefined variable with the value for infinity.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<value>+Infinity</value>
+					</datatype>
+				</property>
+				<property name="undefined">
+					<shortdesc>This global property is a predefined variable with the value for an undefined value.</shortdesc>
+					<datatype>
+						<type>Undefined</type>
+						<value>undefined</value>
+					</datatype>
+				</property>
+				<method name="encodeURI">
+					<shortdesc>Encodes a string after RFC2396.</shortdesc>
+					<description>
+						Create an UTF-8 ASCII encoded version of this string. The string is converted into UTF-8. Every non-alphanumeric character is encoded as a percent escape
+						character of the form %xx, where xx is the hex value of the character. After the conversion to UTF-8 encoding and escaping, it is guaranteed that the string does not contain characters codes greater than 127. The list of characters not to be encoded is -_.!~*'();/?:@&amp;=+$,#. The method returns false on errors.
+					</description>
+					<parameters>
+						<parameter name="text">
+							<shortdesc>The text to encode.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="encodeURIComponent">
+					<shortdesc>Encodes a string after RFC2396.</shortdesc>
+					<description>
+						Create an UTF-8 ASCII encoded version of this string. The string is converted into UTF-8. Every non-alphanumeric character is encoded as a percent escape
+						character of the form %xx, where xx is the hex value of the character. After the conversion to UTF-8 encoding and escaping, it is guaranteed that the string does not contain characters codes greater than 127. The list of characters not to be encoded is -_.!~*'(). The method returns false on errors.
+					</description>
+					<parameters>
+						<parameter name="text">
+							<shortdesc>The text to encode.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="decodeURI">
+					<shortdesc>
+						Decodes a string created with&#160;<a href="#/global/instance/encodeURI">encodeURI()</a>.
+					</shortdesc>
+					<parameters>
+						<parameter name="uri">
+							<shortdesc>The text to decode.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="decodeURIComponent">
+					<shortdesc>
+						Decodes a string created with&#160;<a href="#/global/instance/encodeURIComponent">encodeURIComponent()</a>.
+					</shortdesc>
+					<parameters>
+						<parameter name="uri">
+							<shortdesc>The text to decode.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="escape">
+					<shortdesc>Creates a URL-encoded string from aString.</shortdesc>
+					<description>In the new string, characters of aString that require URL encoding are replaced with the format %xx, where xx is the hexadecimal value of the character code in the Unicode character set.  This format is used to transmit information appended to a URL during, for example, execution of the GET method.  Use the unescape() global function to translate the string back into its original format. Returns a string which is aString URL-encoded.</description>
+					<parameters>
+						<parameter name="aString">
+							<shortdesc>The string to be encoded.</shortdesc>
+							<description/>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+					<example>escape(aString)</example>
+				</method>
+				<method name="eval">
+					<shortdesc>Evaluates its argument as a JavaScript script, and returns the result of evaluation.</shortdesc>
+					<description>You can pass the result of an object's toSource() method to reconstruct that object.</description>
+					<parameters>
+						<parameter name="stringExpression">
+							<shortdesc>The string to evaluate.</shortdesc>
+							<description/>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>any</type>
+					</datatype>
+					<example>eval(stringExpression)</example>
+				</method>
+				<method name="uneval">
+					<shortdesc>Creates a source code representation of the supplied argument, and returns it as a string.</shortdesc>
+					<parameters>
+						<parameter name="what">
+							<shortdesc>The object to uneval.</shortdesc>
+							<datatype>
+								<type>any</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="isFinite">
+					<shortdesc>Evaluates an expression and reports whether the result is a finite number.</shortdesc>
+					<description>Returns true if the expression is a finite number, false otherwise. False if the value is infinity or negative infinity.</description>
+					<parameters>
+						<parameter name="expression">
+							<shortdesc>Any valid JavaScript expression.</shortdesc>
+							<description/>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+					<example>isFinite(expression)</example>
+				</method>
+				<method name="isNaN">
+					<shortdesc>Evaluates an expression and reports whether the result is "Not-a-Number" (NaN).</shortdesc>
+					<description>Returns true if the result of evaluation is not a number (NaN), false if the value is a number.</description>
+					<parameters>
+						<parameter name="expression">
+							<shortdesc>Any valid JavaScript expression.</shortdesc>
+							<description/>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+					<example>isNaN(expression)</example>
+				</method>
+				<method name="parseInt">
+					<shortdesc>Extracts an integer from a string.</shortdesc>
+					<description>Parses a string to find the first set of characters, in a specified base, that can be converted to an integer, and returns that integer, or NaN if it does not encounter characters that it can convert to a number.</description>
+					<parameters>
+						<parameter name="text">
+							<shortdesc>The string from which to extract an integer.</shortdesc>
+							<description/>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+						<parameter name="base" optional="true">
+							<shortdesc>The base of the string to parse (from base 2 to base 36).</shortdesc>
+							<description>If not supplied, base is determined by the format of string.</description>
+							<datatype>
+								<type>number</type>
+								<min>2</min>
+								<max>36</max>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>parseInt(aString, base)</example>
+				</method>
+				<method name="parseFloat">
+					<shortdesc>Extracts a floating-point number from a string.</shortdesc>
+					<description>Parses a string to find the first set of characters that can be converted to a floating point number, and returns that number, or NaN if it does not encounter characters that it can converted to a number.  The function supports exponential notation.</description>
+					<parameters>
+						<parameter name="text">
+							<shortdesc>The string from which to extract a floating point number.</shortdesc>
+							<description/>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>parseFloat(aString)</example>
+				</method>
+				<method name="unescape">
+					<shortdesc>Translates URL-encoded string into a regular string, and returns that string.</shortdesc>
+					<description>Use the escape() global function to URL-encode strings.</description>
+					<parameters>
+						<parameter name="stringExpression">
+							<shortdesc>The URL-encoded string to convert.</shortdesc>
+							<description/>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+					<example>unescape(stringExpression)</example>
+				</method>
+				<method name="localize">
+					<shortdesc>Localizes a ZString-encoded string and merges additional arguments into the string.</shortdesc>
+					<parameters>
+						<parameter name="what">
+							<shortdesc>The string to localize. A ZString-encoded string that can contain placeholder for additional arguments in the form %1 to %n.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+						<parameter name="argument" optional="true">
+							<shortdesc>Optional argument(s) to be merged into the string. There may be more than one argument.</shortdesc>
+							<datatype>
+								<type>any</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="isXMLName">
+					<shortdesc>Returns true if the supplied string is a valid XML name.</shortdesc>
+					<parameters>
+						<parameter name="name">
+							<shortdesc>The XML name to test.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</method>
+				<method name="setDefaultXMLNamespace">
+					<shortdesc>Defines the default XML namespace.</shortdesc>
+					<description>
+						This is a replacement function for the standard JavaScript statement<font face="_typewriter">&#160;set default xml namespace</font>.
+					</description>
+					<parameters>
+						<parameter name="namespace">
+							<shortdesc>The namespace to use.</shortdesc>
+							<description>
+								Omit this parameter to return to the empty namespace. This is either a&#160;<a href="#/Namespace">Namespace</a>&#160;object or a string.
+							</description>
+							<datatype>
+								<type href="#/Namespace">Namespace</type>
+							</datatype>
+						</parameter>
+					</parameters>
+				</method>
+				<method name="alert">
+					<shortdesc>Displays an alert box</shortdesc>
+					<parameters>
+						<parameter name="message">
+							<shortdesc>The text to display</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+						<parameter name="title" optional="true">
+							<shortdesc>The title of the alert; ignored on the Macintosh</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+						<parameter name="errorIcon">
+							<shortdesc>Display an Error icon; ignored on the Macintosh</shortdesc>
+							<datatype>
+								<type>bool</type>
+								<value>false</value>
+							</datatype>
+						</parameter>
+					</parameters>
+				</method>
+				<method name="confirm">
+					<shortdesc>Displays an alert box with Yes and No buttons; returns true for Yes</shortdesc>
+					<parameters>
+						<parameter name="message">
+							<shortdesc>The text to display</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+						<parameter name="noAsDefault">
+							<shortdesc>Set to true to set the No button as the default button</shortdesc>
+							<datatype>
+								<type>bool</type>
+								<value>false</value>
+							</datatype>
+						</parameter>
+						<parameter name="title" optional="true">
+							<shortdesc>The title of the alert; ignored on the Macintosh</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</method>
+				<method name="prompt">
+					<shortdesc>Displays a dialog allowing the user to enter text</shortdesc>
+					<description>Returns null if the user cancelled the dialog, the text otherwise</description>
+					<parameters>
+						<parameter name="prompt">
+							<shortdesc>The text to display</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+						<parameter name="default" optional="true">
+							<shortdesc>The default text to preset the edit field with</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+						<parameter name="title" optional="true">
+							<shortdesc>The title of the dialog;</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+			</elements>
+		</classdef>
+		<classdef name="String" dynamic="true">
+			<shortdesc>A character string. Each character is adressable by index.</shortdesc>
+			<elements type="constructor">
+				<method name="String">
+					<shortdesc>Returns a string representation of the value given as an argument.</shortdesc>
+					<parameters>
+						<parameter name="value">
+							<shortdesc>A number, variable, or object to convert to a string.</shortdesc>
+							<description/>
+							<datatype>
+								<type>any</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type href="#/String">String</type>
+					</datatype>
+					<example>new String(value)</example>
+				</method>
+			</elements>
+			<elements type="class">
+				<method name="fromCharCode">
+					<shortdesc>Returns a string created by concatenation one or more characters specified as ASCII values.</shortdesc>
+					<parameters>
+						<parameter name="value1">
+							<shortdesc>One or more ASCII values.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type href="#/String">String</type>
+					</datatype>
+					<example>String.fromCharCode(value1,...valueN)</example>
+				</method>
+			</elements>
+			<elements type="instance">
+				<property name="length" rwaccess="readonly">
+					<shortdesc>The length of the string.</shortdesc>
+					<datatype>
+						<type>number</type>
+					</datatype>
+				</property>
+				<method name="toString">
+					<shortdesc>Returns itself.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="toSource">
+					<shortdesc>
+						Creates a string representation of this object that can be fed back to&#160;<a href="#/global/instance/eval">eval()</a>&#160;to re-create an object. Works only with built-in classes.
+					</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="valueOf">
+					<shortdesc>Returns itself.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="charAt">
+					<shortdesc>Returns the character at the specified index.</shortdesc>
+					<parameters>
+						<parameter name="index">
+							<shortdesc>An integer between 0 and string.length -1, specifying the character to return.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+					<example>string.charAt(index)</example>
+				</method>
+				<method name="charCodeAt">
+					<shortdesc>Returns the Unicode value of the character at the given index.</shortdesc>
+					<parameters>
+						<parameter name="index">
+							<shortdesc>An integer between 0 and string.length -1, specifying the character.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>string.charCodeAt(index)</example>
+				</method>
+				<method name="concat">
+					<shortdesc>If necessary, converts the one or more given values to strings.</shortdesc>
+					<description>Those values are concatenated with the original string, the result is returned. The original string is not effected.  Returns the concatenated string.</description>
+					<parameters>
+						<parameter name="value">
+							<shortdesc>The values to be concatenated with the given string.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+					<example>string.concat(value1,...valueN)</example>
+				</method>
+				<method name="indexOf">
+					<shortdesc>Returns the index within the string of the first occurrence of the specified string, starting the search at fromIndex if provided.</shortdesc>
+					<parameters>
+						<parameter name="searchValue">
+							<shortdesc>The string for which to search.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+						<parameter name="offset" optional="true">
+							<shortdesc>The starting offset of the search.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>string.indexOf(searchValue, fromIndex)</example>
+				</method>
+				<method name="lastIndexOf">
+					<shortdesc>Returns the index within the string of the last occurrence of the specified value.</shortdesc>
+					<description>The string is searched backward, starting at fromIndex.  Returns the index within the string where the last occurrence of searchValue was found, or -1 if it was not found.</description>
+					<parameters>
+						<parameter name="searchValue">
+							<shortdesc>The string for which to search.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+						<parameter name="offset" optional="true">
+							<shortdesc>The starting offset of the search.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>string.lastIndexOf(searchValue, fromIndex)</example>
+				</method>
+				<method name="slice">
+					<shortdesc>Extracts a substring of the given string and returns it as a new string.</shortdesc>
+					<description>The substring begins at startSlice, and includes all characters up to, but not including the character at the index endSlice.   A negative value indexes from the end of the string.  For example, a negative value for startSlice is resolved as: string. length + startSlice.  The original string is unchanged.  Returns a substring of characters from the given string, starting at startSlice and ending with endSlice-1.</description>
+					<parameters>
+						<parameter name="startSlice">
+							<shortdesc>The index at which to begin extraction.</shortdesc>
+							<description/>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+						<parameter name="endSlice" optional="true">
+							<shortdesc>The index at which to end extraction.</shortdesc>
+							<description>If omitted, slice extracts to the end of the string.</description>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+					<example>string.slice(startSlice, endSlice)</example>
+				</method>
+				<method name="toLowerCase">
+					<shortdesc>Returns a new string which contains all the characters of the original string converted to lowercase.</shortdesc>
+					<description>The original string is unchanged.</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+					<example>string.toLowerCase()</example>
+				</method>
+				<method name="toUpperCase">
+					<shortdesc>Returns a new string which contains all the characters of the original string converted to uppercase.</shortdesc>
+					<description>The original string is unchanged.</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+					<example>string.toUpperCase()</example>
+				</method>
+				<method name="toLocaleLowerCase">
+					<shortdesc>Returns a new string which contains all the characters of the original string converted to lowercase (localized).</shortdesc>
+					<description>The original string is unchanged.</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="toLocaleUpperCase">
+					<shortdesc>Returns a new string which contains all the characters of the original string converted to uppercase (localized).</shortdesc>
+					<description>The original string is unchanged.</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="localeCompare">
+					<shortdesc>Performs a localized comparison of two strings.</shortdesc>
+					<parameters>
+						<parameter name="what">
+							<shortdesc>The string to compare with.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+				</method>
+				<method name="match">
+					<shortdesc>
+						Matches a string against a regular expression.
+					</shortdesc>
+					<parameters>
+						<parameter name="regexp">
+							<shortdesc>The regular expression to use.</shortdesc>
+							<datatype>
+								<type href="#/RegExp">RegExp</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type href="#/Array">Array</type>
+					</datatype>
+				</method>
+				<method name="replace">
+					<parameters>
+						<parameter name="what">
+							<datatype>
+								<type>any</type>
+							</datatype>
+						</parameter>
+						<parameter name="with">
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="search">
+					<parameters>
+						<parameter name="search">
+							<datatype>
+								<type>RegExp</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+				</method>
+				<method name="split">
+					<shortdesc>Splits a string into a group of substrings, places those strings in an array, and returns the array.</shortdesc>
+					<description>The substrings are created by breaking the original string at places that match delimiter, the delimiter characters are removed.  Returns an array whose elements are the substrings.</description>
+					<parameters>
+						<parameter name="delimiter">
+							<shortdesc>Specifies the string to use for delimiting.</shortdesc>
+							<description>If delimiter is omitted, the array returned contains one element, consisting of the entire string.</description>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+						<parameter name="limit">
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+					<example>string.split(delimiter)</example>
+				</method>
+				<method name="substr">
+					<shortdesc>Returns a string containing the characters beginning at the specified index, start, through the specified number of characters.</shortdesc>
+					<description>The original string is unchanged.  Returns a string containing the extracted characters.</description>
+					<parameters>
+						<parameter name="start">
+							<shortdesc>Location at which to begin extracting characters.</shortdesc>
+							<description/>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+						<parameter name="length">
+							<shortdesc>(OptIonal) The number of characters to extract.</shortdesc>
+							<description/>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+					<example>string.substr(start, length)</example>
+				</method>
+				<method name="substring">
+					<shortdesc>Returns a substring of the given string by extracting characters from indexA up to but not including indexB.</shortdesc>
+					<description>The original string is unchanged.  Returns a substring of characters from the given string, starting at indexA and ending with indexB-1.</description>
+					<parameters>
+						<parameter name="indexA">
+							<shortdesc>The index to begin extracting.</shortdesc>
+							<description/>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+						<parameter name="indexB">
+							<shortdesc>(Optional) The index at which to end extraction.</shortdesc>
+							<description>If omitted, slice extracts to the end of the string.</description>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+					<example>string.substring(indexA, indexB)</example>
+				</method>
+				<method name="anchor">
+					<shortdesc>Returns a string consisting of this string enclosed in a &lt;a&gt; tag.</shortdesc>
+					<parameters>
+						<parameter name="name">
+							<shortdesc>The text to be stored in the anchors' name attribute.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="big">
+					<shortdesc>Returns a string consisting of this string enclosed in a &lt;big&gt; tag.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="blink">
+					<shortdesc>Returns a string consisting of this string enclosed in a &lt;blink&gt; tag.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="bold">
+					<shortdesc>Returns a string consisting of this string enclosed in a &lt;b&gt; tag.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="fixed">
+					<shortdesc>Returns a string consisting of this string enclosed in a &lt;tt&gt; tag.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="fontcolor">
+					<shortdesc>Returns a string consisting of this string enclosed in a &lt;font&gt; tag.</shortdesc>
+					<parameters>
+						<parameter name="color">
+							<shortdesc>The value to be stored in the tag's color attribute.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="fontsize">
+					<shortdesc>Returns a string consisting of this string enclosed in a &lt;font&gt; tag.</shortdesc>
+					<parameters>
+						<parameter name="size">
+							<shortdesc>The value to be stored in the tag's size attribute.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="italics">
+					<shortdesc>Returns a string consisting of this string enclosed in a &lt;i&gt; tag.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="link">
+					<shortdesc>Returns a string consisting of this string enclosed in a &lt;a&gt; tag.</shortdesc>
+					<parameters>
+						<parameter name="href">
+							<shortdesc>The value to be stored in the tag's href attribute.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="small">
+					<shortdesc>Returns a string consisting of this string enclosed in a &lt;small&gt; tag.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="strike">
+					<shortdesc>Returns a string consisting of this string enclosed in a &lt;strike&gt; tag.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="sub">
+					<shortdesc>Returns a string consisting of this string enclosed in a &lt;sub&gt; tag.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="sup">
+					<shortdesc>Returns a string consisting of this string enclosed in a &lt;sup&gt; tag.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+			</elements>
+		</classdef>
+		<classdef name="Number" dynamic="true">
+			<shortdesc>Wraps a numeric value.</shortdesc>
+			<elements type="constructor">
+				<method name="Number">
+					<shortdesc>Returns a new Number object set to the value of the argument converted to a number.</shortdesc>
+					<parameters>
+						<parameter name="value">
+							<shortdesc>The value of the object being created.</shortdesc>
+							<description/>
+							<datatype>
+								<type>any</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>Number</type>
+					</datatype>
+					<example>new Number(value)</example>
+				</method>
+			</elements>
+			<elements type="class">
+				<property name="MIN_VALUE" rwaccess="readonly">
+					<shortdesc>A constant representing the smallest representable number.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<value>2.2250738585072014e-308</value>
+					</datatype>
+				</property>
+				<property name="MAX_VALUE" rwaccess="readonly">
+					<shortdesc>A constant representing the largest representable number.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<value>1.7976931348623158e+308</value>
+					</datatype>
+				</property>
+				<property name="NaN" rwaccess="readonly">
+					<shortdesc>A constant representing the special "Not a Number" value.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<value>NaN</value>
+					</datatype>
+				</property>
+				<property name="NEGATIVE_INFINITY" rwaccess="readonly">
+					<shortdesc>A constant representing negative infinity.</shortdesc>
+					<datatype>
+						<type>number</type>
+					</datatype>
+				</property>
+				<property name="POSITIVE_INFINITY" rwaccess="readonly">
+					<shortdesc>A constant representing positive infinity.</shortdesc>
+					<datatype>
+						<type>number</type>
+					</datatype>
+				</property>
+			</elements>
+			<elements type="instance">
+				<method name="toSource">
+					<shortdesc>
+						Creates a string representation of this object that can be fed back to&#160;<a href="#/global/instance/eval">eval()</a>&#160;to re-create an object. Works only with built-in classes.
+					</shortdesc>
+					<datatype>
+						<type>number</type>
+					</datatype>
+				</method>
+				<method name="toString">
+					<shortdesc>Returns the value of a Number object converted to a string.</shortdesc>
+					<parameters>
+						<parameter name="radix" optional="true">
+							<shortdesc>The optional conversion radix.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>num.toString(16)</example>
+				</method>
+				<method name="toLocaleString">
+					<shortdesc>Returns the value of a Number object converted to a string, using localized conventions.</shortdesc>
+					<datatype>
+						<type>number</type>
+					</datatype>
+				</method>
+				<method name="toFixed">
+					<shortdesc>Converts the Number object to a string with fixed decimals.</shortdesc>
+					<parameters>
+						<parameter name="decimals">
+							<shortdesc>The number of decimals.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+				</method>
+				<method name="toExponential">
+					<shortdesc>Converts the Number object to a string in scientific notation.</shortdesc>
+					<parameters>
+						<parameter name="decimals">
+							<shortdesc>The number of decimals.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+				</method>
+				<method name="toPrecision">
+					<shortdesc>Converts the Number object to a string in either scientific or fixed notation, epending on its value.</shortdesc>
+					<parameters>
+						<parameter name="decimals">
+							<shortdesc>The number of decimals.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>number</type>
+					</datatype>
+				</method>
+				<method name="valueOf">
+					<shortdesc>Returns the value of a Number object as a primitive number.</shortdesc>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>num.valueOf()</example>
+				</method>
+			</elements>
+		</classdef>
+		<classdef name="Boolean" dynamic="true">
+			<shortdesc>Wraps a Boolean value.</shortdesc>
+			<elements type="constructor">
+				<method name="Boolean">
+					<shortdesc>Creates and returns a new Boolean object set to the value of the argument converted to a boolean.</shortdesc>
+					<parameters>
+						<parameter name="value">
+							<shortdesc>The value to be converted to a Boolean.</shortdesc>
+							<description/>
+							<datatype>
+								<type>any</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+					<example>new Boolean(value)</example>
+				</method>
+			</elements>
+			<elements type="instance">
+				<method name="toSource">
+					<shortdesc>
+						Creates a string representation of this object that can be fed back to&#160;<a href="#/global/instance/eval">eval()</a>&#160;to re-create an object. Works only with built-in classes.
+					</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="toString">
+					<shortdesc>Returns the string representation of the value of bool.</shortdesc>
+					<description>The method returns the string true if the primitive value of bool is true; otherwise it returns the string false.</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+					<example>bool.toString()</example>
+				</method>
+				<method name="valueOf">
+					<shortdesc>Returns the primitive value of bool.</shortdesc>
+					<description>The method returns true if the primitive value of bool is true; otherwise it returns false.</description>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+					<example>bool.valueOf()</example>
+				</method>
+			</elements>
+		</classdef>
+		<classdef name="RegExp" dynamic="true">
+			<shortdesc>Wraps a regular expression.</shortdesc>
+			<elements type="constructor">
+				<method name="RegExp">
+					<shortdesc>Creates and returns a new RegExp object set to the value of the argument converted to a regular expression.</shortdesc>
+					<parameters>
+						<parameter name="pattern">
+							<shortdesc>The pattern to convert.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+						<parameter name="flags" optional="true">
+							<shortdesc>Flags that control how the conversion is performed.</shortdesc>
+							<description>A string containing any combination of the letters i, m, g:
+							<u><li>"i" -- ignore case in pattern matching</li>
+								<li>"m" -- treat the string as multiple lines</li>
+								<li>"g" -- do global pattern matching</li></u></description>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>RegExp</type>
+					</datatype>
+				</method>
+			</elements>
+			<elements type="class">
+				<property name="$1" rwaccess="readonly">
+					<shortdesc>The matched subexpression #1.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="$2" rwaccess="readonly">
+					<shortdesc>The matched subexpression #2.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="$3" rwaccess="readonly">
+					<shortdesc>The matched subexpression #3.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="$4" rwaccess="readonly">
+					<shortdesc>The matched subexpression #4.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="$5" rwaccess="readonly">
+					<shortdesc>The matched subexpression #5.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="$6" rwaccess="readonly">
+					<shortdesc>The matched subexpression #6.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="$7" rwaccess="readonly">
+					<shortdesc>The matched subexpression #7.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="$8" rwaccess="readonly">
+					<shortdesc>The matched subexpression #8.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="$9" rwaccess="readonly">
+					<shortdesc>The matched subexpression #9.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="lastMatch" rwaccess="readonly">
+					<shortdesc>The last match.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="lastParen" rwaccess="readonly">
+					<shortdesc>The value of the last matched subexpression.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="leftContext" rwaccess="readonly">
+					<shortdesc>The string before the match.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="rightContext" rwaccess="readonly">
+					<shortdesc>The string after the match.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="global">
+					<shortdesc>Indicates whether the match is a global match.</shortdesc>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</property>
+				<property name="ignoreCase">
+					<shortdesc>Indicates whether the match is not case sensitive.</shortdesc>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</property>
+				<property name="multiline">
+					<shortdesc>Indicates whether the match matches multiple lines.</shortdesc>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</property>
+				<property name="input">
+					<shortdesc>The original input string.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+			</elements>
+			<elements type="instance">
+				<method name="toString">
+					<shortdesc>Converts this RegExp object to a string.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="compile">
+					<shortdesc>Compiles a string to a regular expression. Returns true if the compilation was successful.</shortdesc>
+					<parameters>
+						<parameter name="pattern">
+							<shortdesc>The pattern to compile.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</method>
+				<method name="exec">
+					<shortdesc>Execute a regular expression.</shortdesc>
+					<description>The return value is an array of matches, with the first element containing the match, and successive elements containing the results of any matching subexpression in their order of appearance. If there is no match, the result is null.</description>
+					<parameters>
+						<parameter name="text">
+							<shortdesc>The string to match.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type href="#/Array">Array</type>
+					</datatype>
+				</method>
+				<method name="test">
+					<shortdesc>Execute a regular expression, and return true if there is a match.</shortdesc>
+					<parameters>
+						<parameter name="text">
+							<shortdesc>The string to match.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</method>
+			</elements>
+		</classdef>
+		<classdef name="Error" dynamic="true">
+			<shortdesc>Wraps a runtime error.</shortdesc>
+			<elements type="constructor">
+				<method name="Error">
+					<shortdesc>Creates a new Error object.</shortdesc>
+					<parameters>
+						<parameter name="msg">
+							<shortdesc>The error message.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+						<parameter name="file" optional="true">
+							<shortdesc>The name of the file.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+						<parameter name="line" optional="true">
+							<shortdesc>The line number.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>Error</type>
+					</datatype>
+				</method>
+			</elements>
+			<elements type="instance">
+				<property name="description">
+					<shortdesc>The error message.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<method name="toString">
+					<shortdesc>Convert this object to a string.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="toSource">
+					<shortdesc>
+						Creates a string representation of this object that can be fed back to&#160;<a href="#/global/instance/eval">eval()</a>&#160;to re-create an object. Works only with built-in classes.
+					</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+			</elements>
+		</classdef>
+		<classdef name="File" dynamic="true">
+			<shortdesc>Represents a file in the local file system in a platform-independent manner.</shortdesc>
+			<elements type="constructor">
+				<method name="File">
+					<shortdesc>Creates and returns a new File object referring to a given file system location.</shortdesc>
+					<parameters>
+						<parameter name="path" optional="true">
+							<shortdesc>The full or partial path name of the file,  in platform-specific or URI format.</shortdesc>
+							<description>
+								The value stored in the object is the absolute path. The file that the path refers to does not need to exist.If the path refers to an existing folder:
+								<li>The File function returns a Folder object instead of a File object.</li>
+								<li>The new operator returns a File object for a nonexisting file with the same name.</li>
+							</description>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>File</type>
+					</datatype>
+					<example>new File(path)</example>
+				</method>
+			</elements>
+			<elements type="class">
+				<property name="fs" rwaccess="readonly">
+					<shortdesc>The name of the file system.</shortdesc>
+					<description>This is a class property accessed through the File constructor. Valid values are "Windows", "Macintosh", and "Unix".</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<method name="encode">
+					<shortdesc>Encodes a string as required by RFC 2396, and returns the encoded string.</shortdesc>
+					<description>
+						All special characters are encoded in UTF-8 and stored as escaped characters starting with the percent sign followed by two hexadecimal digits. For example, the string "my file" is encoded as "my%20file".<br/>
+						Special characters are those with a numeric value greater than 127, except the following: / - _ . ! ~ * ' ( )<br/>
+						See also&#160;<a href="#/global/instance/encodeURI">encodeURI()</a>.
+					</description>
+					<parameters>
+						<parameter name="name">
+							<shortdesc>The string to encode.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="decode">
+					<shortdesc>
+						Decodes a UTF-8 encoded string as required by RFC 2396, and returns the decoded string.
+					</shortdesc>
+					<description>
+						See also&#160;<a href="#/String/class/decodeURI">String.decodeURI()</a>.
+					</description>
+					<parameters>
+						<parameter name="uri">
+							<shortdesc>The UTF-8 encoded string to decode.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="isEncodingAvailable">
+					<shortdesc>Reports whether a given encoding is available.</shortdesc>
+					<parameters>
+						<parameter name="name">
+							<shortdesc>The encoding name.</shortdesc>
+							<description>
+								Typical values are "ASCII", "binary", or "UTF-8".  For a complete list of supported encodings, see the&#160;<i>JavaScript Tools Guide</i>.
+							</description>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</method>
+				<method name="openDialog">
+					<shortdesc>Opens a dialog so the user can select one or more files to open.</shortdesc>
+					<description>
+						Opens the built-in platform-specific file-browsing dialog in which a user can select an existing file or multiple files, and creates new File objects to represent the selected files.
+						<li>If the user clicks OK, returns a File object for the selected file, or an array of objects if multiple files are selected.</li>
+						<li>If the user cancels, returns null.</li>
+					</description>
+					<parameters>
+						<parameter name="prompt">
+							<shortdesc>The prompt text, displayed if the dialog allows a prompt.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+						<parameter name="filter" optional="true">
+							<shortdesc>A filter that limits the types of files displayed in the dialog.</shortdesc>
+							<description>
+								<li>In Windows,  a filter expression such as "Javascript files:*.jsx;All files:*.*".</li>
+								<li>In Mac OS, a filter function that takes a File instance and returns true if the file should be included in the display, false if it should not.</li>
+							</description>
+							<datatype>
+								<type>any</type>
+								<value>null</value>
+							</datatype>
+						</parameter>
+						<parameter name="multiSelect" optional="true">
+							<shortdesc>When true, the user can select multiple files and the return value is an array.</shortdesc>
+							<datatype>
+								<type>bool</type>
+								<value>false</value>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>File</type>
+					</datatype>
+				</method>
+				<method name="saveDialog">
+					<shortdesc>Opens a dialog so the user can select a file name to save to.</shortdesc>
+					<description>
+						Opens the built-in platform-specific file-browsing dialog in which a user can select an existing file location to which to save information, and creates a new File object to represent the selected file location.
+						<li>If the user clicks OK, returns a File object for the selected file location.</li>
+						<li>If the user cancels, returns null.</li>
+					</description>
+					<parameters>
+						<parameter name="prompt">
+							<shortdesc>The prompt text, displayed if the dialog allows a prompt.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+						<parameter name="filter" optional="true">
+							<shortdesc>In Windows only, a filter that limits the types of files displayed in the dialog.</shortdesc>
+							<description>In Windows only,  a filter expression such as "Javascript files:*.jsx;All files:*.*". Not used In Mac OS. </description>
+							<datatype>
+								<type>any</type>
+								<value>null</value>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>File</type>
+					</datatype>
+				</method>
+			</elements>
+			<elements type="instance">
+				<property name="alias" rwaccess="readonly">
+					<shortdesc>If true, the object refers to a file system alias or shortcut.</shortdesc>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</property>
+				<property name="created" rwaccess="readonly">
+					<shortdesc>The creation date of the referenced file, or null if the object does not refer to a file on disk.</shortdesc>
+					<datatype>
+						<type>Date</type>
+					</datatype>
+				</property>
+				<property name="error">
+					<shortdesc>A string containing a message describing the most recent file system error.</shortdesc>
+					<description>Typically set by the file system, but a script can set it. Setting this value clears any error message and resets the error bit for opened files. Contains the empty string if there is no error.</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="exists" rwaccess="readonly">
+					<shortdesc>If true, this object refers to a file or file-system alias that actually exists in the file system.</shortdesc>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</property>
+				<property name="fsName" rwaccess="readonly">
+					<shortdesc>The platform-specific full path name for the referenced file.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="fullName" rwaccess="readonly">
+					<shortdesc>The full path name for the referenced file in URI notation.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="absoluteURI" rwaccess="readonly">
+					<shortdesc>The full path name for the referenced file in URI notation.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="relativeURI" rwaccess="readonly">
+					<shortdesc>The path name for the object in URI notation, relative to the current folder.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="modified" rwaccess="readonly">
+					<shortdesc>The date of the referenced file's last modification, or null if the object does not refer to a file on the disk.</shortdesc>
+					<datatype>
+						<type href="#/Date">Date</type>
+					</datatype>
+				</property>
+				<property name="name" rwaccess="readonly">
+					<shortdesc>The file name portion of the absolute URI for the referenced file, without the path specification.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="displayName" rwaccess="readonly">
+					<shortdesc>The localized name of the referenced file, without the path specification.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="path" rwaccess="readonly">
+					<shortdesc>The path portion of the absolute URI for the referenced file, without the file name.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="parent" rwaccess="readonly">
+					<shortdesc>The Folder object for the folder that contains this file.</shortdesc>
+					<datatype>
+						<type href="#/Folder">Folder</type>
+					</datatype>
+				</property>
+				<property name="type" rwaccess="readonly">
+					<shortdesc>The file type as a four-character string.</shortdesc>
+					<description>
+						<li>In Mac OS, the Mac OS file type.</li>
+						<li>In Windows, "appl" for .EXE files, "shlb" for .DLL files and "TEXT" for any other file.</li>
+					</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="creator" rwaccess="readonly">
+					<shortdesc>In Mac OS, the file creator as a four-character string. In Windows or UNIX, value is "????".</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="hidden">
+					<shortdesc>When true, the file is not shown in the platform-specific file browser.</shortdesc>
+					<description>If the object references a file-system alias or shortcut, the flag is altered on the alias, not on the original file.</description>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</property>
+				<property name="readonly">
+					<shortdesc>When true, prevents the file from being altered or deleted.</shortdesc>
+					<description>If the referenced file is a file-system alias or shortcut, the flag is altered on the alias, not on the original file.</description>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</property>
+				<property name="lineFeed">
+					<shortdesc>How line feed characters are written in the file system.</shortdesc>
+					<description>One of the values "Windows", "Macintosh", or "Unix".</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="length">
+					<shortdesc>The size of the file in bytes.</shortdesc>
+					<description>Can be set only for a file that is not open, in which case it truncates or pads the file with 0-bytes to the new length.</description>
+					<datatype>
+						<type>number</type>
+					</datatype>
+				</property>
+				<property name="encoding">
+					<shortdesc>Gets or sets the encoding for subsequent read/write operations.</shortdesc>
+					<description>
+						One of the encoding constants listed in the&#160;<i>JavaScript Tools Guide</i>. If the value is not recognized, uses the system default encoding.<br/>A special encoder, BINARY, is used to read binary files. It stores each byte of the file as one Unicode character regardless of any encoding. When writing, the lower byte of each Unicode character is treated as a single byte to write.
+					</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="eof" rwaccess="readonly">
+					<shortdesc>When true, a read attempt caused the current position to be at the end of the file, or the file is not open.</shortdesc>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</property>
+				<method name="resolve">
+					<shortdesc>Attempts to resolve the file-system alias or shortcut that this object refers to.</shortdesc>
+					<description>If successful, creates and returns a new File object that points to the resolved file system element. Returns null if this object does not refer to an alias, or if the alias could not be resolved.</description>
+					<datatype>
+						<type>File</type>
+					</datatype>
+				</method>
+				<method name="rename">
+					<shortdesc>Renames the associated file.</shortdesc>
+					<description>Does not resolve aliases, but renames the referenced alias or shortcut file itself. Returns true if the file was successfully renamed.</description>
+					<parameters>
+						<parameter name="newName">
+							<shortdesc>The new file name, with no path information.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+					<example>aFile.rename(newName)</example>
+				</method>
+				<method name="remove">
+					<shortdesc>Deletes the file associated with this object from disk immediately, without moving it to the system trash.</shortdesc>
+					<description>
+						Does not resolve aliases; instead, deletes the referenced alias or shortcut file itself. Returns true if the file was successfully removed.
+						<li>IMPORTANT: Cannot be undone. It is recommended that you prompt the user for permission before deleting.</li>
+					</description>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</method>
+				<method name="changePath">
+					<shortdesc>Changes the path specification of the referenced file.</shortdesc>
+					<parameters>
+						<parameter name="path">
+							<shortdesc>A string containing the new path, absolute or relative to the current folder.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+					<example>file.changePath ("..");</example>
+				</method>
+				<method name="getRelativeURI">
+					<shortdesc>Retrieves and returns the path for this file, relative to the specified base path, in URI notation.</shortdesc>
+					<description>If no base path is supplied, the URI is relative to the path of the current folder.  Returns a string containing the relative URI.</description>
+					<parameters>
+						<parameter name="basePath">
+							<shortdesc>A base path in URI notation.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+					<example>aFile.getRelativeURI(basePath)</example>
+				</method>
+				<method name="execute">
+					<shortdesc>Executes or opens this file using the appropriate application, as if it had been double-clicked in a file browser.</shortdesc>
+					<description>
+						You can use this method to run scripts, launch applications, and so on.<br/>Returns true immediately if the application launch was successful.
+					</description>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</method>
+				<method name="openDlg">
+					<shortdesc>Opens the built-in platform-specific file-browsing dialog, in which the user can select an existing file or files, and creates new File objects to represent the selected files.</shortdesc>
+					<description>
+						Differs from the class method openDialog() in that it presets the current folder to this File object’s parent folder and the current file to this object’s associated file.
+						<li>If the user clicks OK, returns a File or Folder object for the selected file or folder, or an array of objects.</li>
+						<li>If the user cancels, returns null.</li>
+					</description>
+					<parameters>
+						<parameter name="prompt">
+							<shortdesc>A string containing the prompt text, if the dialog allows a prompt.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+						<parameter name="filter" optional="true">
+							<shortdesc>A filter that limits the types of files displayed in the dialog.</shortdesc>
+							<description>
+								<li>In Windows,  a filter expression such as "Javascript files:*.jsx;All files:*.*".</li>
+								<li>In Mac OS, a filter function that takes a File instance and returns true if the file should be included in the display, false if it should not.</li>
+							</description>
+							<datatype>
+								<type>any</type>
+								<value>null</value>
+							</datatype>
+						</parameter>
+						<parameter name="multiSelect" optional="true">
+							<shortdesc>When true, the user can select multiple files and the return value is an array.</shortdesc>
+							<datatype>
+								<type>bool</type>
+								<value>false</value>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>File</type>
+					</datatype>
+				</method>
+				<method name="saveDlg">
+					<shortdesc>Opens the built-in platform-specific file-browsing dialog, in which the user can select an existing file location to which to save information, and creates a new File object to represent the selected file.</shortdesc>
+					<description>Differs from the class method <a href="#/File/class/saveDialog">saveDialog()</a> in that it presets the current folder to this File object’s parent folder and the file to this object’s associated file.
+						<li>If the user clicks OK, returns a File object for the selected file.</li>
+						<li>If the user cancels, returns null.</li>
+					</description>
+					<parameters>
+						<parameter name="prompt">
+							<shortdesc>A string containing the prompt text, if the dialog allows a prompt.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+						<parameter name="filter" optional="true">
+							<shortdesc>In Windows only, a filter that limits the types of files displayed in the dialog.</shortdesc>
+							<description>In Windows only,  a filter expression such as "Javascript files:*.jsx;All files:*.*". Not used In Mac OS. </description>
+							<datatype>
+								<type>any</type>
+								<value>null</value>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>File</type>
+					</datatype>
+				</method>
+				<method name="toString">
+					<shortdesc>Converts this object to a string.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="toSource">
+					<shortdesc>Creates and returns a serialized string representation of this object.</shortdesc>
+					<description>
+						Pass the resulting string to&#160;<a href="#/global/instance/eval">eval()</a>&#160;to recreate the object.
+					</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="createAlias">
+					<shortdesc>Makes this file a file-system alias or shortcut to the specified file.</shortdesc>
+					<description>The referenced file for this object must not yet exist on disk. Returns true if the operation was successful.</description>
+					<parameters>
+						<parameter name="path">
+							<shortdesc>A string containing the path of the target file.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+				</method>
+				<method name="open">
+					<shortdesc>Opens the referenced file for subsequent read/write operations. The method resolves any aliases to find the file.</shortdesc>
+					<description>
+						Returns true if the file was opened successfully.<br/>The method attempts to detect the encoding of the open file. It reads a few bytes at the current location and tries to detect the Byte Order Mark character 0xFFFE. If found, the current position is advanced behind the detected character and the encoding property is set to one of the strings UCS-2BE, UCS-2LE, UCS4-BE, UCS-4LE, or UTF-8. If the marker character is not found, it checks for zero bytes at the current location and makes an assumption about one of the above formats (except UTF-8). If everything fails, the encoding property is set to the system encoding.<br/>
+						IMPORTANT: Be careful about opening a file more than once. The operating system usually permits you to do so, but if you start writing to the file using two different File objects, you can destroy your data.
+					</description>
+					<parameters>
+						<parameter name="mode">
+							<shortdesc>The read-write mode, a single-character string.</shortdesc>
+							<description>
+								One of these characters:
+								<li>r (read) Opens for reading. If the file does not exist or cannot be found, the call fails.</li>
+								<li>w (write) Opens a file for writing. If the file exists, its contents are destroyed. If the file does not exist, creates a new, empty file.</li>
+								<li>e (edit) Opens an existing file for reading and writing.</li>
+								<li>a (append) Opens an existing file for reading and writing, and moves the current position to the end of the file.</li>
+							</description>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+						<parameter name="type" optional="true">
+							<shortdesc>In Mac OS, the type of a newly created file, a 4-character string. Ignored in Windows and UNIX.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+						<parameter name="creator" optional="true">
+							<shortdesc>In Mac OS, the creator of a newly created file, a 4-character string. Ignored in Windows and UNIX.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+					<example>aFile.open(mode, type, creator)</example>
+				</method>
+				<method name="close">
+					<shortdesc>Closes this open file.</shortdesc>
+					<description>Returns true if the file was closed successfully, false if an I/O error occurred.</description>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+					<example>aFile.close()</example>
+				</method>
+				<method name="read">
+					<shortdesc>Reads the contents of the file, starting at the current position.</shortdesc>
+					<description>Returns a string that contains up to the specified number of characters. If a number of characters is not supplied, reads from the current position to the end of the file. If the file is encoded, multiple bytes might be read to create single Unicode characters.</description>
+					<parameters>
+						<parameter name="chars" optional="true">
+							<shortdesc>An integer specifying the number of characters to read.</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+					<example>aFile.read(chars)</example>
+				</method>
+				<method name="readch">
+					<shortdesc>Reads a single text character from the file at the current position.</shortdesc>
+					<description>Line feeds are recognized as CR, LF, CRLF or LFCR pairs.  If the file is encoded, multiple bytes might be read to create a single Unicode character. Returns a string that contains the character.</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+					<example>aFile.readch()</example>
+				</method>
+				<method name="readln">
+					<shortdesc>Reads a single line of text from the file at the current position.</shortdesc>
+					<description>Line feeds are recognized as CR, LF, CRLF or LFCR pairs.. If the file is encoded, multiple bytes might be read to create single Unicode characters. Returns a string that contains the text.</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+					<example>aFile.readln()</example>
+				</method>
+				<method name="write">
+					<shortdesc>Writes the specified text to the file at the current position.</shortdesc>
+					<description>
+						You can supply multiple&#160;<i>text</i>&#160;values; the strings are concatenated to form a single string.<br/>For encoded files, writing a single Unicode character may write multiple bytes. Returns true if the write was successful.<br/>IMPORTANT: Be careful not to write to a file that is open in another application or object, as this can overwrite existing data.
+					</description>
+					<parameters>
+						<parameter name="text">
+							<shortdesc>A text string to be written.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+					<example>aFile.write(text, ...)</example>
+				</method>
+				<method name="writeln">
+					<shortdesc>Writes a string to the file at the current position and appends a line-feed sequence.</shortdesc>
+					<description>
+						You can supply multiple&#160;<i>text</i>&#160;values. The strings are concatenated into a single string, which is written in the file followed by one line-feed sequence, of the style specified by this object's&#160;<i>linefeed</i>&#160;property.<br/>For encoded files, writing a single Unicode character may write multiple bytes.  Returns true if the write was successful.<br/>IMPORTANT: Be careful not to write to a file that is open in another application or object, as this can overwrite existing data.
+					</description>
+					<parameters>
+						<parameter name="text">
+							<shortdesc>A text string to be written.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+					<example>aFile.writeln(text, ...)</example>
+				</method>
+				<method name="seek">
+					<shortdesc>Seeks to a given position in the file.</shortdesc>
+					<description>The new position cannot be less than 0 or greater than the current file size. Returns true if the position was changed.</description>
+					<parameters>
+						<parameter name="pos">
+							<shortdesc>
+								The new current position in the file as an offset in bytes from the start, current position, or end, depending on the&#160;<i>mode</i>.
+							</shortdesc>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+						<parameter name="mode" optional="true">
+							<shortdesc>The seek mode.</shortdesc>
+							<description>
+								One of:
+								<li>0: Seek to absolute position, where pos=0 is the first byte of the file. This is the default.</li>
+								<li>1: Seek relative to the current position.</li>
+								<li>2. Seek backward from the end of the file.</li>
+							</description>
+							<datatype>
+								<type>number</type>
+								<min>0</min>
+								<max>2</max>
+								<value>0</value>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+					<example>aFile.seek(pos, mode)</example>
+				</method>
+				<method name="tell">
+					<shortdesc>Retrieves the current position as a byte offset from the start of the file.</shortdesc>
+					<description>Returns a number, the position index.</description>
+					<datatype>
+						<type>number</type>
+					</datatype>
+					<example>aFile.tell()</example>
+				</method>
+				<method name="copy">
+					<shortdesc>Copies this object’s referenced file to the specified target location.</shortdesc>
+					<description>
+						Resolves any aliases to find the source file. If a file exists at the target location, it is overwritten.
+						Returns true if the copy was successful.
+					</description>
+					<parameters>
+						<parameter name="target">
+							<shortdesc>A string with the URI path to the target location, or a File object that references the target location.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+							<datatype>
+								<type>File</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+					<example>aFile.copy(target)</example>
+				</method>
+			</elements>
+		</classdef>
+		<classdef name="Folder" dynamic="true">
+			<shortdesc>Represents a file-system folder or directory in a platform-independent manner.</shortdesc>
+			<elements type="constructor">
+				<method name="Folder">
+					<shortdesc>Creates and returns a new Folder object referring to a given file-system location.</shortdesc>
+					<description>If the path name refers to an already existing disk file, a File object is returned instead.  Returns the new Folder object.</description>
+					<parameters>
+						<parameter name="path" optional="true">
+							<shortdesc>The absolute or relative path to the folder associated with this object, specified in URI format.</shortdesc>
+							<description>
+								The value stored in the object is the absolute path.The path need not refer to an existing folder. If the path refers to an existing file, rather than a folder:
+								<li>
+									The&#160;<i>Folder()</i>&#160;function returns a File object instead of a Folder object.
+								</li>
+								<li>
+									The&#160;<i>new</i>&#160;operator returns a Folder object for a nonexisting folder with the same name.
+								</li>
+							</description>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>Folder</type>
+					</datatype>
+					<example>new Folder(path)</example>
+				</method>
+			</elements>
+			<elements type="class">
+				<property name="fs" rwaccess="readonly">
+					<shortdesc>The name of the current file system.</shortdesc>
+					<description>One of "Windows", "Macintosh", or "Unix".</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="current">
+					<shortdesc>A Folder object for the current folder.</shortdesc>
+					<description>Assign a Folder object or a string containing the new path name to set the current folder. This is a class property accessed through the Folder constructor.</description>
+					<datatype>
+						<type>Folder</type>
+					</datatype>
+				</property>
+				<property name="startup" rwaccess="readonly">
+					<shortdesc>A Folder object for the folder containing the executable image of the running application.</shortdesc>
+					<datatype>
+						<type>Folder</type>
+					</datatype>
+				</property>
+				<property name="appPackage" rwaccess="readonly">
+					<shortdesc>In Mac OS, a Folder object for the folder containing the bundle of the running application.</shortdesc>
+					<datatype>
+						<type>Folder</type>
+					</datatype>
+				</property>
+				<property name="system" rwaccess="readonly">
+					<shortdesc>A Folder object for the folder containing the operating system files.</shortdesc>
+					<description>
+						<li>In Windows, the value of %windir% (by default, C:\\Windows)</li>
+						<li>In Mac OS, /System</li>
+					</description>
+					<datatype>
+						<type>Folder</type>
+					</datatype>
+				</property>
+				<property name="trash" rwaccess="readonly">
+					<shortdesc>A Folder object for the folder containing deleted items. On Windows, the trash folder is a virtual
+								   folder containing a database; therefore, the property value is null on Windows.</shortdesc>
+					<datatype>
+						<type>Folder</type>
+					</datatype>
+				</property>
+				<property name="temp" rwaccess="readonly">
+					<shortdesc>A Folder object for the default folder for temporary files.</shortdesc>
+					<datatype>
+						<type>Folder</type>
+					</datatype>
+				</property>
+				<property name="userData" rwaccess="readonly">
+					<shortdesc>A Folder object for the folder containing the user's application data.</shortdesc>
+					<description>
+						<li>
+							In Windows, the value of %USERDATA% (by default, C:\\Documents and Settings\\<i>username</i>\\Application Data)
+						</li>
+						<li>In Mac OS,  ~/Library/Application Support.</li>
+					</description>
+					<datatype>
+						<type>Folder</type>
+					</datatype>
+				</property>
+				<property name="appData" rwaccess="readonly">
+					<shortdesc>The folder containing the application data for all users.</shortdesc>
+					<description>
+						<li>In Windows, the value of %APPDATA% (by default, C:\\Documents and Settings\\All Users\\Application Data)</li>
+						<li>In Mac OS, /Library/Application Support</li>
+					</description>
+					<datatype>
+						<type>Folder</type>
+					</datatype>
+				</property>
+				<property name="commonFiles" rwaccess="readonly">
+					<shortdesc>A Folder object for the folder containing common files for all programs installed by the user.</shortdesc>
+					<description>
+						<li>In Windows, the value of %CommonProgramFiles% (by default, C:\\Program Files\\Common Files)</li>
+						<li>In Mac OS, /Library/Application Support</li>
+					</description>
+					<datatype>
+						<type>Folder</type>
+					</datatype>
+				</property>
+				<property name="myDocuments" rwaccess="readonly">
+					<shortdesc>A folder pointing to the user's My Documents folder.</shortdesc>
+					<description>
+						<li>In Windows, C:\\Documents and Settings\\username\\My Documents</li>
+						<li>In Mac OS,  ~/Documents</li>
+					</description>
+					<datatype>
+						<type>Folder</type>
+					</datatype>
+				</property>
+				<property name="desktop" rwaccess="readonly">
+					<shortdesc>A Folder object for the folder that contains the user’s desktop.</shortdesc>
+					<description>
+						<li>In Windows, C:\\Documents and Settings\\username\\Desktop</li>
+						<li>In Mac OS, ~/Desktop</li>
+					</description>
+					<datatype>
+						<type>Folder</type>
+					</datatype>
+				</property>
+				<method name="encode">
+					<shortdesc>Encodes a string as required by RFC 2396, and returns the encoded string.</shortdesc>
+					<description>
+						All special characters are encoded in UTF-8 and stored as escaped characters starting with the percent sign followed by two hexadecimal digits. For example, the string "my file" is encoded as "my%20file".<br/>
+						Special characters are those with a numeric value greater than 127, except the following: / - _ . ! ~ * ' ( )<br/>
+						See also&#160;<a href="#/global/instance/encodeURI">encodeURI()</a>.
+					</description>
+					<parameters>
+						<parameter name="name">
+							<shortdesc>The string to encode.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="decode">
+					<shortdesc>Decodes a UTF-8 encoded string as required by RFC 2396, and returns the decoded string.</shortdesc>
+					<description>
+						See also&#160;<a href="#/String/class/decodeURI">String.decodeURI()</a>.
+					</description>
+					<parameters>
+						<parameter name="uri">
+							<shortdesc>The UTF-8 string to decode.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="isEncodingAvailable">
+					<shortdesc>Reports whether a given encoding is available.</shortdesc>
+					<parameters>
+						<parameter name="name">
+							<shortdesc>The encoding name.</shortdesc>
+							<description>
+								Typical values are "ASCII", "binary", or "UTF-8".  For a complete list of supported encodings, see the&#160;<i>JavaScript Tools Guide</i>.
+							</description>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</method>
+				<method name="selectDialog">
+					<shortdesc>Opens the built-in platform-specific file-browsing dialog, and creates a new File or Folder object for the selected file or folder.</shortdesc>
+					<description>
+						Differs from the object method selectDlg() in that it does not preselect a folder.
+						<li>If the user clicks OK, returns a File or Folder object for the selected file or folder.</li>
+						<li>If the user cancels, returns null.</li>
+					</description>
+					<parameters>
+						<parameter name="prompt">
+							<shortdesc>The prompt text, if the dialog allows a prompt.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>Folder</type>
+					</datatype>
+				</method>
+			</elements>
+			<elements type="instance">
+				<property name="alias" rwaccess="readonly">
+					<shortdesc>When true, the object refers to a file system alias or shortcut.</shortdesc>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</property>
+				<property name="created" rwaccess="readonly">
+					<shortdesc>The creation date of the referenced folder, or null if the object does not refer to a folder on disk.</shortdesc>
+					<datatype>
+						<type href="#/Date">Date</type>
+					</datatype>
+				</property>
+				<property name="error">
+					<shortdesc>A message describing the most recent file system error.</shortdesc>
+					<description>Typically set by the file system, but a script can set it. Setting this value clears any error message and resets the error bit for opened files. Contains the empty string if there is no error.</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="exists" rwaccess="readonly">
+					<shortdesc>When true, this object refers to a folder that currently exists in the file system.</shortdesc>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</property>
+				<property name="fsName" rwaccess="readonly">
+					<shortdesc>The platform-specific name of the referenced folder as a full path name.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="fullName" rwaccess="readonly">
+					<shortdesc>The full path name for the referenced folder in URI notation. .</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="absoluteURI" rwaccess="readonly">
+					<shortdesc>The full path name for the referenced folder in URI notation.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="relativeURI" rwaccess="readonly">
+					<shortdesc>The path name for the referenced folder in URI notation, relative to the current folder.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="modified" rwaccess="readonly">
+					<shortdesc>The date of the referenced folder's last modification, or null if the object does not refer to a folder on disk.</shortdesc>
+					<datatype>
+						<type href="#/Date">Date</type>
+					</datatype>
+				</property>
+				<property name="name" rwaccess="readonly">
+					<shortdesc>The folder name portion of the absolute URI for the referenced file, without the path specification.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="displayName" rwaccess="readonly">
+					<shortdesc>The localized name portion of the absolute URI for the referenced folder, without the path specification.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="path" rwaccess="readonly">
+					<shortdesc>The path portion of the object absolute URI for the referenced file, without the folder name.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="parent" rwaccess="readonly">
+					<shortdesc>TThe Folder object for the folder that contains this folder, or null if this object refers to the root folder of a volume.</shortdesc>
+					<datatype>
+						<type>Folder</type>
+					</datatype>
+				</property>
+				<method name="resolve">
+					<shortdesc>Attempts to resolve the file-system alias or shortcut that this object refers to.</shortdesc>
+					<description>If successful, creates and returns a new Folder object that points to the resolved file system element. Returns null if this object does not refer to an alias, or if the alias could not be resolved.</description>
+					<datatype>
+						<type href="#/Folder">Folder</type>
+					</datatype>
+					<example>aFolder.resolve()</example>
+				</method>
+				<method name="rename">
+					<shortdesc>Renames the associated folder.</shortdesc>
+					<description>Does not resolve aliases, but renames the referenced alias or shortcut file itself. Returns true if the folder was successfully renamed.</description>
+					<parameters>
+						<parameter name="newName">
+							<shortdesc>The new folder name, with no path information.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+					<example>aFolder.rename(newName)</example>
+				</method>
+				<method name="remove">
+					<shortdesc>Deletes the folder associated with this object from disk immediately, without moving it to the system trash.</shortdesc>
+					<description>
+						Folders must be empty before they can be deleted. Does not resolve aliases; instead, deletes the referenced alias or shortcut file itself. Returns true if the file was successfully removed.
+						<li>IMPORTANT: Cannot be undone. It is recommended that you prompt the user for permission before deleting.</li>
+					</description>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</method>
+				<method name="changePath">
+					<shortdesc>Changes the path specification of the referenced folder.</shortdesc>
+					<parameters>
+						<parameter name="path">
+							<shortdesc>A string containing the new path, absolute or relative to the current folder.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+					<example>folder.changePath ("..");</example>
+				</method>
+				<method name="getRelativeURI">
+					<shortdesc>Retrieves and returns the path for this file, relative to the specified base path, in URI notation.</shortdesc>
+					<description>If no base path is supplied, the URI is relative to the path of the current folder.  Returns a string containing the relative URI.</description>
+					<parameters>
+						<parameter name="basePath" optional="true">
+							<shortdesc>A base path in URI notation.</shortdesc>
+							<datatype>
+								<type>string</type>
+								<value>.</value>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+					<example>aFile.getRelativeURI(basePath)</example>
+				</method>
+				<method name="execute">
+					<shortdesc>Opens this folder in the platform-specific file browser (as if it had been double-clicked in the file browser).</shortdesc>
+					<description>Returns true immediately if the folder was opened successfully.</description>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</method>
+				<method name="toString">
+					<shortdesc>Converts this object to a string.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="toSource">
+					<shortdesc>Creates and returns a serialized string representation of this object.</shortdesc>
+					<description>
+						Pass the resulting string to&#160;<a href="#/global/instance/eval">eval()</a>&#160;to recreate the object.
+					</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="selectDlg">
+					<shortdesc>Opens the built-in platform-specific file-browsing dialog, and creates a new File or Folder object for the selected file or folder.</shortdesc>
+					<description>
+						Differs from the class method selectDialog() in that it preselects this folder.
+						<li>If the user clicks OK, returns a File or Folder object for the selected file or folder.</li>
+						<li>If the user cancels, returns null.</li>
+					</description>
+					<parameters>
+						<parameter name="prompt">
+							<shortdesc>The prompt text, if the dialog allows a prompt.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>Folder</type>
+					</datatype>
+				</method>
+				<method name="getFiles">
+					<shortdesc>Retrieves the contents of this folder, filtered by the supplied mask.</shortdesc>
+					<description>Returns an array of File and Folder objects, or null if this object's referenced folder does not exist.</description>
+					<parameters>
+						<parameter name="mask">
+							<shortdesc>A search mask for file names, specified as a string or a function.</shortdesc>
+							<description>
+								A mask string can contain question mark (?) and asterisk (*) wild cards. Default is "*", which matches all file names.
+								<br/>Can also be the name of a function that takes a File or Folder object as its argument. It is called for each file or folder found in the search; if it returns true, the object is added to the return array.
+								<li>NOTE: In Windows, all aliases end with the extension .lnk. ExtendScript strips this from the file name when found, in order to preserve compatibility with other operating systems. You can search for all aliases by supplying the search mask "*.lnk", but note that such code is not portable.</li>
+							</description>
+							<datatype>
+								<type>any</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type href="#/Array">Array</type>
+					</datatype>
+				</method>
+				<method name="create">
+					<shortdesc>
+						Creates a folder at the location given by this object's&#160;<i>path</i>&#160;property.
+					</shortdesc>
+					<description>Returns true if the folder was created.</description>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+					<example>aFolder.create()</example>
+				</method>
+			</elements>
+		</classdef>
+		<classdef name="Socket" dynamic="true">
+			<shortdesc>Creates a TCP/IP connection, or establishes a TCP/IP server.</shortdesc>
+			<elements type="constructor">
+				<method name="Socket">
+					<shortdesc>Creates a new Socket object.</shortdesc>
+					<datatype>
+						<type>Socket</type>
+					</datatype>
+				</method>
+			</elements>
+			<elements type="instance">
+				<property name="host" rwaccess="readonly">
+					<shortdesc>The name of the remote computer when a connection is established.</shortdesc>
+					<description> If the connection is shut down or does not exist, the property contains the empty string.</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="encoding">
+					<shortdesc>Sets or retrieves the name of the encoding used to transmit data.</shortdesc>
+					<description>Typical values are "ASCII", "BINARY", or "UTF-8".</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="error">
+					<shortdesc>A message describing the most recent error. Setting this value clears any error message.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="eof" rwaccess="readonly">
+					<shortdesc>When true, the receive buffer is empty.</shortdesc>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</property>
+				<property name="connected" rwaccess="readonly">
+					<shortdesc>When true, the connection is active.</shortdesc>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</property>
+				<property name="timeout">
+					<shortdesc>The timeout in seconds to be applied to read or write operations.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<value>10</value>
+					</datatype>
+				</property>
+				<method name="open">
+					<shortdesc>Opens the connection for subsequent read/write operations.</shortdesc>
+					<description>The call to open() and the call to listen() are mutually exclusive. Call one function or the other, not both.</description>
+					<parameters>
+						<parameter name="host">
+							<shortdesc>The server to connect to. </shortdesc>
+							<description>This can be a DNS name, an IPv4 address, or an IPv6 address, followed by a colon and a port number.</description>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+						<parameter name="encoding" optional="true">
+							<shortdesc>The encoding to be used for the connection</shortdesc>
+							<description>Typical values are "ASCII", "binary", or "UTF-8".</description>
+							<datatype>
+								<type>string</type>
+								<value>ASCII</value>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</method>
+				<method name="listen">
+					<shortdesc>Instructs the object to start listening for an incoming connection.</shortdesc>
+					<description>The call to open() and the call to listen()are mutually exclusive. Call one function or the other, not both.</description>
+					<parameters>
+						<parameter name="port">
+							<shortdesc>
+								The TCP/IP port number to listen on.
+							</shortdesc>
+							<description>
+								Valid port numbers are 1 to 65535. Typical values are 80 for a Web server, 23 for a Telnet server and so on.
+							</description>
+							<datatype>
+								<type>number</type>
+								<min>1</min>
+								<max>65535</max>
+							</datatype>
+						</parameter>
+						<parameter name="encoding" optional="true">
+							<shortdesc>The encoding to be used for the connection</shortdesc>
+							<description>Typical values are "ASCII", "BINARY", or "UTF-8".</description>
+							<datatype>
+								<type>string</type>
+								<value>ASCII</value>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</method>
+				<method name="close">
+					<shortdesc>Terminates the open connection.</shortdesc>
+					<description>
+						Returns true if the connection was closed, false on I/O errors.<br/>
+						Deleting the object also closes the connection, but not until JavaScript garbage-collects the object. The connection might stay open longer than you wish if you do not close it explicitly.
+					</description>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</method>
+				<method name="read">
+					<shortdesc>
+						Reads up to the specified number of characters from the connection. CR characters are ignored unless the encoding is set to "BINARY".
+					</shortdesc>
+					<description>Returns a string that contains up to the number of characters that were supposed to be read, or the number of characters read before the connection closed or timed out.</description>
+					<parameters>
+						<parameter name="count" optional="true">
+							<shortdesc>The number of characters to read.</shortdesc>
+							<description>If not supplied, the connection attempts to read as many characters it can get and returns immediately. </description>
+							<datatype>
+								<type>number</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="readln">
+					<shortdesc>Reads one line of text up to the next line feed. </shortdesc>
+					<description>Line feeds are recognized as LF or CRLF pairs. CR characters are ignored. Returns a string containing the characters.</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="write">
+					<shortdesc>Concatenates all arguments into a single string and writes that string to the connection.</shortdesc>
+					<parameters>
+						<parameter name="text">
+							<shortdesc>
+								Any number of string values. All arguments are concatenated to form the string to be written. CRLF sequences are converted to LFs unless the encoding is set to "BINARY".
+							</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</method>
+				<method name="writeln">
+					<shortdesc>Concatenates all arguments into a single string, appends a LF character, and writes that string to the connection.</shortdesc>
+					<parameters>
+						<parameter name="text">
+							<shortdesc>
+								Any number of string values. All arguments are concatenated to form the string to be written. CRLF sequences are converted to LFs unless the encoding is set to "BINARY".
+							</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</method>
+				<method name="poll">
+					<shortdesc>Checks a listening object for a new incoming connection.</shortdesc>
+					<description>If a connection request was detected, the method returns a new Socket object that wraps the new connection. Use this connection object to communicate with the remote computer. After use, close the connection and delete the JavaScript object. If no new connection request was detected, the method returns null.</description>
+					<datatype>
+						<type>Socket</type>
+					</datatype>
+				</method>
+			</elements>
+			<example href="Socket.jsx"/>
+		</classdef>
+		<classdef name="ReflectionInfo" dynamic="true">
+			<shortdesc>Provides information about a method, a property or a method parameters.</shortdesc>
+			<elements type="instance">
+				<property name="parent" rwaccess="readonly">
+					<shortdesc>The class object that this element belongs to.</shortdesc>
+					<datatype>
+						<type href="#/Reflection">Reflection</type>
+					</datatype>
+				</property>
+				<property name="name" rwaccess="readonly">
+					<shortdesc>The element name.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="type" rwaccess="readonly">
+					<shortdesc>The element type.</shortdesc>
+					<description>One of unknown, readonly, readwrite, createonly, method or parameter.</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="dataType" rwaccess="readonly">
+					<shortdesc>The data type.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="arguments" rwaccess="readonly">
+					<shortdesc>The description of method or function arguments.</shortdesc>
+					<datatype>
+						<type>ReflectionInfo</type>
+						<array/>
+					</datatype>
+				</property>
+				<property name="min" rwaccess="readonly">
+					<shortdesc>The minimum value.</shortdesc>
+					<datatype>
+						<type>number</type>
+					</datatype>
+				</property>
+				<property name="max" rwaccess="readonly">
+					<shortdesc>The maximum value.</shortdesc>
+					<datatype>
+						<type>number</type>
+					</datatype>
+				</property>
+				<property name="defaultValue" rwaccess="readonly">
+					<shortdesc>The default value.</shortdesc>
+					<datatype>
+						<type>any</type>
+					</datatype>
+				</property>
+				<property name="isCollection" rwaccess="readonly">
+					<shortdesc>Contains true if the class describes a collection class.</shortdesc>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</property>
+				<property name="description" rwaccess="readonly">
+					<shortdesc>The long description text.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="help" rwaccess="readonly">
+					<shortdesc>The short description text.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="sampleCode" rwaccess="readonly">
+					<shortdesc>Sample code, if present.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="sampleFile" rwaccess="readonly">
+					<shortdesc>A file containing sample code. May be null.</shortdesc>
+					<datatype>
+						<type href="#/File">File</type>
+					</datatype>
+				</property>
+			</elements>
+		</classdef>
+		<classdef name="Reflection" dynamic="true">
+			<shortdesc>Provides information about a class.</shortdesc>
+			<elements type="instance">
+				<property name="name" rwaccess="readonly">
+					<shortdesc>The class name.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="methods" rwaccess="readonly">
+					<shortdesc>An array of method descriptions.</shortdesc>
+					<datatype>
+						<type href="#/ReflectionInfo">ReflectionInfo</type>
+						<array/>
+					</datatype>
+				</property>
+				<property name="properties" rwaccess="readonly">
+					<shortdesc>An array of property descriptions.</shortdesc>
+					<datatype>
+						<type href="#/ReflectionInfo">ReflectionInfo</type>
+						<array/>
+					</datatype>
+				</property>
+				<property name="staticMethods" rwaccess="readonly">
+					<shortdesc>An array of class method descriptions.</shortdesc>
+					<datatype>
+						<type href="#/ReflectionInfo">ReflectionInfo</type>
+						<array/>
+					</datatype>
+				</property>
+				<property name="staticProperties" rwaccess="readonly">
+					<shortdesc>An array of class property descriptions.</shortdesc>
+					<datatype>
+						<type href="#/ReflectionInfo">ReflectionInfo</type>
+						<array/>
+					</datatype>
+				</property>
+				<property name="description" rwaccess="readonly">
+					<shortdesc>The long description text.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="help" rwaccess="readonly">
+					<shortdesc>The short description text.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="sampleCode" rwaccess="readonly">
+					<shortdesc>Sample code, if present.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="sampleFile" rwaccess="readonly">
+					<shortdesc>A file containing sample code. May be null.</shortdesc>
+					<datatype>
+						<type href="#/File">File</type>
+					</datatype>
+				</property>
+				<method name="find">
+					<shortdesc>Finds an element description by name.</shortdesc>
+					<parameters>
+						<parameter name="name">
+							<shortdesc>The name of the element to find.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type href="#/ReflectionInfo">ReflectionInfo</type>
+					</datatype>
+				</method>
+				<method name="toXML">
+					<shortdesc>Returns this class information as XML in OMV format.</shortdesc>
+					<datatype>
+						<type href="#/XML">XML</type>
+					</datatype>
+				</method>
+			</elements>
+		</classdef>
+		<classdef name="QName" dynamic="true">
+			<shortdesc>A qualified XML name, containing the URI and the local name.</shortdesc>
+			<elements type="constructor">
+				<method name="QName">
+					<shortdesc>Creates a QName object.</shortdesc>
+					<parameters>
+						<parameter name="uri">
+							<shortdesc>
+								The URI, specified as a <a href="#/Namespace">Namespace</a> object, an existing QName object, or string.
+							</shortdesc>
+							<description>
+								<u>
+									<li>
+										If this is a <a href="#/Namespace">Namespace</a> object, the URI is set to the namespace URI, and there is no local name.
+									</li>
+									<li>If this is a QName object, the URI and localName is set to those of that object.</li>
+									<li>If this is a string, the URI is set to that string.</li>
+								</u>
+							</description>
+							<datatype>
+								<type>any</type>
+							</datatype>
+						</parameter>
+						<parameter name="name" optional="true">
+							<shortdesc>The local name. Used only if URI is given as a string.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>QName</type>
+					</datatype>
+					<example>new QName ("http:/www.adobe.com", "name")</example>
+				</method>
+			</elements>
+			<elements type="instance">
+				<property name="uri" rwaccess="readonly">
+					<shortdesc>The URI part of the qualified name.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="localName" rwaccess="readonly">
+					<shortdesc>The local name part of the qualified name.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+			</elements>
+		</classdef>
+		<classdef name="Namespace" dynamic="true">
+			<shortdesc>A XML namespace object.</shortdesc>
+			<elements type="constructor">
+				<method name="Namespace">
+					<shortdesc>Creates a Namespace object.</shortdesc>
+					<parameters>
+						<parameter name="prefix">
+							<shortdesc>
+								The URI  prefix, specified as an existing Namespace object, <a href="#/QName">QName</a> object, or string.
+							</shortdesc>
+							<description>
+								<u>
+									<li>
+										If this is a Namespace or a&#160;<a href="#/QName">QName</a> object, the URI and prefix are set to that of the object.
+									</li>
+									<li>If this is a string, the prefix is set to that string, and the URI must be specified.</li>
+								</u>
+							</description>
+							<datatype>
+								<type>any</type>
+							</datatype>
+						</parameter>
+						<parameter name="uri" optional="true">
+							<shortdesc>The URI if the prefix is specified as a string.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>Namespace</type>
+					</datatype>
+					<example>new Namespace ("adobe", "http:/www.adobe.com")</example>
+				</method>
+			</elements>
+			<elements type="instance">
+				<property name="prefix" rwaccess="readonly">
+					<shortdesc>The named prefix.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="uri" rwaccess="readonly">
+					<shortdesc>The URI.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+			</elements>
+		</classdef>
+		<classdef name="XML" dynamic="true">
+			<shortdesc>Wraps XML into an object.</shortdesc>
+			<elements type="constructor">
+				<method name="XML">
+					<shortdesc>Parses an XML string. Throws an error if the XML is incorrect.</shortdesc>
+					<parameters>
+						<parameter name="text">
+							<shortdesc>The text to parse.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>XML</type>
+					</datatype>
+				</method>
+			</elements>
+			<elements type="class">
+				<property name="ignoreComments">
+					<shortdesc>Controls whether XML comments should be parsed (false) or ignored (true).</shortdesc>
+					<datatype>
+						<type>bool</type>
+						<value>true</value>
+					</datatype>
+				</property>
+				<property name="ignoreProcessingInstructions">
+					<shortdesc>Controls whether XML preprocessing instructions should be parsed (false) or ignored (true).</shortdesc>
+					<datatype>
+						<type>bool</type>
+						<value>true</value>
+					</datatype>
+				</property>
+				<property name="ignoreWhitespace">
+					<shortdesc>Controls whether whitespace should be parsed (false) or ignored (true).</shortdesc>
+					<datatype>
+						<type>bool</type>
+						<value>true</value>
+					</datatype>
+				</property>
+				<property name="prettyPrinting">
+					<shortdesc>When true, XML is pretty-printed when converting to a string.</shortdesc>
+					<datatype>
+						<type>bool</type>
+						<value>true</value>
+					</datatype>
+				</property>
+				<property name="prettyIndent">
+					<shortdesc>The number of spaces used to indent pretty-printed XML.</shortdesc>
+					<datatype>
+						<type>number</type>
+						<value>2</value>
+					</datatype>
+				</property>
+				<method name="settings">
+					<shortdesc>Returns an object containing the current parsing and print settings for XML.</shortdesc>
+					<datatype>
+						<type>Object</type>
+					</datatype>
+				</method>
+				<method name="setSettings">
+					<shortdesc>
+						Sets the parsing and print setting for XML using an object returned by the <a href="#/XML/class/settings">settings()</a> method.
+					</shortdesc>
+					<parameters>
+						<parameter name="obj">
+							<shortdesc>The object containing the settings to set.</shortdesc>
+							<datatype>
+								<type>Object</type>
+							</datatype>
+						</parameter>
+					</parameters>
+				</method>
+				<method name="defaultSettings">
+					<shortdesc>Returns an object containing the default parsing and print settings for XML.</shortdesc>
+					<datatype>
+						<type>Object</type>
+					</datatype>
+				</method>
+			</elements>
+			<elements type="instance">
+				<method name="addNamespace">
+					<shortdesc>Adds a namespace declaration to the node. Returns the XML object itself.</shortdesc>
+					<parameters>
+						<parameter name="namespace">
+							<shortdesc>The namespace to add.</shortdesc>
+							<datatype>
+								<type href="#/Namespace">Namespace</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>XML</type>
+					</datatype>
+				</method>
+				<method name="appendChild">
+					<shortdesc>Appends the given XML to this XML as a child. Returns the XML object itself.</shortdesc>
+					<description>If the argument is not XML, creates a new XML element containing the argument as text. The element name of that new XML is the same as the last element in the original XML.</description>
+					<parameters>
+						<parameter name="child">
+							<shortdesc>The child XML to add.</shortdesc>
+							<datatype>
+								<type>XML</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>XML</type>
+					</datatype>
+				</method>
+				<method name="attribute">
+					<shortdesc>Returns a list containing all attribute elements matching the given name.</shortdesc>
+					<parameters>
+						<parameter name="name">
+							<shortdesc>The attribute name to look for.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>XML</type>
+					</datatype>
+				</method>
+				<method name="attributes">
+					<shortdesc>Returns a list containing all attribute elements.</shortdesc>
+					<datatype>
+						<type>XML</type>
+					</datatype>
+				</method>
+				<method name="child">
+					<shortdesc>Returns a list containing all children of this XML matching the given element name.</shortdesc>
+					<description>If the argument is a number, uses the number as index into the array of children.</description>
+					<parameters>
+						<parameter name="name">
+							<shortdesc>The name or the index of the child element.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>XML</type>
+					</datatype>
+				</method>
+				<method name="childIndex">
+					<shortdesc>Returns a number representing the ordinal position of this XML object within the context of its parent.</shortdesc>
+					<datatype>
+						<type>number</type>
+					</datatype>
+				</method>
+				<method name="children">
+					<shortdesc>Returns an XML object containing all the properties of this XML object in order.</shortdesc>
+					<datatype>
+						<type>XML</type>
+					</datatype>
+				</method>
+				<method name="comments">
+					<shortdesc>Returns an XML object containing the properties of this XML object that represent XML comments.</shortdesc>
+					<datatype>
+						<type>XML</type>
+					</datatype>
+				</method>
+				<method name="contains">
+					<shortdesc>Checks if this XML object contains the given XML object.</shortdesc>
+					<parameters>
+						<parameter name="xml">
+							<shortdesc>The XML to search for.</shortdesc>
+							<datatype>
+								<type>XML</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</method>
+				<method name="copy">
+					<shortdesc>Creates a copy of this XML object.</shortdesc>
+					<datatype>
+						<type>XML</type>
+					</datatype>
+				</method>
+				<method name="descendants">
+					<shortdesc>Returns all the XML-valued descendants of this XML object with the given name.</shortdesc>
+					<description>If the name parameter is omitted, returns all descendants of this XML object.</description>
+					<parameters>
+						<parameter name="name" optional="true">
+							<shortdesc>The name of the descendant to find.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>XML</type>
+					</datatype>
+				</method>
+				<method name="elements">
+					<shortdesc>Returns a list of XML children that are elements with a given name, or all children that are XML elements.</shortdesc>
+					<parameters>
+						<parameter name="name" optional="true">
+							<shortdesc>The element name. If not supplied, gets all children that are XML elements.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>XML</type>
+					</datatype>
+				</method>
+				<method name="hasComplexContent">
+					<shortdesc>Reports whether this XML object contains complex content.</shortdesc>
+					<description>An XML object is considered to contain complex content if it represents an XML element that has child elements. XML objects representing attributes, comments, processing instructions and text nodes do not have complex content. The existence of attributes, comments, processing instructions and text nodes within an XML object is not significant in determining if it has complex content.</description>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</method>
+				<method name="hasSimpleContent">
+					<shortdesc>Reports whether this XML object contains simple content.</shortdesc>
+					<description>An XML object is considered to contain simple content if it represents a text node, represents an attribute node or if it represents an XML element that has no child elements. XML objects representing comments and processing instructions do not have simple content. The existence of attributes, comments, processing instructions and text nodes within an XML object is not significant in determining if it has simple content.</description>
+					<datatype>
+						<type>bool</type>
+					</datatype>
+				</method>
+				<method name="inScopeNamespaces">
+					<shortdesc>
+						Returns an array of <a href="#/Namespace">Namespace</a> objects mirroring the current list of valid namespaces at this element.
+					</shortdesc>
+					<description>The last element of the  returned array is the default namespace.</description>
+					<datatype>
+						<type href="#/Array">Array</type>
+					</datatype>
+				</method>
+				<method name="insertChildAfter">
+					<shortdesc>Inserts the given child2 after the given child1 in this XML object and returns this XML object.</shortdesc>
+					<description>If child1 is null, the method inserts child2 before all children of this XML object (that is, after none of them). If child1 does not exist in this XML object, the method returns without modifying this XML object.</description>
+					<parameters>
+						<parameter name="child1">
+							<shortdesc>The child to insert the other child after.</shortdesc>
+							<description>If null, the method inserts child2 before all children of this XML object.</description>
+							<datatype>
+								<type>XML</type>
+							</datatype>
+						</parameter>
+						<parameter name="child2">
+							<shortdesc>The XML to insert.</shortdesc>
+							<datatype>
+								<type>XML</type>
+							</datatype>
+						</parameter>
+					</parameters>
+				</method>
+				<method name="insertChildBefore">
+					<shortdesc>Inserts the given child2 before the given child1 in this XML object and returns this XML object.</shortdesc>
+					<description>If child1 is null, the method inserts child2 after all children of this XML object (that is, before none of them). If child1 does not exist in this XML object, the method returns without modifying this XML object.</description>
+					<parameters>
+						<parameter name="child1">
+							<shortdesc>The child to search for.</shortdesc>
+							<description>If null, the method inserts child2 after all children of this XML object.</description>
+							<datatype>
+								<type>XML</type>
+							</datatype>
+						</parameter>
+						<parameter name="child2">
+							<shortdesc>The XML to insert.</shortdesc>
+							<datatype>
+								<type>XML</type>
+							</datatype>
+						</parameter>
+					</parameters>
+				</method>
+				<method name="length">
+					<shortdesc>Returns the number of elements contained in an XML list. If this XML object is not a list, returns 1.</shortdesc>
+					<datatype>
+						<type>number</type>
+					</datatype>
+				</method>
+				<method name="localName">
+					<shortdesc>Returns the local name of this XML object.</shortdesc>
+					<description>This value corresponds to the element name unless the name has a namespace prefix. For example, if the element has the name "ns:tag", the return value is "tag".</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="name">
+					<shortdesc>Returns a QName object containing the URI and the local name of the element.</shortdesc>
+					<datatype>
+						<type href="#/QName">QName</type>
+					</datatype>
+				</method>
+				<method name="namespace">
+					<shortdesc>Returns a Namespace object containing the namespace URI of the current element.</shortdesc>
+					<datatype>
+						<type href="#/Namespace">Namespace</type>
+					</datatype>
+				</method>
+				<method name="namespaceDeclarations">
+					<shortdesc>Returns an array containing all namespace declarations of this XML object.</shortdesc>
+					<datatype>
+						<type href="#/Array">Array</type>
+					</datatype>
+				</method>
+				<method name="nodeKind">
+					<shortdesc>Returns the type of this XML object as one of the strings "element", "attribute", "comment", "processing-instruction", or "text".</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="normalize">
+					<shortdesc>Puts all text nodes in this and all descendant XML objects into a normal form by merging adjacent text nodes and eliminating empty text nodes. Returns this XML object.</shortdesc>
+					<datatype>
+						<type>XML</type>
+					</datatype>
+				</method>
+				<method name="parent">
+					<shortdesc>Returns the parent object of this XML object.</shortdesc>
+					<description>The root object, as returned by the XML constructor, does not have a parent and returns null. Note that the E4X standard does not define what happens if this XML object is a list containing elements with multiple parents.</description>
+					<datatype>
+						<type>XML</type>
+					</datatype>
+				</method>
+				<method name="processingInstructions">
+					<shortdesc>Returns a list of preprocessing instructions.</shortdesc>
+					<description>Collects processing-instructions with the given name, if supplied. Otherwise, returns an XML list containing all the children of this XML object that are processing-instructions regardless of their name.</description>
+					<parameters>
+						<parameter name="name" optional="true">
+							<shortdesc>The name of the preprocessing instruction to return.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>XML</type>
+					</datatype>
+				</method>
+				<method name="prependChild">
+					<shortdesc>Inserts a given child into this object before its existing XML properties, and returns this XML object.</shortdesc>
+					<parameters>
+						<parameter name="child">
+							<shortdesc>The XML to insert.</shortdesc>
+							<datatype>
+								<type>XML</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>XML</type>
+					</datatype>
+				</method>
+				<method name="removeNamespace">
+					<shortdesc>Removes the given namespace from this XML, and returns this XML.</shortdesc>
+					<parameters>
+						<parameter name="namespace">
+							<shortdesc>The namespace to remove.</shortdesc>
+							<datatype>
+								<type href="#/Namespace">Namespace</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>XML</type>
+					</datatype>
+				</method>
+				<method name="replace">
+					<shortdesc>Replaces the value of specified XML properties of this XML object returns this XML object. </shortdesc>
+					<description>
+						This method acts like the assignment operator.
+					</description>
+					<parameters>
+						<parameter name="name">
+							<shortdesc>The property name.</shortdesc>
+							<description>Can be a numeric property name, a name for a set of XML elements, or the properties wildcard “*”. If this XML object contains no properties that match the name, the method returns without modifying this XML object.  </description>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+						<parameter name="value">
+							<shortdesc>The XML with which to replace the value of the matching property.</shortdesc>
+							<description>Can be an XML object, XML list or any value that can be converted to a String with toString().</description>
+							<datatype>
+								<type>XML</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>XML</type>
+					</datatype>
+				</method>
+				<method name="setChildren">
+					<shortdesc>Replaces all of the XML-valued properties in this object with a new value, and returns this XML object. </shortdesc>
+					<parameters>
+						<parameter name="value">
+							<shortdesc>The new value, which can be a single XML object or an XML list.</shortdesc>
+							<datatype>
+								<type>XML</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>XML</type>
+					</datatype>
+				</method>
+				<method name="setLocalName">
+					<shortdesc>Replaces the local name of this XML object  with a string constructed from the given name</shortdesc>
+					<description>The local name is any part behind a colon character. If there is no colon, it is the entire name.</description>
+					<parameters>
+						<parameter name="name">
+							<shortdesc>The name to set.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+				</method>
+				<method name="setName">
+					<shortdesc>Replaces the name of this XML object with the given QName object.</shortdesc>
+					<parameters>
+						<parameter name="name">
+							<shortdesc>The fully qualified name.</shortdesc>
+							<datatype>
+								<type href="#/QName">QName</type>
+							</datatype>
+						</parameter>
+					</parameters>
+				</method>
+				<method name="setNamespace">
+					<shortdesc>Sets the namespace for this XML element. </shortdesc>
+					<description>If the namespace has not been declared in the tree above this element, adds a namespace declaration.</description>
+					<parameters>
+						<parameter name="namespace">
+							<shortdesc>The namespace to set.</shortdesc>
+							<datatype>
+								<type href="#/Namespace">Namespace</type>
+							</datatype>
+						</parameter>
+					</parameters>
+				</method>
+				<method name="text">
+					<shortdesc>Returns an XML list containing all XML properties of this XML object that represent XML text nodes.</shortdesc>
+					<datatype>
+						<type>XML</type>
+					</datatype>
+				</method>
+				<method name="toString">
+					<shortdesc>Returns the string representation of this object.</shortdesc>
+					<description>For text and attribute nodes, this is the textual value of the node; for other elements, this is the result of calling the toXMLString() method. If this XML object is a list, concatenates the result of calling toString() on each element.</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="toXMLString">
+					<shortdesc>Returns an XML-encoded string representation of this XML object.</shortdesc>
+					<description>
+						Always includes the start tag, attributes and end tag of the XML object regardless of its content. It is provided for cases when the default XML to string conversion rules are not desired. Interprets the global settings <a href="#/XML/prettyPrint">XML.prettyPrint</a> and <a href="#/XML/prettyIndent">XML.prettyIndent</a>.
+					</description>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</method>
+				<method name="xpath">
+					<shortdesc>Evaluates the given XPath expression in accordance with the W3C XPath recommendation, using this XML object as the context node.</shortdesc>
+					<parameters>
+						<parameter name="expr">
+							<shortdesc>The XPath expression to use.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>XML</type>
+					</datatype>
+				</method>
+			</elements>
+		</classdef>
+		<classdef name="XMLList" dynamic="true">
+			<shortdesc>An XML list object.</shortdesc>
+			<description>
+				In this implementation, an XMLList object is synonymous to the <a href="#/XML">XML</a> object. The constructor accepts an XML list, but everything else works like the  <a href="#/XML">XML</a> object.
+			</description>
+		</classdef>
+		<classdef name="UnitValue" dynamic="true">
+			<shortdesc>Represents a measurement as a combination of values and unit.</shortdesc>
+			<description>Note that this object is not available in all applications.</description>
+			<elements type="class">
+				<property name="baseUnit">
+					<shortdesc>The base unit for all conversions.</shortdesc>
+					<datatype>
+						<type>UnitValue</type>
+					</datatype>
+				</property>
+			</elements>
+			<elements type="instance">
+				<property name="type" rwaccess="readonly">
+					<shortdesc>The unit name.</shortdesc>
+					<datatype>
+						<type>string</type>
+					</datatype>
+				</property>
+				<property name="value">
+					<shortdesc>The numeric value.</shortdesc>
+					<datatype>
+						<type>number</type>
+					</datatype>
+				</property>
+				<property name="baseUnit">
+					<shortdesc>The base unit.</shortdesc>
+					<datatype>
+						<type>UnitValue</type>
+					</datatype>
+				</property>
+				<method name="convert">
+					<shortdesc>Converts this instance to a different unit.</shortdesc>
+					<parameters>
+						<parameter name="unitName">
+							<shortdesc>The unit name.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>any</type>
+					</datatype>
+				</method>
+				<method name="as">
+					<shortdesc>Returns this instance as a different unit.</shortdesc>
+					<parameters>
+						<parameter name="unitName">
+							<shortdesc>The unit name.</shortdesc>
+							<datatype>
+								<type>string</type>
+							</datatype>
+						</parameter>
+					</parameters>
+					<datatype>
+						<type>UnitValue</type>
+					</datatype>
+				</method>
+			</elements>
+		</classdef>
+	</package>
+</dictionary>

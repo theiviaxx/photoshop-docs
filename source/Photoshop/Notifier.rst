@@ -1,0 +1,70 @@
+.. _Notifier:
+
+================================================
+Notifier
+================================================
+
+
+Description
+-----------
+
+An event-handler object that tells the script to execute specified code when a specified event occurs. For notifiers to work, they must be enabled. See the 'notifiers enabled' property of the Application object. Events that occur within scripts do not generally trigger notifiers, because they occur inside of a "play script" event.
+
+
+
+
+Properties
+^^^^^^^^^^
+
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| :ref:`event<Notifier.event>` readonly           | The event ID in four characters or a unique string that the notifier is associated with.            |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| :ref:`eventClass<Notifier.eventClass>` readonly | The class ID associated with the event for the Notifier object, four characters or a unique string. |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| :ref:`eventFile<Notifier.eventFile>` readonly   | The path to the file to execute when the event occurs/activates the notifier.                       |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| :ref:`parent<Notifier.parent>` readonly         | The object's container.                                                                             |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| :ref:`typename<Notifier.typename>` readonly     | The class name of the object.                                                                       |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+
+
+
+
+
+
+
+Methods
+^^^^^^^
+
++-----------------------------------------------+-----------------------+
+| :ref:`remove<Notifier.remove>` readonly       | Deletes this object.  |
++-----------------------------------------------+-----------------------+
+| :ref:`removeAll<Notifier.removeAll>` readonly | Deletes all elements. |
++-----------------------------------------------+-----------------------+
+
+
+
+
+
+
+.. container:: hide
+
+   .. toctree::
+      :hidden:
+      :maxdepth: 1
+
+      Notifier/parent.rst
+      Notifier/typename.rst
+      Notifier/event.rst
+      Notifier/eventFile.rst
+      Notifier/eventClass.rst
+      
+      
+
+      Notifier/remove.rst
+      Notifier/removeAll.rst
+      
+      
+      
+      

@@ -1,0 +1,49 @@
+.. _PixarSaveOptions:
+
+================================================
+PixarSaveOptions
+================================================
+
+
+Description
+-----------
+
+Options for saving a document in Pixar format.
+
+
+
+
+
+
+Static Properties
+^^^^^^^^^^^^^^^^^
+
++---------------------------------------------------------------+----------------------------------------+
+| :ref:`alphaChannels<PixarSaveOptions.alphaChannels>` readonly | If true, the alpha channels are saved. |
++---------------------------------------------------------------+----------------------------------------+
+
+
+
+
+
+
+
+
+
+
+
+
+.. container:: hide
+
+   .. toctree::
+      :hidden:
+      :maxdepth: 1
+
+      
+      PixarSaveOptions/alphaChannels.rst
+      
+
+      
+      
+      
+      

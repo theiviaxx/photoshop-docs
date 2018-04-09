@@ -1,0 +1,14 @@
+.. _PhotoshopSaveOptions.spotColors:
+
+================================================
+PhotoshopSaveOptions.spotColors
+================================================
+
+   bool **spotColors**
+
+
+Description
+-----------
+
+If true, spot colors are saved.
+

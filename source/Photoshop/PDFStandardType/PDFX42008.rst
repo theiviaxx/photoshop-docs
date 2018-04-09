@@ -1,0 +1,14 @@
+.. _PDFStandardType.PDFX42008:
+
+================================================
+PDFStandardType.PDFX42008
+================================================
+
+   int **PDFX42008**
+
+
+Description
+-----------
+
+PDF/X-4 standard, which requires all fonts to be embedded and the appropriate PDF bounding boxes to be specified, and for color allows either the use of color management and device-independent color (CIE L*a*b, ICC-based color spaces, CalRGB, and CalGray) or CMYK, spot colors, or both; can be opened in Acrobat 8.0 and Acrobat Reader 8.0 and later.
+

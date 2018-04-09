@@ -1,0 +1,15 @@
+.. _TreeView.properties:
+
+================================================
+TreeView.properties
+================================================
+
+   :ref:`Object` **properties**
+
+
+Description
+-----------
+
+An object that contains one or more creation properties of the control (properties used only when the element is created).
+
+Creation properties of a ListBox object can include:                            items: An array of strings for the text of each top-level list item. An item object is created for each item. An item with the text string "-" creates a separator item. Supply this property, or the items argument to the?add()?method, not both. This form is most useful for elements defined using Resource Specifications.

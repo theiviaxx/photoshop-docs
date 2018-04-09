@@ -1,0 +1,26 @@
+.. _Group.remove:
+
+================================================
+Group.remove
+================================================
+
+   void **remove** (any **what**)
+
+
+Parameters
+----------
+
++----------+-------------------------------------------------------------------------------------------------------+
+| **what** | The child control to remove, specified by 0-based index, text property value, or as a control object. |
++----------+-------------------------------------------------------------------------------------------------------+
+
+
+
+Description
+-----------
+
+Removes the specified child control from this group's?children?array.
+
+No error results if the child does not exist.
+
+

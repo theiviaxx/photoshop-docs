@@ -1,0 +1,14 @@
+.. _TreeView.shortcutKey:
+
+================================================
+TreeView.shortcutKey
+================================================
+
+   :ref:`String` **shortcutKey**
+
+
+Description
+-----------
+
+The key sequence that invokes the?onShortcutKey()?callback for this element (in Windows only).
+

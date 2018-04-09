@@ -1,0 +1,19 @@
+.. _Object.toLocaleString:
+
+================================================
+Object.toLocaleString
+================================================
+
+   :ref:`string` **toLocaleString** ()
+
+
+
+
+Description
+-----------
+
+Creates and returns a string representing this object, localized for the current locale. See?toString().
+
+
+
+
