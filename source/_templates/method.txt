@@ -1,0 +1,26 @@
+.. _{{namespace}}:
+
+================================================
+{{namespace}}
+================================================
+
+   {{return_type}} **{{name}}** ({%- for param in parameters -%}{{param.type}} **{{param.name}}** {%- if not loop.last -%}, {% endif -%}{%- endfor -%})
+
+
+{% if parameters -%}
+Parameters
+----------
+
+{{param_table}}
+
+{% endif %}
+
+Description
+-----------
+
+{{short_description}}
+
+{{description}}
+
+
+{% include '{}/{}/{}.rst'.format(module, classname, name) ignore missing %}

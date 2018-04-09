@@ -1,0 +1,85 @@
+.. _{{name}}:
+
+================================================
+{{name}}
+================================================
+
+
+Description
+-----------
+
+{{short_description}}
+
+{{description}}
+
+
+{% if properties -%}
+Properties
+^^^^^^^^^^
+
+{{properties_table}}
+{%- endif %}
+
+{% if static_properties -%}
+Static Properties
+^^^^^^^^^^^^^^^^^
+
+{{static_properties_table}}
+{%- endif %}
+
+
+{% if constructors -%}
+Constructors
+^^^^^^^^^^^^
+
+{{constructors_table}}
+{%- endif %}
+
+
+{% if methods -%}
+Methods
+^^^^^^^
+
+{{methods_table}}
+{%- endif %}
+
+{% if static_methods -%}
+Static Methods
+^^^^^^^^^^^^^^
+
+{{static_methods_table}}
+{%- endif %}
+
+{% if event_methods -%}
+Events
+^^^^^^
+
+{{event_methods_table}}
+{%- endif %}
+
+
+.. container:: hide
+
+   .. toctree::
+      :hidden:
+      :maxdepth: 1
+
+      {% for property in properties -%}
+      {{property.classname}}/{{property.name}}.rst
+      {% endfor %}
+      {% for property in static_properties -%}
+      {{property.classname}}/{{property.name}}.rst
+      {% endfor %}
+
+      {% for meth in methods -%}
+      {{meth.classname}}/{{meth.name}}.rst
+      {% endfor %}
+      {% for meth in static_methods -%}
+      {{meth.classname}}/{{meth.name}}.rst
+      {% endfor %}
+      {% for meth in event_methods -%}
+      {{meth.classname}}/{{meth.name}}.rst
+      {% endfor %}
+      {% for meth in constructors -%}
+      {{meth.classname}}/{{meth.name}}.rst
+      {% endfor %}

@@ -1,0 +1,33 @@
+{{name}}
+********************************
+
+Classes
+^^^^^^^
+
+.. toctree::
+    :maxdepth: 1
+
+    {% for c in classes -%}
+    {%- if c != 'index.rst' -%}
+    {{c}}
+    {% endif -%}
+    {% endfor %}
+
+{% if enumerations %}
+Enumerations
+^^^^^^^^^^^^
+
+.. toctree::
+    :maxdepth: 1
+
+    {% for e in enumerations -%}
+    {%- if e != 'index.rst' -%}
+    {{e}}
+    {% endif -%}
+    {% endfor %}
+{% endif %}
+
+Module Index
+============
+
+* :ref:`modindex`
