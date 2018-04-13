@@ -40,7 +40,10 @@ release = u''
 # ones.
 extensions = [
     'sphinx.ext.githubpages',
+    'sphinx_js',
 ]
+
+js_source_path = './source'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

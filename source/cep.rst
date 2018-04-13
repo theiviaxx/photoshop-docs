@@ -6,6 +6,11 @@ Extension SDK Documentation (CEP)
    This document was copied from the official `Adobe-CEP <https://github.com/Adobe-CEP/CEP-Resources/blob/master/CEP_8.x/Documentation/CEP%208.0%20HTML%20Extension%20Cookbook.md>`__ github
    project and all credit is due there for providing in depth documentation into CEP.  I copied it simply to keep everything related to Photoshop in one place.
 
+.. toctree::
+   :maxdepth: 2
+
+   CEP/csinterface.rst
+
 Overview
 --------
 
@@ -22,6 +27,8 @@ point products in which they run. Extensions are loaded into
 applications through the PlugPlug Library architecture. Starting from
 CEP 4.0, HTML/CSS and JavaScript (ECMAScript 5) can be used to develop
 extensions.
+
+* `Boilerplate Extension <https://github.com/theiviaxx/photoshop-extension-boilerplate>`__
 
 Extension Types
 ~~~~~~~~~~~~~~~

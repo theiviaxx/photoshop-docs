@@ -4,6 +4,7 @@
 from __future__ import unicode_literals
 
 import os
+import re
 from operator import itemgetter
 from xml.etree import cElementTree as ET
 
@@ -247,7 +248,33 @@ def main(root, filename):
     (SOURCE / root / 'index.rst').write_text(INDEX_TEMPLATE.render(name=root.capitalize(), classes=sorted(classes), enumerations=sorted(enumerations)))
 
 
+def genJavaScript(root, filename):
+    f = SOURCE / filename
+    content = f.read_bytes()
+    classes = [
+        f.stem,
+        '=' * len(f.stem),
+        '',
+        '',
+        ''
+    ]
+    classtoc = []
+
+    for match in re.finditer('@class\s(\w+)', content):
+        docline = '.. js:autoclass:: {}\n   :members:\n\n'.format(match.groups()[0])
+        classes.append(docline)
+        classtoc.append('      * :js:class:`{}`'.format(match.groups()[0]))
+
+    classes = classes[:3] + classtoc + classes[3:]
+
+    rstcontent = '\n'.join(classes)
+
+    output = SOURCE / root / '{}.rst'.format(f.stem)
+    output.write_text(rstcontent)
+
+
 if __name__ == '__main__':
     main('Photoshop', 'omv.xml')
     main('Core', 'javascript.xml')
     main('ScriptUI', 'scriptui.xml')
+    genJavaScript('CEP', 'CSInterface.js')
