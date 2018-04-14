@@ -1,0 +1,12 @@
+IconButton.onShortcutKey {#IconButton.onShortcutKey}
+========================
+
+> void **onShortcutKey** ()
+
+Description
+-----------
+
+An event-handler callback function, called when the element\'s
+shortcutKey sequence is typed in the active window.
+
+In Windows only.

@@ -1,0 +1,9 @@
+ColorModel.HSB {#ColorModel.HSB}
+==============
+
+> int **HSB**
+
+Description
+-----------
+
+HSB.

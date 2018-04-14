@@ -1,0 +1,14 @@
+Window.active {#Window.active}
+=============
+
+> [Boolean]{role="ref"} **active**
+
+Description
+-----------
+
+Set to true to make this window active.
+
+A modal dialog that is visible is by definition the active dialog. An
+active palette is the front-most window. An active control is the one
+with focus?that is, the one that accepts keystrokes, or in the case of
+a?Button, be selected when the user types Return or Enter.

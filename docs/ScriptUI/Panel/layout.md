@@ -1,0 +1,14 @@
+Panel.layout {#Panel.layout}
+============
+
+> [LayoutManager]{role="ref"} **layout**
+
+Description
+-----------
+
+The layout manager for this container.
+
+The first time a container object is made visible, ScriptUI invokes this
+layout manager by calling its?layout()?function. Default is an instance
+of the?LayoutManager?class that is automatically created when the
+container element is created.

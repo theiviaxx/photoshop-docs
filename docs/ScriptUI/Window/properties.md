@@ -1,0 +1,25 @@
+Window.properties {#Window.properties}
+=================
+
+> [Object]{role="ref"} **properties**
+
+Description
+-----------
+
+An object that contains one or more creation properties of the container
+(properties used only when the element is created).
+
+Creation properties of a Window object can include: resizeable: When
+true, the window can be resized by the user. Default is false.
+su1PanelCoordinates: Photoshop only. When true, the child panels of this
+window automatically adjust the positions of their children for
+compatability with Photoshop CS (in which the vertical coordinate was
+measured from outside the frame). Default is false. Individual panels
+can override the parent window?s setting. closeButton: Bridge only. When
+true, the title bar includes a button to close the window, if the
+platform and window type allow it. When false, it does not. Default is
+true. Not used for dialogs. maximizeButton: Bridge only. When true, the
+title bar includes a button to expand the window to its maximum size
+(typically, the entire screen), if the platform and window type allow
+it. When false, it does not. Default is false for type palette, true for
+type window. Not used for dialogs.

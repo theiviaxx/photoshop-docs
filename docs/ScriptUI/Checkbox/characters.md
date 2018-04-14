@@ -1,0 +1,10 @@
+Checkbox.characters {#Checkbox.characters}
+===================
+
+> [Number]{role="ref"} **characters**
+
+Description
+-----------
+
+A number of characters for which to reserve space when calculating the
+preferred size of the element.

@@ -1,0 +1,9 @@
+Window.version {#Window.version}
+==============
+
+> any **version**
+
+Description
+-----------
+
+Deprecated. Use?ScriptUI.version?instead.
