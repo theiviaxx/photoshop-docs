@@ -1,0 +1,26 @@
+.. _global.decodeURIComponent:
+
+================================================
+global.decodeURIComponent
+================================================
+
+   :ref:`string` **decodeURIComponent** (:ref:`string` **uri**)
+
+
+Parameters
+----------
+
++---------+---------------------+
+| **uri** | The text to decode. |
++---------+---------------------+
+
+
+
+Description
+-----------
+
+Decodes a string created with?encodeURIComponent().
+
+
+
+

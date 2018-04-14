@@ -1,0 +1,70 @@
+.. _ColorSamplers:
+
+================================================
+ColorSamplers
+================================================
+
+
+Description
+-----------
+
+The collection of color samplers in the document.
+
+
+
+
+Properties
+^^^^^^^^^^
+
++--------------------------------------------------+---------------------------------------+
+| :ref:`length<ColorSamplers.length>` readonly     | Number of elements in the collection. |
++--------------------------------------------------+---------------------------------------+
+| :ref:`parent<ColorSamplers.parent>` readonly     | The object's container.               |
++--------------------------------------------------+---------------------------------------+
+| :ref:`typename<ColorSamplers.typename>` readonly | The class name of the object.         |
++--------------------------------------------------+---------------------------------------+
+
+
+
+
+
+
+
+Methods
+^^^^^^^
+
++----------------------------------------------------+-----------------------------------------------------------------+
+| :ref:`[]<ColorSamplers.[]>` readonly               | Get an element in the collection with the provided index.       |
++----------------------------------------------------+-----------------------------------------------------------------+
+| :ref:`getByName<ColorSamplers.getByName>` readonly | Get the first element in the collection with the provided name. |
++----------------------------------------------------+-----------------------------------------------------------------+
+
+Static Methods
+^^^^^^^^^^^^^^
+
++----------------------------------------+--------------------------+
+| :ref:`add<ColorSamplers.add>` readonly | Creates a color sampler. |
++----------------------------------------+--------------------------+
+
+
+
+
+.. container:: hide
+
+   .. toctree::
+      :hidden:
+      :maxdepth: 1
+
+      ColorSamplers/parent.rst
+      ColorSamplers/typename.rst
+      ColorSamplers/length.rst
+      
+      
+
+      ColorSamplers/getByName.rst
+      ColorSamplers/[].rst
+      
+      ColorSamplers/add.rst
+      
+      
+      

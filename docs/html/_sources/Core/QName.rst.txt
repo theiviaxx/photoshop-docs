@@ -1,0 +1,58 @@
+.. _QName:
+
+================================================
+QName
+================================================
+
+
+Description
+-----------
+
+A qualified XML name, containing the URI and the local name.
+
+
+
+
+Properties
+^^^^^^^^^^
+
++--------------------------------------------+--------------------------------------------+
+| :ref:`localName<QName.localName>` readonly | The local name part of the qualified name. |
++--------------------------------------------+--------------------------------------------+
+| :ref:`uri<QName.uri>` readonly             | The URI part of the qualified name.        |
++--------------------------------------------+--------------------------------------------+
+
+
+
+
+Constructors
+^^^^^^^^^^^^
+
++------------------------------------+-------------------------+
+| :ref:`QName<QName.QName>` readonly | Creates a QName object. |
++------------------------------------+-------------------------+
+
+
+
+
+
+
+
+
+
+.. container:: hide
+
+   .. toctree::
+      :hidden:
+      :maxdepth: 1
+
+      QName/uri.rst
+      QName/localName.rst
+      
+      
+
+      
+      
+      
+      QName/QName.rst
+      

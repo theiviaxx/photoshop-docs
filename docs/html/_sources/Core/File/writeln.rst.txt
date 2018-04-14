@@ -1,0 +1,26 @@
+.. _File.writeln:
+
+================================================
+File.writeln
+================================================
+
+   bool **writeln** (:ref:`string` **text**)
+
+
+Parameters
+----------
+
++----------+------------------------------+
+| **text** | A text string to be written. |
++----------+------------------------------+
+
+
+
+Description
+-----------
+
+Writes a string to the file at the current position and appends a line-feed sequence.
+
+You can supply multiple?text?values. The strings are concatenated into a single string, which is written in the file followed by one line-feed sequence, of the style specified by this object's?linefeed?property.For encoded files, writing a single Unicode character may write multiple bytes.  Returns true if the write was successful.IMPORTANT: Be careful not to write to a file that is open in another application or object, as this can overwrite existing data.
+
+

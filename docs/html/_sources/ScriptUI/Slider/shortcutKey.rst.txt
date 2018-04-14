@@ -1,0 +1,14 @@
+.. _Slider.shortcutKey:
+
+================================================
+Slider.shortcutKey
+================================================
+
+   :ref:`String` **shortcutKey**
+
+
+Description
+-----------
+
+The key sequence that invokes the?onShortcutKey()?callback for this element (in Windows only).
+

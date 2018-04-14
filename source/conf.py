@@ -40,7 +40,7 @@ release = u''
 # ones.
 extensions = [
     'sphinx.ext.githubpages',
-    # 'sphinx_js',
+    'sphinx_js',
 ]
 
 js_source_path = './source'

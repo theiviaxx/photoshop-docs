@@ -1,0 +1,19 @@
+.. _Window.onShortcutKey:
+
+================================================
+Window.onShortcutKey
+================================================
+
+   void **onShortcutKey** ()
+
+
+
+
+Description
+-----------
+
+In Windows only, an event-handler callback function, called a shortcut-key sequence is typed that matches the?shortcutKey?value for this window.
+
+
+
+

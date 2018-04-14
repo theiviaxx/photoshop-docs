@@ -1,0 +1,157 @@
+.. _Checkbox:
+
+================================================
+Checkbox
+================================================
+
+
+Description
+-----------
+
+A dual-state control showing a box that has a checkmark when the?value?is true, and is empty when the?value?is false.
+
+Calls the?onClick()?callback if the control is clicked or if its?notify()?method is called.
+
+
+Properties
+^^^^^^^^^^
+
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`active<Checkbox.active>` readonly               | True if this element is active.                                                                                            |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`alignment<Checkbox.alignment>` readonly         | The alignment style for this element. If defined, this value overrides the alignChildren setting for the parent container. |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bounds<Checkbox.bounds>` readonly               | The boundaries of the element, in parent-relative coordinates.                                                             |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`characters<Checkbox.characters>` readonly       | A number of characters for which to reserve space when calculating the preferred size of the element.                      |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`children<Checkbox.children>` readonly           | An array of child elements.                                                                                                |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`enabled<Checkbox.enabled>` readonly             | True if this element is enabled.                                                                                           |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`graphics<Checkbox.graphics>` readonly           | The graphics object that can be used to customize the element's appearance, in response to the?onDraw()?event.             |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`helpTip<Checkbox.helpTip>` readonly             | The help text that is displayed when the mouse hovers over the element.                                                    |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`indent<Checkbox.indent>` readonly               | The number of pixels to indent the element during automatic layout.                                                        |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`justify<Checkbox.justify>` readonly             | The default text justification style for child text elements.                                                              |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`location<Checkbox.location>` readonly           | The upper left corner of this element relative to its parent.                                                              |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`maximumSize<Checkbox.maximumSize>` readonly     | The maximum height and width to which the element can be resized.                                                          |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`minimumSize<Checkbox.minimumSize>` readonly     | The minimum height and width to which the element can be resized.                                                          |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`parent<Checkbox.parent>` readonly               | The parent element.                                                                                                        |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`preferredSize<Checkbox.preferredSize>` readonly | The preferred size, used by layout managers to determine the best size for each element.                                   |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`properties<Checkbox.properties>` readonly       | An object that contains one or more creation properties of the item (properties used only when the element is created).    |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`shortcutKey<Checkbox.shortcutKey>` readonly     | The key sequence that invokes the?onShortcutKey()?callback for this element (in Windows only).                             |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`size<Checkbox.size>` readonly                   | The current dimensions of this element.                                                                                    |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`text<Checkbox.text>` readonly                   | The text to display, a localizable string.                                                                                 |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`type<Checkbox.type>` readonly                   | The element type; "checkbox".                                                                                              |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`value<Checkbox.value>` readonly                 | The selection state of the control.                                                                                        |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`visible<Checkbox.visible>` readonly             | True if this element is shown, false if it is hidden.                                                                      |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`window<Checkbox.window>` readonly               | The window that this element belongs to.                                                                                   |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`windowBounds<Checkbox.windowBounds>` readonly   | The bounds of this element relative to the top-level parent window.                                                        |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+
+
+
+
+
+
+
+Methods
+^^^^^^^
+
++-------------------------------------------------------------------+---------------------------------------------------------------------------------------+
+| :ref:`addEventListener<Checkbox.addEventListener>` readonly       | Registers an event handler for a particular type of event occuring in this element.   |
++-------------------------------------------------------------------+---------------------------------------------------------------------------------------+
+| :ref:`dispatchEvent<Checkbox.dispatchEvent>` readonly             | Simulates the occurrence of an event in this target.                                  |
++-------------------------------------------------------------------+---------------------------------------------------------------------------------------+
+| :ref:`hide<Checkbox.hide>` readonly                               | Hides this element.                                                                   |
++-------------------------------------------------------------------+---------------------------------------------------------------------------------------+
+| :ref:`notify<Checkbox.notify>` readonly                           | Sends a notification message, simulating the specified user interaction event.        |
++-------------------------------------------------------------------+---------------------------------------------------------------------------------------+
+| :ref:`removeEventListener<Checkbox.removeEventListener>` readonly | Unregisters an event handler for a particular type of event occuring in this element. |
++-------------------------------------------------------------------+---------------------------------------------------------------------------------------+
+| :ref:`show<Checkbox.show>` readonly                               | Shows this element.                                                                   |
++-------------------------------------------------------------------+---------------------------------------------------------------------------------------+
+
+
+
+Events
+^^^^^^
+
++-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`onActivate<Checkbox.onActivate>` readonly       | An event-handler callback function, called when the element acquires the keyboard focus.                          |
++-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`onClick<Checkbox.onClick>` readonly             | An event-handler callback function, called when the element has been clicked.                                     |
++-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`onDeactivate<Checkbox.onDeactivate>` readonly   | An event-handler callback function, called when the element loses the keyboard focus.                             |
++-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`onDraw<Checkbox.onDraw>` readonly               | An event-handler callback function, called when the window is about to be drawn.                                  |
++-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`onShortcutKey<Checkbox.onShortcutKey>` readonly | An event-handler callback function, called when the element's?shortcutKey?sequence is typed in the active window. |
++-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+
+
+.. container:: hide
+
+   .. toctree::
+      :hidden:
+      :maxdepth: 1
+
+      Checkbox/value.rst
+      Checkbox/characters.rst
+      Checkbox/justify.rst
+      Checkbox/text.rst
+      Checkbox/active.rst
+      Checkbox/shortcutKey.rst
+      Checkbox/graphics.rst
+      Checkbox/visible.rst
+      Checkbox/bounds.rst
+      Checkbox/location.rst
+      Checkbox/maximumSize.rst
+      Checkbox/minimumSize.rst
+      Checkbox/preferredSize.rst
+      Checkbox/size.rst
+      Checkbox/windowBounds.rst
+      Checkbox/alignment.rst
+      Checkbox/children.rst
+      Checkbox/properties.rst
+      Checkbox/enabled.rst
+      Checkbox/helpTip.rst
+      Checkbox/indent.rst
+      Checkbox/parent.rst
+      Checkbox/window.rst
+      Checkbox/type.rst
+      
+      
+
+      Checkbox/notify.rst
+      Checkbox/show.rst
+      Checkbox/hide.rst
+      Checkbox/addEventListener.rst
+      Checkbox/removeEventListener.rst
+      Checkbox/dispatchEvent.rst
+      
+      
+      Checkbox/onActivate.rst
+      Checkbox/onDeactivate.rst
+      Checkbox/onDraw.rst
+      Checkbox/onClick.rst
+      Checkbox/onShortcutKey.rst
+      
+      
