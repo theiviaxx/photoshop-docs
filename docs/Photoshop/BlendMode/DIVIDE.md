@@ -1,7 +1,0 @@
-BlendMode.DIVIDE {#BlendMode.DIVIDE}
-================
-
-> int **DIVIDE**
-
-Description
------------
