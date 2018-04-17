@@ -1,0 +1,30 @@
+.. _Window.prompt:
+
+================================================
+Window.prompt
+================================================
+
+   :ref:`String` **prompt** (:ref:`String` **prompt**, :ref:`String` **default**, :ref:`String` **title**)
+
+
+Parameters
+----------
+
++-------------+-----------------------------------------------------------+
+| **prompt**  | The string for the displayed message.                     |
++-------------+-----------------------------------------------------------+
+| **default** | The initial value to be displayed in the text edit field. |
++-------------+-----------------------------------------------------------+
+| **title**   | A string to appear as the title of the dialog.            |
++-------------+-----------------------------------------------------------+
+
+
+
+Description
+-----------
+
+Displays a modal dialog that returns the user?s text input.
+
+Returns the value of the text edit field if the user clicked OK, null if the user clicked Cancel.
+
+

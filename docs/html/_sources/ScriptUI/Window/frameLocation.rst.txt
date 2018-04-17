@@ -1,0 +1,15 @@
+.. _Window.frameLocation:
+
+================================================
+Window.frameLocation
+================================================
+
+   :ref:`Point` **frameLocation**
+
+
+Description
+-----------
+
+The top left corner of the window frame in screen coordinates.
+
+The same as [frameBounds.x, frameBounds.y]. Set this value to move the window frame to the specified location on the screen. The?frameBounds?value changes accordingly.

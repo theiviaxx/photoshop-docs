@@ -1,0 +1,26 @@
+.. _Channels.[]:
+
+================================================
+Channels.[]
+================================================
+
+   :ref:`Channel` **[]** (uint **index**)
+
+
+Parameters
+----------
+
++-----------+--+
+| **index** |  |
++-----------+--+
+
+
+
+Description
+-----------
+
+Get an element in the collection with the provided index.
+
+
+
+

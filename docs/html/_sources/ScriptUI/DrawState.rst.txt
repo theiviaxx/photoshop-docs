@@ -1,0 +1,82 @@
+.. _DrawState:
+
+================================================
+DrawState
+================================================
+
+
+Description
+-----------
+
+Describes an input state at the time of the triggering ?ScriptUIGraphics.onDraw()?event.
+
+Contains properties that report whether the current control has the input focus, and the particular mouse button and keypress state. Passed in as argument to?ScriptUIGraphics.onDraw().
+
+
+Properties
+^^^^^^^^^^
+
++--------------------------------------------------------------------+------------------------------------------------------------+
+| :ref:`altKeyPressed<DrawState.altKeyPressed>` readonly             | True if the Alt key is being pressed (in Windows only).    |
++--------------------------------------------------------------------+------------------------------------------------------------+
+| :ref:`capsLockKeyPressed<DrawState.capsLockKeyPressed>` readonly   | True if the Caps Lock key is being pressed.                |
++--------------------------------------------------------------------+------------------------------------------------------------+
+| :ref:`cmdKeyPressed<DrawState.cmdKeyPressed>` readonly             | True if the Command key is being pressed (in Mac OS only). |
++--------------------------------------------------------------------+------------------------------------------------------------+
+| :ref:`ctrlKeyPressed<DrawState.ctrlKeyPressed>` readonly           | True if the Ctrl key is being pressed.                     |
++--------------------------------------------------------------------+------------------------------------------------------------+
+| :ref:`hasFocus<DrawState.hasFocus>` readonly                       | True if the element has the input focus.                   |
++--------------------------------------------------------------------+------------------------------------------------------------+
+| :ref:`leftButtonPressed<DrawState.leftButtonPressed>` readonly     | True if the left mouse button is being pressed.            |
++--------------------------------------------------------------------+------------------------------------------------------------+
+| :ref:`middleButtonPressed<DrawState.middleButtonPressed>` readonly | True if the middle mouse button is being pressed.          |
++--------------------------------------------------------------------+------------------------------------------------------------+
+| :ref:`mouseOver<DrawState.mouseOver>` readonly                     | True if the cursor is hovering over this element.          |
++--------------------------------------------------------------------+------------------------------------------------------------+
+| :ref:`numLockKeyPressed<DrawState.numLockKeyPressed>` readonly     | True if the Num Lock key is being pressed.                 |
++--------------------------------------------------------------------+------------------------------------------------------------+
+| :ref:`optKeyPressed<DrawState.optKeyPressed>` readonly             | True if the Option key is being pressed (in Mac OS only).  |
++--------------------------------------------------------------------+------------------------------------------------------------+
+| :ref:`rightButtonPressed<DrawState.rightButtonPressed>` readonly   | True if the right mouse button is being pressed.           |
++--------------------------------------------------------------------+------------------------------------------------------------+
+| :ref:`shiftKeyPressed<DrawState.shiftKeyPressed>` readonly         | True if the Shift key is being pressed.                    |
++--------------------------------------------------------------------+------------------------------------------------------------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.. container:: hide
+
+   .. toctree::
+      :hidden:
+      :maxdepth: 1
+
+      DrawState/mouseOver.rst
+      DrawState/leftButtonPressed.rst
+      DrawState/middleButtonPressed.rst
+      DrawState/rightButtonPressed.rst
+      DrawState/hasFocus.rst
+      DrawState/shiftKeyPressed.rst
+      DrawState/ctrlKeyPressed.rst
+      DrawState/cmdKeyPressed.rst
+      DrawState/optKeyPressed.rst
+      DrawState/altKeyPressed.rst
+      DrawState/numLockKeyPressed.rst
+      DrawState/capsLockKeyPressed.rst
+      
+      
+
+      
+      
+      
+      

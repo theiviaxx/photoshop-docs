@@ -1,0 +1,14 @@
+.. _Window.graphics:
+
+================================================
+Window.graphics
+================================================
+
+   :ref:`ScriptUIGraphics` **graphics**
+
+
+Description
+-----------
+
+The graphics object that can be used to customize the window?s appearance, in response to the onDraw event.
+

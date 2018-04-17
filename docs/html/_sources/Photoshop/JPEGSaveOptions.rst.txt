@@ -1,0 +1,61 @@
+.. _JPEGSaveOptions:
+
+================================================
+JPEGSaveOptions
+================================================
+
+
+Description
+-----------
+
+Options for saving a document in JPEG format.
+
+
+
+
+
+
+Static Properties
+^^^^^^^^^^^^^^^^^
+
++----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| :ref:`embedColorProfile<JPEGSaveOptions.embedColorProfile>` readonly | If true, the color profile is embedded in the document.                                                 |
++----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| :ref:`formatOptions<JPEGSaveOptions.formatOptions>` readonly         | The download format to use.                                                                             |
++----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| :ref:`matte<JPEGSaveOptions.matte>` readonly                         | The color to use to fill anti-aliased edges adjacent to transparent areas of the image. Default: white. |
++----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| :ref:`quality<JPEGSaveOptions.quality>` readonly                     | The quality of the produced image.                                                                      |
++----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| :ref:`scans<JPEGSaveOptions.scans>` readonly                         | The number of scans. Valid only for progressive type JPEG files.                                        |
++----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+
+
+
+
+
+
+
+
+
+
+
+
+.. container:: hide
+
+   .. toctree::
+      :hidden:
+      :maxdepth: 1
+
+      
+      JPEGSaveOptions/embedColorProfile.rst
+      JPEGSaveOptions/formatOptions.rst
+      JPEGSaveOptions/matte.rst
+      JPEGSaveOptions/scans.rst
+      JPEGSaveOptions/quality.rst
+      
+
+      
+      
+      
+      
