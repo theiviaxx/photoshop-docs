@@ -10,6 +10,7 @@ Extension SDK Documentation (CEP)
    :maxdepth: 2
 
    CEP/csinterface.rst
+   CEP/event_codes.rst
 
 Overview
 --------
@@ -1239,144 +1240,15 @@ Standard Events in Point Products
 
 Following table lists the standard events supported by point products.
 
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-| Eve | Eve | Des | Eve | PS  | ID  | AI  | AN  | PR  | PL  | AU  |
-| nt  | nt  | cri | nt  |     |     |     |     |     |     |     |
-| Typ | Sco | pti | Par |     |     |     |     |     |     |     |
-| e   | pe  | on  | ame |     |     |     |     |     |     |     |
-|     |     |     | ter |     |     |     |     |     |     |     |
-+=====+=====+=====+=====+=====+=====+=====+=====+=====+=====+=====+
-| doc | APP | Eve | URL | No  | Yes | Yes | No  |  No |  No | Yes |
-| ume | LIC | nt  | to  |     |     |     |     |     |     |     |
-| ntA | ATI | fir | the |     |     |     |     |     |     |     |
-| fte | ON  | ed  | act |     |     |     |     |     |     |     |
-| rAc |     | whe | ive |     |     |     |     |     |     |     |
-| tiv |     | n   | doc |     |     |     |     |     |     |     |
-| ate |     | a   | ume |     |     |     |     |     |     |     |
-|     |     | doc | nt. |     |     |     |     |     |     |     |
-|     |     | ume | If  |     |     |     |     |     |     |     |
-|     |     | nt  | the |     |     |     |     |     |     |     |
-|     |     | has | doc |     |     |     |     |     |     |     |
-|     |     | bee | was |     |     |     |     |     |     |     |
-|     |     | n   | not |     |     |     |     |     |     |     |
-|     |     | act | sav |     |     |     |     |     |     |     |
-|     |     | iva | e,  |     |     |     |     |     |     |     |
-|     |     | ted | the |     |     |     |     |     |     |     |
-|     |     | (af | NAM |     |     |     |     |     |     |     |
-|     |     | ter | E   |     |     |     |     |     |     |     |
-|     |     | new | wil |     |     |     |     |     |     |     |
-|     |     | /op | l   |     |     |     |     |     |     |     |
-|     |     | en  | be  |     |     |     |     |     |     |     |
-|     |     | doc | set |     |     |     |     |     |     |     |
-|     |     | ume | ins |     |     |     |     |     |     |     |
-|     |     | nt; | tea |     |     |     |     |     |     |     |
-|     |     | aft | d   |     |     |     |     |     |     |     |
-|     |     | er  | of  |     |     |     |     |     |     |     |
-|     |     | doc | the |     |     |     |     |     |     |     |
-|     |     | ume | URL |     |     |     |     |     |     |     |
-|     |     | nt  | .   |     |     |     |     |     |     |     |
-|     |     | has |     |     |     |     |     |     |     |     |
-|     |     | ret |     |     |     |     |     |     |     |     |
-|     |     | rie |     |     |     |     |     |     |     |     |
-|     |     | ved |     |     |     |     |     |     |     |     |
-|     |     | foc |     |     |     |     |     |     |     |     |
-|     |     | us) |     |     |     |     |     |     |     |     |
-|     |     | .   |     |     |     |     |     |     |     |     |
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-| doc | APP | Eve | URL | Yes | Yes | Yes |  No |  No |  No | Yes |
-| ume | LIC | nt  | to  |     |     |     |     |     |     |     |
-| ntA | ATI | fir | the |     |     |     |     |     |     |     |
-| fte | ON  | ed  | act |     |     |     |     |     |     |     |
-| rDe |     | whe | ive |     |     |     |     |     |     |     |
-| act |     | n   | doc |     |     |     |     |     |     |     |
-| iva |     | the | ume |     |     |     |     |     |     |     |
-| te  |     | act | nt. |     |     |     |     |     |     |     |
-|     |     | ive | If  |     |     |     |     |     |     |     |
-|     |     | doc | the |     |     |     |     |     |     |     |
-|     |     | ume | doc |     |     |     |     |     |     |     |
-|     |     | nt  | was |     |     |     |     |     |     |     |
-|     |     | has | not |     |     |     |     |     |     |     |
-|     |     | bee | sav |     |     |     |     |     |     |     |
-|     |     | n   | e,  |     |     |     |     |     |     |     |
-|     |     | de- | the |     |     |     |     |     |     |     |
-|     |     | act | nam |     |     |     |     |     |     |     |
-|     |     | iva | e   |     |     |     |     |     |     |     |
-|     |     | ted | wil |     |     |     |     |     |     |     |
-|     |     | .(a | l   |     |     |     |     |     |     |     |
-|     |     | fte | be  |     |     |     |     |     |     |     |
-|     |     | r   | set |     |     |     |     |     |     |     |
-|     |     | doc | ins |     |     |     |     |     |     |     |
-|     |     | ume | tea |     |     |     |     |     |     |     |
-|     |     | nt  | d   |     |     |     |     |     |     |     |
-|     |     | los | of  |     |     |     |     |     |     |     |
-|     |     | es  | the |     |     |     |     |     |     |     |
-|     |     | foc | URL |     |     |     |     |     |     |     |
-|     |     | us) | .   |     |     |     |     |     |     |     |
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-| app | APP | Eve | non |  No |  Is |  Is |  No |  No |  No |  No |
-| lic | LIC | nt  | e   |     | sue | sue |     |     |     |     |
-| ati | ATI | fir |     |     |     |     |     |     |     |     |
-| onB | ON  | ed  |     |     |     |     |     |     |     |     |
-| efo |     | whe |     |     |     |     |     |     |     |     |
-| reQ |     | n   |     |     |     |     |     |     |     |     |
-| uit |     | the |     |     |     |     |     |     |     |     |
-|     |     | app |     |     |     |     |     |     |     |     |
-|     |     | lic |     |     |     |     |     |     |     |     |
-|     |     | ati |     |     |     |     |     |     |     |     |
-|     |     | on  |     |     |     |     |     |     |     |     |
-|     |     | got |     |     |     |     |     |     |     |     |
-|     |     | the |     |     |     |     |     |     |     |     |
-|     |     | sig |     |     |     |     |     |     |     |     |
-|     |     | nal |     |     |     |     |     |     |     |     |
-|     |     | to  |     |     |     |     |     |     |     |     |
-|     |     | sta |     |     |     |     |     |     |     |     |
-|     |     | rt  |     |     |     |     |     |     |     |     |
-|     |     | to  |     |     |     |     |     |     |     |     |
-|     |     | ter |     |     |     |     |     |     |     |     |
-|     |     | min |     |     |     |     |     |     |     |     |
-|     |     | ate |     |     |     |     |     |     |     |     |
-|     |     | .   |     |     |     |     |     |     |     |     |
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-| app | APP | Eve | non | Yes | Yes | Yes |  No | Yes | Yes | Yes |
-| lic | LIC | nt  | e   |     |     |     |     |     |     |     |
-| ati | ATI | fir |     |     |     |     |     | on  | on  |     |
-| onA | ON  | ed  |     |     |     |     |     | Mac | Mac |     |
-| cti |     | whe |     |     |     |     |     | ;   | ;   |     |
-| vat |     | n   |     |     |     |     |     | \ | | \ | |     |
-| e   |     | the |     |     |     |     |     | No| | No| |     |
-|     |     | App |     |     |     |     |     | on  | on  |     |
-|     |     | lic |     |     |     |     |     | Win | Win |     |
-|     |     | ati |     |     |     |     |     | dow | dow |     |
-|     |     | on  |     |     |     |     |     | s   | s   |     |
-|     |     | got |     |     |     |     |     |     |     |     |
-|     |     | an  |     |     |     |     |     |     |     |     |
-|     |     | “ac |     |     |     |     |     |     |     |     |
-|     |     | tiv |     |     |     |     |     |     |     |     |
-|     |     | ati |     |     |     |     |     |     |     |     |
-|     |     | on” |     |     |     |     |     |     |     |     |
-|     |     | eve |     |     |     |     |     |     |     |     |
-|     |     | nt  |     |     |     |     |     |     |     |     |
-|     |     | fro |     |     |     |     |     |     |     |     |
-|     |     | m   |     |     |     |     |     |     |     |     |
-|     |     | the |     |     |     |     |     |     |     |     |
-|     |     | OS. |     |     |     |     |     |     |     |     |
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-| doc | APP | Eve | URL | Yes | Yes | Yes |  No |  No |  No | Yes |
-| ume | LIC | nt  | to  |     |     |     |     |     |     |     |
-| ntA | ATI | fir | the |     |     |     |     |     |     |     |
-| fte | ON  | ed  | sav |     |     |     |     |     |     |     |
-| rSa |     | aft | ed  |     |     |     |     |     |     |     |
-| ve  |     | er  | doc |     |     |     |     |     |     |     |
-|     |     | the | ume |     |     |     |     |     |     |     |
-|     |     | doc | nt. |     |     |     |     |     |     |     |
-|     |     | ume |     |     |     |     |     |     |     |     |
-|     |     | nt  |     |     |     |     |     |     |     |     |
-|     |     | has |     |     |     |     |     |     |     |     |
-|     |     | bee |     |     |     |     |     |     |     |     |
-|     |     | n   |     |     |     |     |     |     |     |     |
-|     |     | sav |     |     |     |     |     |     |     |     |
-|     |     | ed  |     |     |     |     |     |     |     |     |
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+.. csv-table:: Standard Events in Point Products
+  :header: "Event Type", "Event Scope", "Description", "Event Parameter", "PS", "ID", "AI", "AN", "PR", "PL", "AU"
+
+  "documentAfterActivate", "APPLICATION", "Event fired when a document has been activated(after new/open document; after document has retrieved focus).", "URL to the active document. If the doc was not save, the NAME will be set instead of the URL.", "No", "Yes", "Yes", "No", "No", "No", "Yes"
+  "documentAfterDeactivate", "APPLICATION", "Event fired when the active document has been de-activated.(after document loses focus)", "URL to the active document. If the doc was not save, the name will be set instead of the URL.", "Yes", "Yes", "Yes", "No", "No", "No", "Yes"
+  "applicationBeforeQuit", "APPLICATION", "Event fired when the application got the signal to start to terminate.", "none", "No", "Issue", "Issue", "No", "No", "No", "No"
+  "applicationActivate", "APPLICATION", "Event fired when the Application got an 'activation' event from the OS.", "none", "Yes", "Yes", "Yes", "No", "Yes", "Yes", "Yes"
+  "documentAfterSave", "APPLICATION", "Event fired after the document has been saved", "URL to the saved document.", "Yes", "Yes", "Yes", "No", "No", "No", "Yes"
+
 
 (|Yes| = supported, |No| = not supported)
 

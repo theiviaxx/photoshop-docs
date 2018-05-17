@@ -83,6 +83,7 @@
 <li class="toctree-l1"><a class="reference internal" href="scripting.html">Photoshop Scripting Documentation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Extension SDK Documentation (CEP)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="CEP/csinterface.html">CSInterface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CEP/event_codes.html">Event Codes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#cep-extensions">CEP Extensions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#extension-types">Extension Types</a></li>
@@ -291,6 +292,7 @@ project and all credit is due there for providing in depth documentation into CE
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="CEP/csinterface.html">CSInterface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CEP/event_codes.html">Event Codes</a></li>
 </ul>
 </div>
 <div class="section" id="overview">
@@ -1695,7 +1697,8 @@ csInterface.addEventListener(“com.adobe.cep.test”, callback);
 <div class="section" id="standard-events-in-point-products">
 <h5>Standard Events in Point Products<a class="headerlink" href="#standard-events-in-point-products" title="Permalink to this headline">¶</a></h5>
 <p>Following table lists the standard events supported by point products.</p>
-<table border="1" class="docutils">
+<table border="1" class="docutils" id="id6">
+<caption><span class="caption-text">Standard Events in Point Products</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="9%" />
 <col width="9%" />
@@ -1710,23 +1713,10 @@ csInterface.addEventListener(“com.adobe.cep.test”, callback);
 <col width="9%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Eve
-nt
-Typ
-e</th>
-<th class="head">Eve
-nt
-Sco
-pe</th>
-<th class="head">Des
-cri
-pti
-on</th>
-<th class="head">Eve
-nt
-Par
-ame
-ter</th>
+<tr class="row-odd"><th class="head">Event Type</th>
+<th class="head">Event Scope</th>
+<th class="head">Description</th>
+<th class="head">Event Parameter</th>
 <th class="head">PS</th>
 <th class="head">ID</th>
 <th class="head">AI</th>
@@ -1737,82 +1727,10 @@ ter</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>doc
-ume
-ntA
-fte
-rAc
-tiv
-ate</td>
-<td>APP
-LIC
-ATI
-ON</td>
-<td>Eve
-nt
-fir
-ed
-whe
-n
-a
-doc
-ume
-nt
-has
-bee
-n
-act
-iva
-ted
-(af
-ter
-new
-/op
-en
-doc
-ume
-nt;
-aft
-er
-doc
-ume
-nt
-has
-ret
-rie
-ved
-foc
-us)
-.</td>
-<td>URL
-to
-the
-act
-ive
-doc
-ume
-nt.
-If
-the
-doc
-was
-not
-sav
-e,
-the
-NAM
-E
-wil
-l
-be
-set
-ins
-tea
-d
-of
-the
-URL
-.</td>
+<tr class="row-even"><td>documentAfterActivate</td>
+<td>APPLICATION</td>
+<td>Event fired when a document has been activated(after new/open document; after document has retrieved focus).</td>
+<td>URL to the active document. If the doc was not save, the NAME will be set instead of the URL.</td>
 <td>No</td>
 <td>Yes</td>
 <td>Yes</td>
@@ -1821,76 +1739,10 @@ URL
 <td>No</td>
 <td>Yes</td>
 </tr>
-<tr class="row-odd"><td>doc
-ume
-ntA
-fte
-rDe
-act
-iva
-te</td>
-<td>APP
-LIC
-ATI
-ON</td>
-<td>Eve
-nt
-fir
-ed
-whe
-n
-the
-act
-ive
-doc
-ume
-nt
-has
-bee
-n
-de-
-act
-iva
-ted
-.(a
-fte
-r
-doc
-ume
-nt
-los
-es
-foc
-us)</td>
-<td>URL
-to
-the
-act
-ive
-doc
-ume
-nt.
-If
-the
-doc
-was
-not
-sav
-e,
-the
-nam
-e
-wil
-l
-be
-set
-ins
-tea
-d
-of
-the
-URL
-.</td>
+<tr class="row-odd"><td>documentAfterDeactivate</td>
+<td>APPLICATION</td>
+<td>Event fired when the active document has been de-activated.(after document loses focus)</td>
+<td>URL to the active document. If the doc was not save, the name will be set instead of the URL.</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>Yes</td>
@@ -1899,153 +1751,34 @@ URL
 <td>No</td>
 <td>Yes</td>
 </tr>
-<tr class="row-even"><td>app
-lic
-ati
-onB
-efo
-reQ
-uit</td>
-<td>APP
-LIC
-ATI
-ON</td>
-<td>Eve
-nt
-fir
-ed
-whe
-n
-the
-app
-lic
-ati
-on
-got
-the
-sig
-nal
-to
-sta
-rt
-to
-ter
-min
-ate
-.</td>
-<td>non
-e</td>
+<tr class="row-even"><td>applicationBeforeQuit</td>
+<td>APPLICATION</td>
+<td>Event fired when the application got the signal to start to terminate.</td>
+<td>none</td>
 <td>No</td>
-<td><blockquote class="first">
-<div>Is</div></blockquote>
-<p class="last">sue</p>
-</td>
-<td><blockquote class="first">
-<div>Is</div></blockquote>
-<p class="last">sue</p>
-</td>
+<td>Issue</td>
+<td>Issue</td>
 <td>No</td>
 <td>No</td>
 <td>No</td>
 <td>No</td>
 </tr>
-<tr class="row-odd"><td>app
-lic
-ati
-onA
-cti
-vat
-e</td>
-<td>APP
-LIC
-ATI
-ON</td>
-<td>Eve
-nt
-fir
-ed
-whe
-n
-the
-App
-lic
-ati
-on
-got
-an
-“ac
-tiv
-ati
-on”
-eve
-nt
-fro
-m
-the
-OS.</td>
-<td>non
-e</td>
+<tr class="row-odd"><td>applicationActivate</td>
+<td>APPLICATION</td>
+<td>Event fired when the Application got an ‘activation’ event from the OS.</td>
+<td>none</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>No</td>
-<td><p class="first">Yes</p>
-<p class="last">on
-Mac
-;
-|
-No|
-on
-Win
-dow
-s</p>
-</td>
-<td><p class="first">Yes</p>
-<p class="last">on
-Mac
-;
-|
-No|
-on
-Win
-dow
-s</p>
-</td>
+<td>Yes</td>
+<td>Yes</td>
 <td>Yes</td>
 </tr>
-<tr class="row-even"><td>doc
-ume
-ntA
-fte
-rSa
-ve</td>
-<td>APP
-LIC
-ATI
-ON</td>
-<td>Eve
-nt
-fir
-ed
-aft
-er
-the
-doc
-ume
-nt
-has
-bee
-n
-sav
-ed</td>
-<td>URL
-to
-the
-sav
-ed
-doc
-ume
-nt.</td>
+<tr class="row-even"><td>documentAfterSave</td>
+<td>APPLICATION</td>
+<td>Event fired after the document has been saved</td>
+<td>URL to the saved document.</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>Yes</td>
@@ -2280,7 +2013,7 @@ is not available in host application’s engine.</p>
 provides an API, <code class="docutils literal notranslate"><span class="pre">CSInterface.evalScript</span></code>, to execute extend script to
 access the host application’s DOM. Here is a brief diagram to indicate
 how to access Application DOM through this API.</p>
-<div class="figure" id="id6">
+<div class="figure" id="id7">
 <img alt="enter image description here" src="https://github.com/Adobe-CEP/CEP-Resources/raw/master/CEP_8.x/Documentation/images/dom_comm.jpg" />
 <p class="caption"><span class="caption-text">enter image description here</span></p>
 </div>
