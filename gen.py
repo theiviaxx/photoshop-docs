@@ -141,7 +141,6 @@ def main(root, filename):
         classes += ADDITIONS[root].get('class', [])
         enumerations += ADDITIONS[root].get('enumeration', [])
 
-    # for classdef in xml.findall("./package/classdef[@name='ColorSamplers']"):
     for classdef in xml.findall("./package/classdef[@dynamic]"):
         data = {
             'name': classdef.attrib['name'],

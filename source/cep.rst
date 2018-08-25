@@ -480,12 +480,7 @@ Signing extensions
 -  CC Extensions Signing Toolkit (also on above labs web site)
 
    -  Example of using CC Extension signing toolkit:
-      ccextensionswin64.exe -sign “d::raw-latex:`\Adobe `Layer
-      Namer:raw-latex:`\Adobe `Layer Namer"\ *(input extension path)*
-      d::raw-latex:`\AdobeLayerNamer`.zxp *(output zxp path)*
-      d::raw-latex:`\sign`.p12 *(certificate path)* 1 *(certificate
-      password)* Adobe Exchange Packer (please sign in so that you can
-      see it.)
+      ccextensionswin64.exe -sign "d:\Adobe Layer Namer\Adobe Layer Namer" *(input extension path)* d:\AdobeLayerNamer.zxp *(output zxp path)* d:\\sign.p12 *(certificate path)* 1 *(certificate password)* Adobe Exchange Packer (please sign in so that you can see it.)
 
 -  `Adobe Exchange Packer <http://www.adobeexchange.com/resources>`__
    (please sign in so that you can see it.)

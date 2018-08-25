@@ -634,7 +634,7 @@ Stores information about the host capabilities.</p>
 <em class="property">class </em><code class="descname">ApiVersion</code><span class="sig-paren">(</span><em>major</em>, <em>minor</em>, <em>micro</em><span class="sig-paren">)</span><a class="headerlink" href="#ApiVersion" title="Permalink to this definition">¶</a></dt>
 <dd><p>ApiVersion
 Stores current api version.</p>
-<p>Since 4.2.0</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">4.2.0</span></code></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -658,7 +658,7 @@ Stores current api version.</p>
 <em class="property">class </em><code class="descname">MenuItemStatus</code><span class="sig-paren">(</span><em>menuItemLabel</em>, <em>enabled</em>, <em>checked</em><span class="sig-paren">)</span><a class="headerlink" href="#MenuItemStatus" title="Permalink to this definition">¶</a></dt>
 <dd><p>MenuItemStatus
 Stores flyout menu item status</p>
-<p>Since 5.2.0</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">5.2.0</span></code></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -682,7 +682,7 @@ Stores flyout menu item status</p>
 <em class="property">class </em><code class="descname">ContextMenuItemStatus</code><span class="sig-paren">(</span><em>menuItemID</em>, <em>enabled</em>, <em>checked</em><span class="sig-paren">)</span><a class="headerlink" href="#ContextMenuItemStatus" title="Permalink to this definition">¶</a></dt>
 <dd><p>ContextMenuItemStatus
 Stores the status of the context menu item.</p>
-<p>Since 5.2.0</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">5.2.0</span></code></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -838,7 +838,7 @@ in which the extension is currently running.</p>
 <dt id="CSInterface.getCurrentApiVersion">
 <code class="descclassname">CSInterface.</code><code class="descname">getCurrentApiVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.getCurrentApiVersion" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves current API version.</p>
-<p>Since 4.2.0</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">4.2.0</span></code></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -853,7 +853,7 @@ in which the extension is currently running.</p>
 <dt id="CSInterface.getExtensionID">
 <code class="descclassname">CSInterface.</code><code class="descname">getExtensionID</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.getExtensionID" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves extension ID.</p>
-<p>Since 4.2.0</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">4.2.0</span></code></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -904,10 +904,8 @@ in which the extension is currently running.</p>
 <dl class="function">
 <dt id="CSInterface.getHostEnvironment">
 <code class="descclassname">CSInterface.</code><code class="descname">getHostEnvironment</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.getHostEnvironment" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>Retrieves information about the host environment in which the</dt>
-<dd>extension is currently running.</dd>
-</dl>
+<dd><p>Retrieves information about the host environment in which the
+extension is currently running.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -937,11 +935,13 @@ in which the extension is currently running.</p>
 <code class="descclassname">CSInterface.</code><code class="descname">getOSInformation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.getOSInformation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves version information for the current Operating System,
 See <a class="reference external" href="http://www.useragentstring.com/pages/Chrome/">http://www.useragentstring.com/pages/Chrome/</a> for Chrome <code class="xref js js-class docutils literal notranslate"><span class="pre">navigator()</span></code>.userAgent values.</p>
+<p>If user customizes the User Agent by setting CEF command parameter “–user-agent”, only
+“Mac OS X” or “Windows” will be returned.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A string containing the OS version, or “unknown Operation System”. If user customizes the User Agent by setting CEF command parameter “–user-agent”, only “Mac OS X” or “Windows” will be returned.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A string containing the OS version, or “unknown Operation System”.</td>
 </tr>
 </tbody>
 </table>
@@ -953,12 +953,17 @@ See <a class="reference external" href="http://www.useragentstring.com/pages/Chr
 <dd><p>Retrieves the scale factor of screen.
 On Windows platform, the value of scale factor might be different from operating system’s scale factor,
 since host application may use its self-defined scale factor.</p>
-<p>Since 4.2.0</p>
+<ul class="simple">
+<li>-1.0 when error occurs</li>
+<li>1.0 means normal screen</li>
+<li>&gt;1.0 means HiDPI screen</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">4.2.0</span></code></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">One of the following float number. * -1.0 when error occurs * 1.0 means normal screen * &gt;1.0 means HiDPI screen</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Number</td>
 </tr>
 </tbody>
 </table>
@@ -989,7 +994,7 @@ since host application may use its self-defined scale factor.</p>
 <code class="descclassname">CSInterface.</code><code class="descname">getWindowTitle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.getWindowTitle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the title of the extension window.
 This function works with modal and modeless extensions in all Adobe products, and panel extensions in Photoshop, InDesign, InCopy, Illustrator, Flash Pro and Dreamweaver.</p>
-<p>Since 6.1.0</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">6.1.0</span></code></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1033,7 +1038,7 @@ instead of the empty <code class="xref js js-class docutils literal notranslate"
 <dt id="CSInterface.isWindowVisible">
 <code class="descclassname">CSInterface.</code><code class="descname">isWindowVisible</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.isWindowVisible" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the visibility status of an extension window.</p>
-<p>Since 6.0.0</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">6.0.0</span></code></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1048,7 +1053,7 @@ instead of the empty <code class="xref js js-class docutils literal notranslate"
 <dt id="CSInterface.openURLInDefaultBrowser">
 <code class="descclassname">CSInterface.</code><code class="descname">openURLInDefaultBrowser</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.openURLInDefaultBrowser" title="Permalink to this definition">¶</a></dt>
 <dd><p>Opens a page in the default system browser.</p>
-<p>Since 4.2.0</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">4.2.0</span></code></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1071,7 +1076,7 @@ instead of the empty <code class="xref js js-class docutils literal notranslate"
 <dd><p>Register the invalid certificate callback for an extension.
 This callback will be triggered when the extension tries to access the web site that contains the invalid certificate on the main frame.
 But if the extension does not call this function and tries to access the web site containing the invalid certificate, a default error page will be shown.</p>
-<p>Since 6.1.0</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">6.1.0</span></code></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1094,13 +1099,38 @@ Generally all the key events will be sent to the host application for these two 
 is not text input or dropdown,
 If you want to intercept some key events and want them to be handled in the extension, please call this function
 in advance to prevent them being sent to the host application.</p>
-<p>Since 6.1.0</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">6.1.0</span></code></p>
+<p>This JSON string should be an array, each object has following keys:</p>
+<ul class="simple">
+<li>keyCode:  [Required] represents an OS system dependent virtual key code identifying the unmodified value of the pressed key.</li>
+<li>ctrlKey:  [optional] a Boolean that indicates if the control key was pressed (true) or not (false) when the event occurred.</li>
+<li>altKey:   [optional] a Boolean that indicates if the alt key was pressed (true) or not (false) when the event occurred.</li>
+<li>shiftKey: [optional] a Boolean that indicates if the shift key was pressed (true) or not (false) when the event occurred.</li>
+<li>metaKey:  [optional] (Mac Only) a Boolean that indicates if the Meta key was pressed (true) or not (false) when the event occurred. On Macintosh keyboards, this is the command key. To detect Windows key on Windows, please use keyCode instead.</li>
+</ul>
+<p>An example JSON string:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;keyCode&quot;</span><span class="p">:</span> <span class="mi">48</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;keyCode&quot;</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="nt">&quot;ctrlKey&quot;</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;keyCode&quot;</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="nt">&quot;ctrlKey&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;metaKey&quot;</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
-<li><strong>keyEventsInterest</strong> – </li>
+<li><strong>keyEventsInterest</strong> – A JSON string describing those key events you are interested in. A null object or an empty string will lead to removing the interest</li>
 </ul>
 </td>
 </tr>
@@ -1171,7 +1201,7 @@ in advance to prevent them being sent to the host application.</p>
 specified size satisfies min/max constraints.</dd>
 </dl>
 </div></blockquote>
-<p>Since 6.0.0</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">6.0.0</span></code></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1288,19 +1318,26 @@ specified size satisfies min/max constraints.</dd>
 <dl class="function">
 <dt id="CSInterface.setPanelFlyoutMenu">
 <code class="descclassname">CSInterface.</code><code class="descname">setPanelFlyoutMenu</code><span class="sig-paren">(</span><em>menu</em><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.setPanelFlyoutMenu" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set panel flyout menu by an XML.</p>
-<p>Since 5.2.0</p>
-<p>Register a callback function for “com.adobe.csxs.events.flyoutMenuClicked” to get notified when a
-menu item is clicked.
-The “data” attribute of event is an object which contains “menuId” and “menuName” attributes.</p>
-<p>Register callback functions for “com.adobe.csxs.events.flyoutMenuOpened” and “com.adobe.csxs.events.flyoutMenuClosed”
-respectively to get notified when flyout menu is opened or closed.</p>
+<dd><p>An example menu XML:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Menu&gt;</span>
+  <span class="nt">&lt;MenuItem</span> <span class="na">Id=</span><span class="s">&quot;menuItemId1&quot;</span> <span class="na">Label=</span><span class="s">&quot;TestExample1&quot;</span> <span class="na">Enabled=</span><span class="s">&quot;true&quot;</span> <span class="na">Checked=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;MenuItem</span> <span class="na">Label=</span><span class="s">&quot;TestExample2&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;MenuItem</span> <span class="na">Label=</span><span class="s">&quot;TestExample2-1&quot;</span> <span class="nt">&gt;</span>
+      <span class="nt">&lt;MenuItem</span> <span class="na">Label=</span><span class="s">&quot;TestExample2-1-1&quot;</span> <span class="na">Enabled=</span><span class="s">&quot;false&quot;</span> <span class="na">Checked=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/MenuItem&gt;</span>
+    <span class="nt">&lt;MenuItem</span> <span class="na">Label=</span><span class="s">&quot;TestExample2-2&quot;</span> <span class="na">Enabled=</span><span class="s">&quot;true&quot;</span> <span class="na">Checked=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/MenuItem&gt;</span>
+  <span class="nt">&lt;MenuItem</span> <span class="na">Label=</span><span class="s">&quot;---&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;MenuItem</span> <span class="na">Label=</span><span class="s">&quot;TestExample3&quot;</span> <span class="na">Enabled=</span><span class="s">&quot;false&quot;</span> <span class="na">Checked=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/Menu&gt;</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
-<li><strong>menu</strong> – A XML string which describes menu structure. An example menu XML: .. code-block:: xml &lt;Menu&gt; &lt;MenuItem Id=”menuItemId1” Label=”TestExample1” Enabled=”true” Checked=”false”/&gt; &lt;MenuItem Label=”TestExample2”&gt; &lt;MenuItem Label=”TestExample2-1” &gt; &lt;MenuItem Label=”TestExample2-1-1” Enabled=”false” Checked=”true”/&gt; &lt;/MenuItem&gt; &lt;MenuItem Label=”TestExample2-2” Enabled=”true” Checked=”true”/&gt; &lt;/MenuItem&gt; &lt;MenuItem Label=”—” /&gt; &lt;MenuItem Label=”TestExample3” Enabled=”false” Checked=”false”/&gt; &lt;/Menu&gt;</li>
+<li><strong>menu</strong> – A XML string which describes menu structure.</li>
 </ul>
 </td>
 </tr>
@@ -1312,7 +1349,7 @@ respectively to get notified when flyout menu is opened or closed.</p>
 <dt id="CSInterface.setScaleFactorChangedHandler">
 <code class="descclassname">CSInterface.</code><code class="descname">setScaleFactorChangedHandler</code><span class="sig-paren">(</span><em>handler</em><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.setScaleFactorChangedHandler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set a handler to detect any changes of scale factor. This only works on Mac.</p>
-<p>Since 4.2.0</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">4.2.0</span></code></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1331,7 +1368,7 @@ respectively to get notified when flyout menu is opened or closed.</p>
 <code class="descclassname">CSInterface.</code><code class="descname">setWindowTitle</code><span class="sig-paren">(</span><em>title</em><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.setWindowTitle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the title of the extension window.
 This function works with modal and modeless extensions in all Adobe products, and panel extensions in Photoshop, InDesign, InCopy, Illustrator, Flash Pro and Dreamweaver.</p>
-<p>Since 6.1.0</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">6.1.0</span></code></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1349,7 +1386,7 @@ This function works with modal and modeless extensions in all Adobe products, an
 <dt id="CSInterface.updateContextMenuItem">
 <code class="descclassname">CSInterface.</code><code class="descname">updateContextMenuItem</code><span class="sig-paren">(</span><em>menuItemID</em>, <em>enabled</em>, <em>checked</em><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.updateContextMenuItem" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates a context menu item by setting the enabled and selection status.</p>
-<p>Since 5.2.0</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">5.2.0</span></code></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1370,7 +1407,7 @@ This function works with modal and modeless extensions in all Adobe products, an
 <code class="descclassname">CSInterface.</code><code class="descname">updatePanelMenuItem</code><span class="sig-paren">(</span><em>menuItemLabel</em>, <em>enabled</em>, <em>checked</em><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.updatePanelMenuItem" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates a menu item in the extension window’s flyout menu, by setting the enabled
 and selection status.</p>
-<p>Since 5.2.0</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">5.2.0</span></code></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />

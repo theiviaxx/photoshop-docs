@@ -243,5 +243,5 @@ Events
       Window/onShortcutKey.rst
       Window/onShow.rst
       
-      Window/Window.rst
+      Window/window.rst
       
