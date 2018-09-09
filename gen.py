@@ -46,7 +46,8 @@ def getTable(data):
 
 def getRefTable(data):
     data = sorted(data, key=itemgetter('name'))
-    table = [[':ref:`{0}<{1}>` readonly'.format(_['name'], _['namespace']), _['short_description']] for _ in data]
+    access = 'readonly' 
+    table = [[':ref:`{0}<{1}>` {2}'.format(_['name'], _['namespace'], _.get('rwaccess', '')), _['short_description']] for _ in data]
     return tabulate.tabulate(table, tablefmt='grid')
 
 
@@ -120,12 +121,12 @@ def getDescriptions(element):
     shortdescription = ''
 
     try:
-        description = ''.join(desc.itertext()).strip().encode('ascii', 'replace').replace('\t', '').replace('\n', ' ')
+        description = ''.join(desc.itertext()).strip().replace('\t', '').replace('\n', ' ')#.encode('ascii', 'replace')
     except AttributeError:
         pass
 
     try:
-        shortdescription = ''.join(short.itertext()).strip().encode('ascii', 'replace').replace('\t', '').replace('\n', ' ')
+        shortdescription = ''.join(short.itertext()).strip().replace('\t', '').replace('\n', ' ')#.encode('ascii', 'replace')
     except AttributeError:
         pass
 
@@ -163,7 +164,7 @@ def main(root, filename):
         data['event_methods_table'] = getRefTable(data['event_methods'])
         data['constructors_table'] = getRefTable(data['constructors'])
 
-        for key, value in data.iteritems():
+        for key, value in data.items():
             if isinstance(value, list):
                 for _ in data[key]:
                     _['module'] = root
@@ -174,6 +175,7 @@ def main(root, filename):
         outfile = SOURCE / root / '{}.rst'.format(data['name'])
         if not outfile.parent.exists():
             outfile.parent.mkdir(parents=True)
+        print('Writing to {}'.format(outfile))
         outfile.write_bytes(content)
         classes.append(outfile.name)
 
@@ -185,6 +187,7 @@ def main(root, filename):
             outfile = SOURCE / root / data['name'] / '{}.rst'.format(property['name'])
             if not outfile.parent.exists():
                 outfile.parent.mkdir(parents=True)
+            print('Writing to {}'.format(outfile))
             outfile.write_bytes(content)
 
         for method in data['methods'] + data['static_methods'] + data['event_methods'] + data['constructors']:
@@ -194,6 +197,7 @@ def main(root, filename):
             outfile = SOURCE / root / data['name'] / '{}.rst'.format(method['name'])
             if not outfile.parent.exists():
                 outfile.parent.mkdir(parents=True)
+            print('Writing to {}'.format(outfile))
             outfile.write_bytes(content)
 
     # (SOURCE / root / 'index.rst').write_text(INDEX_TEMPLATE.render(name=root.capitalize(), classes=classes))
@@ -276,4 +280,4 @@ if __name__ == '__main__':
     main('Photoshop', 'omv.xml')
     main('Core', 'javascript.xml')
     main('ScriptUI', 'scriptui.xml')
-    genJavaScript('CEP', 'CSInterface.js')
+    #genJavaScript('CEP', 'CSInterface.js')

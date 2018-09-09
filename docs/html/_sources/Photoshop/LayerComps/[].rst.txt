@@ -1,0 +1,26 @@
+.. _LayerComps.[]:
+
+================================================
+LayerComps.[]
+================================================
+
+   :ref:`LayerComp` **[]** (uint **index**)
+
+
+Parameters
+----------
+
++-----------+--+
+| **index** |  |
++-----------+--+
+
+
+
+Description
+-----------
+
+Get an element in the collection with the provided index.
+
+
+
+

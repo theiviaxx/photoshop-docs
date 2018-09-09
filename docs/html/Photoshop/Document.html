@@ -1,0 +1,560 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Document &mdash; Photoshop Scripting Reference  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Document.parent" href="Document/parent.html" />
+    <link rel="prev" title="DICOMOpenOptions.reverse" href="DICOMOpenOptions/reverse.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Photoshop Scripting Reference
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../scripting.html">Photoshop Scripting Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Core/index.html">Core</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Photoshop</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ActionDescriptor.html">ActionDescriptor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ActionList.html">ActionList</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ActionReference.html">ActionReference</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Application.html">Application</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ArtLayer.html">ArtLayer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ArtLayers.html">ArtLayers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BMPSaveOptions.html">BMPSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BatchOptions.html">BatchOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BitmapConversionOptions.html">BitmapConversionOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CMYKColor.html">CMYKColor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CameraRAWOpenOptions.html">CameraRAWOpenOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Channel.html">Channel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Channels.html">Channels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Color.html">Color</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ColorSampler.html">ColorSampler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ColorSamplers.html">ColorSamplers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ContactSheetOptions.html">ContactSheetOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CountItem.html">CountItem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CountItems.html">CountItems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DCS1_SaveOptions.html">DCS1_SaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DCS2_SaveOptions.html">DCS2_SaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DICOMOpenOptions.html">DICOMOpenOptions</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Document</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DocumentConversionOptions.html">DocumentConversionOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DocumentInfo.html">DocumentInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DocumentPrintSettings.html">DocumentPrintSettings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Documents.html">Documents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EPSSaveOptions.html">EPSSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ExportOptions.html">ExportOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ExportOptionsIllustrator.html">ExportOptionsIllustrator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ExportOptionsSaveForWeb.html">ExportOptionsSaveForWeb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GIFSaveOptions.html">GIFSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GalleryBannerOptions.html">GalleryBannerOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GalleryCustomColorOptions.html">GalleryCustomColorOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GalleryImagesOptions.html">GalleryImagesOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GalleryOptions.html">GalleryOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GallerySecurityOptions.html">GallerySecurityOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GalleryThumbnailOptions.html">GalleryThumbnailOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GenericEPSOpenOptions.html">GenericEPSOpenOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GenericPDFOpenOptions.html">GenericPDFOpenOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GrayColor.html">GrayColor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Guide.html">Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Guides.html">Guides</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HSBColor.html">HSBColor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HistoryState.html">HistoryState</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HistoryStates.html">HistoryStates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IndexedConversionOptions.html">IndexedConversionOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="JPEGSaveOptions.html">JPEGSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LabColor.html">LabColor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Layer.html">Layer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LayerComp.html">LayerComp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LayerComps.html">LayerComps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LayerSet.html">LayerSet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LayerSets.html">LayerSets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Layers.html">Layers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MeasurementLog.html">MeasurementLog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MeasurementScale.html">MeasurementScale</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NoColor.html">NoColor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Notifier.html">Notifier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Notifiers.html">Notifiers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="OpenOptions.html">OpenOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PDFSaveOptions.html">PDFSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PICTFileSaveOptions.html">PICTFileSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PICTResourceSaveOptions.html">PICTResourceSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PNGSaveOptions.html">PNGSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PathItem.html">PathItem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PathItems.html">PathItems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PathPoint.html">PathPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PathPointInfo.html">PathPointInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PathPoints.html">PathPoints</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PhotoCDOpenOptions.html">PhotoCDOpenOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PhotoshopSaveOptions.html">PhotoshopSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PicturePackageOptions.html">PicturePackageOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PixarSaveOptions.html">PixarSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Preferences.html">Preferences</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PresentationOptions.html">PresentationOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RGBColor.html">RGBColor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RawFormatOpenOptions.html">RawFormatOpenOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RawSaveOptions.html">RawSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Rectangle.html">Rectangle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SGIRGBSaveOptions.html">SGIRGBSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SaveOptions.html">SaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Selection.html">Selection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SolidColor.html">SolidColor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SubPathInfo.html">SubPathInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SubPathItem.html">SubPathItem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SubPathItems.html">SubPathItems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TargaSaveOptions.html">TargaSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TextFont.html">TextFont</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TextFonts.html">TextFonts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TextItem.html">TextItem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TiffSaveOptions.html">TiffSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="XMPMetadata.html">XMPMetadata</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#enumerations">Enumerations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ScriptUI/index.html">Scriptui</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cep.html">Extension SDK Documentation (CEP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Photoshop Scripting Resources</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Photoshop Scripting Reference</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../scripting.html">Photoshop Scripting Documentation</a> &raquo;</li>
+        
+          <li><a href="index.html">Photoshop</a> &raquo;</li>
+        
+      <li>Document</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Photoshop/Document.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="document">
+<span id="id1"></span><h1>Document<a class="headerlink" href="#document" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The active containment object for the layers and all other objects in the script; the basic canvas for the file.</p>
+<div class="section" id="properties">
+<h3>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="66%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="Document/activeChannels.html#document-activechannels"><span class="std std-ref">activeChannels</span></a></td>
+<td>The selected channels.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/activeHistoryBrushSource.html#document-activehistorybrushsource"><span class="std std-ref">activeHistoryBrushSource</span></a></td>
+<td>The history state to use with the history brush.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/activeHistoryState.html#document-activehistorystate"><span class="std std-ref">activeHistoryState</span></a></td>
+<td>The current history state for this document.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/activeLayer.html#document-activelayer"><span class="std std-ref">activeLayer</span></a></td>
+<td>The selected layer.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/artLayers.html#document-artlayers"><span class="std std-ref">artLayers</span></a> readonly</td>
+<td>The art layers collection in the document.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/backgroundLayer.html#document-backgroundlayer"><span class="std std-ref">backgroundLayer</span></a> readonly</td>
+<td>The background layer for the document.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/bitsPerChannel.html#document-bitsperchannel"><span class="std std-ref">bitsPerChannel</span></a></td>
+<td>The number of bits per channel.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/channels.html#document-channels"><span class="std std-ref">channels</span></a> readonly</td>
+<td>The channels collection in this document.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/colorProfileName.html#document-colorprofilename"><span class="std std-ref">colorProfileName</span></a></td>
+<td>The name of the color profile. Valid only when no value is specified for color profile kind (to indicate a custom color profile).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/colorProfileType.html#document-colorprofiletype"><span class="std std-ref">colorProfileType</span></a></td>
+<td>The type of color model that defines the working space of the document.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/colorSamplers.html#document-colorsamplers"><span class="std std-ref">colorSamplers</span></a> readonly</td>
+<td>The current color samplers associated with the document.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/componentChannels.html#document-componentchannels"><span class="std std-ref">componentChannels</span></a> readonly</td>
+<td>The color component channels for this document.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/countItems.html#document-countitems"><span class="std std-ref">countItems</span></a> readonly</td>
+<td>The current count items in the document.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/fullName.html#document-fullname"><span class="std std-ref">fullName</span></a> readonly</td>
+<td>The full path name of the document.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/guides.html#document-guides"><span class="std std-ref">guides</span></a> readonly</td>
+<td>The guides in this document.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/height.html#document-height"><span class="std std-ref">height</span></a> readonly</td>
+<td>The height of the document.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/histogram.html#document-histogram"><span class="std std-ref">histogram</span></a> readonly</td>
+<td>A histogram showing the number of pixels at each color intensity level for the composite channel.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/historyStates.html#document-historystates"><span class="std std-ref">historyStates</span></a> readonly</td>
+<td>The history states collection in this document.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/id.html#document-id"><span class="std std-ref">id</span></a> readonly</td>
+<td>The unique ID of this document.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/info.html#document-info"><span class="std std-ref">info</span></a> readonly</td>
+<td>Metadata about the document.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/layerComps.html#document-layercomps"><span class="std std-ref">layerComps</span></a> readonly</td>
+<td>The layer comps collection in this document.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/layerSets.html#document-layersets"><span class="std std-ref">layerSets</span></a> readonly</td>
+<td>The layer sets collection in the document.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/layers.html#document-layers"><span class="std std-ref">layers</span></a> readonly</td>
+<td>The layers collection in the document.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/managed.html#document-managed"><span class="std std-ref">managed</span></a> readonly</td>
+<td>If true, the document is a workgroup document.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/measurementScale.html#document-measurementscale"><span class="std std-ref">measurementScale</span></a> readonly</td>
+<td>The measurement scale of the document.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/mode.html#document-mode"><span class="std std-ref">mode</span></a> readonly</td>
+<td>The color profile.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/name.html#document-name"><span class="std std-ref">name</span></a> readonly</td>
+<td>The document name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/parent.html#document-parent"><span class="std std-ref">parent</span></a> readonly</td>
+<td>The object’s container.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/path.html#document-path"><span class="std std-ref">path</span></a> readonly</td>
+<td>The path to the document.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/pathItems.html#document-pathitems"><span class="std std-ref">pathItems</span></a> readonly</td>
+<td>The path items collection in this document.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/pixelAspectRatio.html#document-pixelaspectratio"><span class="std std-ref">pixelAspectRatio</span></a></td>
+<td>The (custom) pixel aspect ratio of the document. Range: 0.100 to 10.000.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/printSettings.html#document-printsettings"><span class="std std-ref">printSettings</span></a> readonly</td>
+<td>Document print settings.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/quickMaskMode.html#document-quickmaskmode"><span class="std std-ref">quickMaskMode</span></a></td>
+<td>If true, the document is in Quick Mask mode.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/resolution.html#document-resolution"><span class="std std-ref">resolution</span></a> readonly</td>
+<td>The resolution of the document (in pixels per inch)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/saved.html#document-saved"><span class="std std-ref">saved</span></a> readonly</td>
+<td>If true, the document been saved since the last change.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/selection.html#document-selection"><span class="std std-ref">selection</span></a> readonly</td>
+<td>The selected area of the document.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/typename.html#document-typename"><span class="std std-ref">typename</span></a> readonly</td>
+<td>The class name of the object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/width.html#document-width"><span class="std std-ref">width</span></a> readonly</td>
+<td>The width of the document.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/xmpMetadata.html#document-xmpmetadata"><span class="std std-ref">xmpMetadata</span></a> readonly</td>
+<td>The XMP properties of the document. The Camera RAW settings are stored here.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="methods">
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="Document/autoCount.html#document-autocount"><span class="std std-ref">autoCount</span></a></td>
+<td>Counts the objects in the document.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/changeMode.html#document-changemode"><span class="std std-ref">changeMode</span></a></td>
+<td>Changes the mode of the document.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/close.html#document-close"><span class="std std-ref">close</span></a></td>
+<td>Closes the document.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/convertProfile.html#document-convertprofile"><span class="std std-ref">convertProfile</span></a></td>
+<td>Converts the document from using one color profile to using another.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/crop.html#document-crop"><span class="std std-ref">crop</span></a></td>
+<td>Crops the document.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/duplicate.html#document-duplicate"><span class="std std-ref">duplicate</span></a></td>
+<td>Duplicate this object.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/duplicate.html#document-duplicate"><span class="std std-ref">duplicate</span></a></td>
+<td>Creates a duplicate of the document object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/exportDocument.html#document-exportdocument"><span class="std std-ref">exportDocument</span></a></td>
+<td>Exports the document.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/flatten.html#document-flatten"><span class="std std-ref">flatten</span></a></td>
+<td>Flattens all layers.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/flipCanvas.html#document-flipcanvas"><span class="std std-ref">flipCanvas</span></a></td>
+<td>Flips the canvas horizontally or vertically.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/importAnnotations.html#document-importannotations"><span class="std std-ref">importAnnotations</span></a></td>
+<td>Imports annotations into the document.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/mergeVisibleLayers.html#document-mergevisiblelayers"><span class="std std-ref">mergeVisibleLayers</span></a></td>
+<td>Flattens all visible layers in the document.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/paste.html#document-paste"><span class="std std-ref">paste</span></a></td>
+<td>Pastes contents of the clipboard into the document.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/print.html#document-print"><span class="std std-ref">print</span></a></td>
+<td>Prints the document.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/printOneCopy.html#document-printonecopy"><span class="std std-ref">printOneCopy</span></a></td>
+<td>Print one copy of the document.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/rasterizeAllLayers.html#document-rasterizealllayers"><span class="std std-ref">rasterizeAllLayers</span></a></td>
+<td>Rasterizes all layers.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/recordMeasurements.html#document-recordmeasurements"><span class="std std-ref">recordMeasurements</span></a></td>
+<td>Records the measurements of document.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/resizeCanvas.html#document-resizecanvas"><span class="std std-ref">resizeCanvas</span></a></td>
+<td>Changes the size of the canvas.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/resizeImage.html#document-resizeimage"><span class="std std-ref">resizeImage</span></a></td>
+<td>Changes the size of the image.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/revealAll.html#document-revealall"><span class="std std-ref">revealAll</span></a></td>
+<td>Expands the document to show clipped sections.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/rotateCanvas.html#document-rotatecanvas"><span class="std std-ref">rotateCanvas</span></a></td>
+<td>Rotates the canvas.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/save.html#document-save"><span class="std std-ref">save</span></a></td>
+<td>Saves the document.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/saveAs.html#document-saveas"><span class="std std-ref">saveAs</span></a></td>
+<td>Saves the document with the specified save options.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/splitChannels.html#document-splitchannels"><span class="std std-ref">splitChannels</span></a></td>
+<td>Splits the channels of the document.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/suspendHistory.html#document-suspendhistory"><span class="std std-ref">suspendHistory</span></a></td>
+<td>Provides a single history state for the entire script. Allows a single undo for all actions taken in the script.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Document/trap.html#document-trap"><span class="std std-ref">trap</span></a></td>
+<td>Applies trapping to a CMYK document. Valid only when ‘mode’ = CMYK.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Document/trim.html#document-trim"><span class="std std-ref">trim</span></a></td>
+<td>Trims the transparent area around the image on the specified sides of the canvas.</td>
+</tr>
+</tbody>
+</table>
+<div class="hide docutils container">
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Document/parent.html" class="btn btn-neutral float-right" title="Document.parent" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="DICOMOpenOptions/reverse.html" class="btn btn-neutral" title="DICOMOpenOptions.reverse" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Brett Dixon.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

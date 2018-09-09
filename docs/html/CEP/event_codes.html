@@ -1,0 +1,1361 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Event Codes &mdash; Photoshop Scripting Reference  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Photoshop Scripting Resources" href="../resources.html" />
+    <link rel="prev" title="CSInterface" href="csinterface.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Photoshop Scripting Reference
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../scripting.html">Photoshop Scripting Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../cep.html">Extension SDK Documentation (CEP)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="csinterface.html">CSInterface</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Event Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cep.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cep.html#development-and-debugging">Development and Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cep.html#cep-javascript-programming">CEP JavaScript Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cep.html#other-javascript-information">Other JavaScript Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cep.html#cephtmlengine">CEPHtmlEngine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cep.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Photoshop Scripting Resources</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Photoshop Scripting Reference</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../cep.html">Extension SDK Documentation (CEP)</a> &raquo;</li>
+        
+      <li>Event Codes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/CEP/event_codes.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="event-codes">
+<span id="id1"></span><h1>Event Codes<a class="headerlink" href="#event-codes" title="Permalink to this headline">¶</a></h1>
+<p>A list of JSON Callback events in Photoshop
+<a class="reference external" href="https://forums.adobe.com/docs/DOC-8796">Photoshop JSON CallBack Events List (up to CC2015 ver.16)</a></p>
+<table border="1" class="colwidths-given docutils" id="id2">
+<caption><span class="caption-text">Event Codes</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="20%" />
+<col width="10%" />
+<col width="10%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Char ID</th>
+<th class="head">Type ID</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>3DTransform</td>
+<td>TdT</td>
+<td>1415861280</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Average</td>
+<td>Avrg</td>
+<td>1098281575</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>ApplyStyle</td>
+<td>ASty</td>
+<td>1095988345</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Assert</td>
+<td>Asrt</td>
+<td>1098084980</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>AccentedEdges</td>
+<td>AccE</td>
+<td>1097032517</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Add</td>
+<td>Add</td>
+<td>1097098272</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>AddNoise</td>
+<td>AdNs</td>
+<td>1097092723</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>AddTo</td>
+<td>AddT</td>
+<td>1097098324</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Align</td>
+<td>Algn</td>
+<td>1097623406</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>All</td>
+<td>All</td>
+<td>1097624608</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>AngledStrokes</td>
+<td>AngS</td>
+<td>1097754451</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>ApplyImage</td>
+<td>AppI</td>
+<td>1097887817</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>BasRelief</td>
+<td>BsRl</td>
+<td>1114853996</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Batch</td>
+<td>Btch</td>
+<td>1114923880</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>BatchFromDroplet</td>
+<td>BtcF</td>
+<td>1114923846</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Blur</td>
+<td>Blr</td>
+<td>1114403360</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>BlurMore</td>
+<td>BlrM</td>
+<td>1114403405</td>
+<td>There is also keyBlurMethod, typeBlurMethod.</td>
+</tr>
+<tr class="row-odd"><td>Border</td>
+<td>Brdr</td>
+<td>1114793074</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Brightness</td>
+<td>BrgC</td>
+<td>1114793795</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>CanvasSize</td>
+<td>CnvS</td>
+<td>1131312723</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>ChalkCharcoal</td>
+<td>ChlC</td>
+<td>1130916931</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>ChannelMixer</td>
+<td>ChnM</td>
+<td>1130917453</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Charcoal</td>
+<td>Chrc</td>
+<td>1130918499</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Chrome</td>
+<td>Chrm</td>
+<td>1130918509</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Clear</td>
+<td>Cler</td>
+<td>1131177330</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Close</td>
+<td>Cls</td>
+<td>1131180832</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Clouds</td>
+<td>Clds</td>
+<td>1131177075</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>ColorBalance</td>
+<td>ClrB</td>
+<td>1131180610</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>ColorHalftone</td>
+<td>ClrH</td>
+<td>1131180616</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>ColorRange</td>
+<td>ClrR</td>
+<td>1131180626</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>ColoredPencil</td>
+<td>ClrP</td>
+<td>1131180624</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>ConteCrayon</td>
+<td>CntC</td>
+<td>1131312195</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Contract</td>
+<td>Cntc</td>
+<td>1131312227</td>
+<td>Breaks hash for Center.</td>
+</tr>
+<tr class="row-odd"><td>ConvertMode</td>
+<td>CnvM</td>
+<td>1131312717</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Copy</td>
+<td>copy</td>
+<td>1668247673</td>
+<td>kAECopy</td>
+</tr>
+<tr class="row-odd"><td>CopyEffects</td>
+<td>CpFX</td>
+<td>1131431512</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>CopyMerged</td>
+<td>CpyM</td>
+<td>1131444557</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>CopyToLayer</td>
+<td>CpTL</td>
+<td>1131435084</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Craquelure</td>
+<td>Crql</td>
+<td>1131573612</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>CreateDroplet</td>
+<td>CrtD</td>
+<td>1131574340</td>
+<td>There is also an enumCreateDuplicate</td>
+</tr>
+<tr class="row-even"><td>Crop</td>
+<td>Crop</td>
+<td>1131573104</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Crosshatch</td>
+<td>Crsh</td>
+<td>1131574120</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Crystallize</td>
+<td>Crst</td>
+<td>1131574132</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Curves</td>
+<td>Crvs</td>
+<td>1131574899</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Custom</td>
+<td>Cstm</td>
+<td>1131639917</td>
+<td>There is also keyCustom, enumCustomPattern.</td>
+</tr>
+<tr class="row-odd"><td>Cut</td>
+<td>cut</td>
+<td>1668641824</td>
+<td>kAECut</td>
+</tr>
+<tr class="row-even"><td>CutToLayer</td>
+<td>CtTL</td>
+<td>1131697228</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Cutout</td>
+<td>Ct</td>
+<td>1131683872</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>DarkStrokes</td>
+<td>DrkS</td>
+<td>1148349267</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>DeInterlace</td>
+<td>Dntr</td>
+<td>1148089458</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>DefinePattern</td>
+<td>DfnP</td>
+<td>1147563600</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Defringe</td>
+<td>Dfrg</td>
+<td>1147564647</td>
+<td>Breaks hash for Difference.</td>
+</tr>
+<tr class="row-even"><td>Delete</td>
+<td>Dlt</td>
+<td>1147958304</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Desaturate</td>
+<td>Dstt</td>
+<td>1148417140</td>
+<td>Breaks hash for Distribution.</td>
+</tr>
+<tr class="row-even"><td>Deselect</td>
+<td>Dslc</td>
+<td>1148415075</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Despeckle</td>
+<td>Dspc</td>
+<td>1148416099</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>DifferenceClouds</td>
+<td>DfrC</td>
+<td>1147564611</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Diffuse</td>
+<td>Dfs</td>
+<td>1147564832</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>DiffuseGlow</td>
+<td>DfsG</td>
+<td>1147564871</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>DisableLayerFX</td>
+<td>dlfx</td>
+<td>1684825720</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Displace</td>
+<td>Dspl</td>
+<td>1148416108</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Distribute</td>
+<td>Dstr</td>
+<td>1148417138</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Draw</td>
+<td>Draw</td>
+<td>1148346743</td>
+<td>Draw Line</td>
+</tr>
+<tr class="row-odd"><td>DryBrush</td>
+<td>DryB</td>
+<td>1148352834</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Duplicate</td>
+<td>Dplc</td>
+<td>1148218467</td>
+<td>There is also a keyDuplicate.</td>
+</tr>
+<tr class="row-odd"><td>DustAndScratches</td>
+<td>DstS</td>
+<td>1148417107</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Emboss</td>
+<td>Embs</td>
+<td>1164796531</td>
+<td>There is also an enumEmboss.</td>
+</tr>
+<tr class="row-odd"><td>Equalize</td>
+<td>Eqlz</td>
+<td>1165061242</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Exchange</td>
+<td>Exch</td>
+<td>1165517672</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Expand</td>
+<td>Expn</td>
+<td>1165521006</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Export</td>
+<td>Expr</td>
+<td>1165521010</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Extrude</td>
+<td>Extr</td>
+<td>1165522034</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Facet</td>
+<td>Fct</td>
+<td>1180922912</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Fade</td>
+<td>Fade</td>
+<td>1180787813</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Feather</td>
+<td>Fthr</td>
+<td>1182034034</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Fibers</td>
+<td>Fbrs</td>
+<td>1180856947</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Fill</td>
+<td>Fl</td>
+<td>1181491232</td>
+<td>There is also keyFill, typeFill.</td>
+</tr>
+<tr class="row-odd"><td>FilmGrain</td>
+<td>FlmG</td>
+<td>1181510983</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Filter</td>
+<td>Fltr</td>
+<td>1181512818</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>FindEdges</td>
+<td>FndE</td>
+<td>1181639749</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>FlattenImage</td>
+<td>FltI</td>
+<td>1181512777</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Flip</td>
+<td>Flip</td>
+<td>1181510000</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Fragment</td>
+<td>Frgm</td>
+<td>1181902701</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Fresco</td>
+<td>Frsc</td>
+<td>1181905763</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>GaussianBlur</td>
+<td>GsnB</td>
+<td>1198747202</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Get</td>
+<td>getd</td>
+<td>1734702180</td>
+<td>kAEGetData</td>
+</tr>
+<tr class="row-even"><td>Glass</td>
+<td>Gls</td>
+<td>1198289696</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>GlowingEdges</td>
+<td>GlwE</td>
+<td>1198290757</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Gradient</td>
+<td>Grdn</td>
+<td>1198679150</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>GradientMap</td>
+<td>GrMp</td>
+<td>1198673264</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Grain</td>
+<td>Grn</td>
+<td>1198681632</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>GraphicPen</td>
+<td>GraP</td>
+<td>1198678352</td>
+<td>Breaks Hash for Group with Prev.</td>
+</tr>
+<tr class="row-even"><td>Group</td>
+<td>GrpL</td>
+<td>1198682188</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Grow</td>
+<td>Grow</td>
+<td>1198681975</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>HalftoneScreen</td>
+<td>HlfS</td>
+<td>1215063635</td>
+<td>There is also keyHalftoneScreen, enumHalftoneScreen, classHalftoneScreen.</td>
+</tr>
+<tr class="row-odd"><td>Hide</td>
+<td>Hd</td>
+<td>1214521376</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>HighPass</td>
+<td>HghP</td>
+<td>1214736464</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>HSBHSL</td>
+<td>HsbP</td>
+<td>1215521360</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>HueSaturation</td>
+<td>HStr</td>
+<td>1213428850</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>ImageSize</td>
+<td>ImgS</td>
+<td>1231906643</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Import</td>
+<td>Impr</td>
+<td>1231908978</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>InkOutlines</td>
+<td>InkO</td>
+<td>1231973199</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Intersect</td>
+<td>Intr</td>
+<td>1231975538</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>IntersectWith</td>
+<td>IntW</td>
+<td>1231975511</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Inverse</td>
+<td>Invs</td>
+<td>1231976051</td>
+<td>Breaks hash for Invert.</td>
+</tr>
+<tr class="row-odd"><td>Invert</td>
+<td>Invr</td>
+<td>1231976050</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>LensFlare</td>
+<td>LnsF</td>
+<td>1282306886</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Levels</td>
+<td>Lvls</td>
+<td>1282829427</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>LightingEffects</td>
+<td>LghE</td>
+<td>1281845317</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Link</td>
+<td>Lnk</td>
+<td>1282304800</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Make</td>
+<td>Mk</td>
+<td>1298866208</td>
+<td>Was kMakeEvent.</td>
+</tr>
+<tr class="row-odd"><td>Maximum</td>
+<td>Mxm</td>
+<td>1299737888</td>
+<td>There is also a keyMaximum, enumMaximumQuality.</td>
+</tr>
+<tr class="row-even"><td>Median</td>
+<td>Mdn</td>
+<td>1298427424</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>MergeLayers</td>
+<td>Mrg2</td>
+<td>1299343154</td>
+<td>starting in PSCS2, use this constant for merge actions</td>
+</tr>
+<tr class="row-even"><td>MergeLayersOld</td>
+<td>MrgL</td>
+<td>1299343180</td>
+<td>previous to PSCS2 actions use this for merge</td>
+</tr>
+<tr class="row-odd"><td>MergeSpotChannel</td>
+<td>MSpt</td>
+<td>1297313908</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>MergeVisible</td>
+<td>MrgV</td>
+<td>1299343190</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Mezzotint</td>
+<td>Mztn</td>
+<td>1299870830</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Minimum</td>
+<td>Mnm</td>
+<td>1299082528</td>
+<td>There is also a keyMinimum.</td>
+</tr>
+<tr class="row-odd"><td>Mosaic</td>
+<td>Msc</td>
+<td>1299407648</td>
+<td>From UActionsTerminology. CONFLICT: eventMosaic (MscT). Was kMosaicEvent.</td>
+</tr>
+<tr class="row-even"><td>Mosaic_PLUGIN</td>
+<td>MscT</td>
+<td>1299407700</td>
+<td>From AdobePITerminology. CONFLICT: eventMosaic (Msc ).</td>
+</tr>
+<tr class="row-odd"><td>MotionBlur</td>
+<td>MtnB</td>
+<td>1299476034</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Move</td>
+<td>move</td>
+<td>1836021349</td>
+<td>kAEMove</td>
+</tr>
+<tr class="row-odd"><td>NTSCColors</td>
+<td>NTSC</td>
+<td>1314149187</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>NeonGlow</td>
+<td>NGlw</td>
+<td>1313303671</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Next</td>
+<td>Nxt</td>
+<td>1316516896</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>NotePaper</td>
+<td>NtPr</td>
+<td>1316245618</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Notify</td>
+<td>Ntfy</td>
+<td>1316251257</td>
+<td>PR#17472</td>
+</tr>
+<tr class="row-even"><td>OceanRipple</td>
+<td>OcnR</td>
+<td>1331916370</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Offset</td>
+<td>Ofst</td>
+<td>1332114292</td>
+<td>There is also keyOffset, classOffset.</td>
+</tr>
+<tr class="row-even"><td>Open</td>
+<td>Opn</td>
+<td>1332768288</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Paint</td>
+<td>Pnt</td>
+<td>1349415968</td>
+<td>Paint stroke recording deleted for 6.0</td>
+</tr>
+<tr class="row-even"><td>PaintDaubs</td>
+<td>PntD</td>
+<td>1349416004</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>PaletteKnife</td>
+<td>PltK</td>
+<td>1349284939</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Paste</td>
+<td>past</td>
+<td>1885434740</td>
+<td>kAEPaste</td>
+</tr>
+<tr class="row-odd"><td>PasteEffects</td>
+<td>PaFX</td>
+<td>1348552280</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>PasteInto</td>
+<td>PstI</td>
+<td>1349743689</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>PasteOutside</td>
+<td>PstO</td>
+<td>1349743695</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Patchwork</td>
+<td>Ptch</td>
+<td>1349804904</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Photocopy</td>
+<td>Phtc</td>
+<td>1349022819</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Pinch</td>
+<td>Pnch</td>
+<td>1349411688</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Place</td>
+<td>Plc</td>
+<td>1349280544</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Plaster</td>
+<td>Plst</td>
+<td>1349284724</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>PlasticWrap</td>
+<td>PlsW</td>
+<td>1349284695</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Play</td>
+<td>Ply</td>
+<td>1349286176</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Pointillize</td>
+<td>Pntl</td>
+<td>1349416044</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Polar</td>
+<td>Plr</td>
+<td>1349284384</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>PosterEdges</td>
+<td>PstE</td>
+<td>1349743685</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Posterize</td>
+<td>Pstr</td>
+<td>1349743730</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Previous</td>
+<td>Prvs</td>
+<td>1349678707</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Print</td>
+<td>Prnt</td>
+<td>1349676660</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>ProfileToProfile</td>
+<td>PrfT</td>
+<td>1349674580</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Purge</td>
+<td>Prge</td>
+<td>1349674853</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Quit</td>
+<td>quit</td>
+<td>1903520116</td>
+<td>kAEQuitApplication</td>
+</tr>
+<tr class="row-even"><td>RadialBlur</td>
+<td>RdlB</td>
+<td>1382313026</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Rasterize</td>
+<td>Rstr</td>
+<td>1383298162</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>RasterizeTypeSheet</td>
+<td>RstT</td>
+<td>1383298132</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>RemoveBlackMatte</td>
+<td>RmvB</td>
+<td>1382905410</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>RemoveLayerMask</td>
+<td>RmvL</td>
+<td>1382905420</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>RemoveWhiteMatte</td>
+<td>RmvW</td>
+<td>1382905431</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Rename</td>
+<td>Rnm</td>
+<td>1382968608</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>ReplaceColor</td>
+<td>RplC</td>
+<td>1383099459</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Reset</td>
+<td>Rset</td>
+<td>1383294324</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Reticulation</td>
+<td>Rtcl</td>
+<td>1383359340</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Revert</td>
+<td>Rvrt</td>
+<td>1383494260</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Ripple</td>
+<td>Rple</td>
+<td>1383099493</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Rotate</td>
+<td>Rtte</td>
+<td>1383363685</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>RoughPastels</td>
+<td>RghP</td>
+<td>1382508624</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Save</td>
+<td>save</td>
+<td>1935767141</td>
+<td>kAESave</td>
+</tr>
+<tr class="row-odd"><td>Select</td>
+<td>slct</td>
+<td>1936483188</td>
+<td>kAESelect. Was kSelectEvent.</td>
+</tr>
+<tr class="row-even"><td>SelectiveColor</td>
+<td>SlcC</td>
+<td>1399612227</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Set</td>
+<td>setd</td>
+<td>1936028772</td>
+<td>kAESetData</td>
+</tr>
+<tr class="row-even"><td>SharpenEdges</td>
+<td>ShrE</td>
+<td>1399353925</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Sharpen</td>
+<td>Shrp</td>
+<td>1399353968</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>SharpenMore</td>
+<td>ShrM</td>
+<td>1399353933</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Shear</td>
+<td>Shr</td>
+<td>1399353888</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Show</td>
+<td>Shw</td>
+<td>1399355168</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Similar</td>
+<td>Smlr</td>
+<td>1399680114</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>SmartBlur</td>
+<td>SmrB</td>
+<td>1399681602</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Smooth</td>
+<td>Smth</td>
+<td>1399682152</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>SmudgeStick</td>
+<td>SmdS</td>
+<td>1399678035</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Solarize</td>
+<td>Slrz</td>
+<td>1399616122</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Spatter</td>
+<td>Spt</td>
+<td>1399878688</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Spherize</td>
+<td>Sphr</td>
+<td>1399875698</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>SplitChannels</td>
+<td>SplC</td>
+<td>1399876675</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Sponge</td>
+<td>Spng</td>
+<td>1399877223</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>SprayedStrokes</td>
+<td>SprS</td>
+<td>1399878227</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>StainedGlass</td>
+<td>StnG</td>
+<td>1400139335</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Stamp</td>
+<td>Stmp</td>
+<td>1400139120</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Stop</td>
+<td>Stop</td>
+<td>1400139632</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Stroke</td>
+<td>Strk</td>
+<td>1400140395</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Subtract</td>
+<td>Sbtr</td>
+<td>1398961266</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>SubtractFrom</td>
+<td>SbtF</td>
+<td>1398961222</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Sumie</td>
+<td>Smie</td>
+<td>1399679333</td>
+<td>Breaks hash.</td>
+</tr>
+<tr class="row-even"><td>TakeMergedSnapshot</td>
+<td>TkMr</td>
+<td>1416318322</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>TakeSnapshot</td>
+<td>TkSn</td>
+<td>1416319854</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>TextureFill</td>
+<td>TxtF</td>
+<td>1417180230</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Texturizer</td>
+<td>Txtz</td>
+<td>1417180282</td>
+<td>Breaks hash.</td>
+</tr>
+<tr class="row-even"><td>Threshold</td>
+<td>Thrs</td>
+<td>1416131187</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Tiles</td>
+<td>Tls</td>
+<td>1416393504</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>TornEdges</td>
+<td>TrnE</td>
+<td>1416785477</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>TraceContour</td>
+<td>TrcC</td>
+<td>1416782659</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Transform</td>
+<td>Trnf</td>
+<td>1416785510</td>
+<td>Breaks hash for Transparent.</td>
+</tr>
+<tr class="row-odd"><td>Trap</td>
+<td>Trap</td>
+<td>1416782192</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Twirl</td>
+<td>Twrl</td>
+<td>1417114220</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Underpainting</td>
+<td>Undr</td>
+<td>1433298034</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Undo</td>
+<td>undo</td>
+<td>1970168943</td>
+<td>kAEUndo</td>
+</tr>
+<tr class="row-odd"><td>Ungroup</td>
+<td>Ungr</td>
+<td>1433298802</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Unlink</td>
+<td>Unlk</td>
+<td>1433300075</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>UnsharpMask</td>
+<td>UnsM</td>
+<td>1433301837</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Variations</td>
+<td>Vrtn</td>
+<td>1450341486</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Wait</td>
+<td>Wait</td>
+<td>1466001780</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>WaterPaper</td>
+<td>WtrP</td>
+<td>1467249232</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Watercolor</td>
+<td>Wtrc</td>
+<td>1467249251</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Wave</td>
+<td>Wave</td>
+<td>1466005093</td>
+<td>Breaks hash.</td>
+</tr>
+<tr class="row-odd"><td>Wind</td>
+<td>Wnd</td>
+<td>1466852384</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>ZigZag</td>
+<td>ZgZg</td>
+<td>1516722791</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>BackLight</td>
+<td>BacL</td>
+<td>1113678668</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>FillFlash</td>
+<td>FilE</td>
+<td>1181314117</td>
+<td>rkulkarn 11/15/2000</td>
+</tr>
+<tr class="row-odd"><td>ColorCast</td>
+<td>ColE</td>
+<td>1131375685</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>OpenUntitled</td>
+<td>OpnU</td>
+<td>1332768341</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../resources.html" class="btn btn-neutral float-right" title="Photoshop Scripting Resources" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="csinterface.html" class="btn btn-neutral" title="CSInterface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Brett Dixon.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

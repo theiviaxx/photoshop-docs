@@ -1,0 +1,1503 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CSInterface &mdash; Photoshop Scripting Reference  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Event Codes" href="event_codes.html" />
+    <link rel="prev" title="Extension SDK Documentation (CEP)" href="../cep.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Photoshop Scripting Reference
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../scripting.html">Photoshop Scripting Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../cep.html">Extension SDK Documentation (CEP)</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">CSInterface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="event_codes.html">Event Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cep.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cep.html#development-and-debugging">Development and Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cep.html#cep-javascript-programming">CEP JavaScript Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cep.html#other-javascript-information">Other JavaScript Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cep.html#cephtmlengine">CEPHtmlEngine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cep.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Photoshop Scripting Resources</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Photoshop Scripting Reference</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../cep.html">Extension SDK Documentation (CEP)</a> &raquo;</li>
+        
+      <li>CSInterface</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/CEP/csinterface.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="csinterface">
+<h1>CSInterface<a class="headerlink" href="#csinterface" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#Version" title="Version"><code class="xref js js-class docutils literal notranslate"><span class="pre">Version()</span></code></a></li>
+<li><a class="reference internal" href="#VersionBound" title="VersionBound"><code class="xref js js-class docutils literal notranslate"><span class="pre">VersionBound()</span></code></a></li>
+<li><a class="reference internal" href="#VersionRange" title="VersionRange"><code class="xref js js-class docutils literal notranslate"><span class="pre">VersionRange()</span></code></a></li>
+<li><a class="reference internal" href="#Runtime" title="Runtime"><code class="xref js js-class docutils literal notranslate"><span class="pre">Runtime()</span></code></a></li>
+<li><a class="reference internal" href="#Extension" title="Extension"><code class="xref js js-class docutils literal notranslate"><span class="pre">Extension()</span></code></a></li>
+<li><a class="reference internal" href="#CSEvent" title="CSEvent"><code class="xref js js-class docutils literal notranslate"><span class="pre">CSEvent()</span></code></a></li>
+<li><a class="reference internal" href="#SystemPath" title="SystemPath"><code class="xref js js-class docutils literal notranslate"><span class="pre">SystemPath()</span></code></a></li>
+<li><a class="reference internal" href="#ColorType" title="ColorType"><code class="xref js js-class docutils literal notranslate"><span class="pre">ColorType()</span></code></a></li>
+<li><a class="reference internal" href="#RGBColor" title="RGBColor"><code class="xref js js-class docutils literal notranslate"><span class="pre">RGBColor()</span></code></a></li>
+<li><a class="reference internal" href="#Direction" title="Direction"><code class="xref js js-class docutils literal notranslate"><span class="pre">Direction()</span></code></a></li>
+<li><a class="reference internal" href="#GradientStop" title="GradientStop"><code class="xref js js-class docutils literal notranslate"><span class="pre">GradientStop()</span></code></a></li>
+<li><a class="reference internal" href="#GradientColor" title="GradientColor"><code class="xref js js-class docutils literal notranslate"><span class="pre">GradientColor()</span></code></a></li>
+<li><a class="reference internal" href="#UIColor" title="UIColor"><code class="xref js js-class docutils literal notranslate"><span class="pre">UIColor()</span></code></a></li>
+<li><a class="reference internal" href="#AppSkinInfo" title="AppSkinInfo"><code class="xref js js-class docutils literal notranslate"><span class="pre">AppSkinInfo()</span></code></a></li>
+<li><a class="reference internal" href="#HostEnvironment" title="HostEnvironment"><code class="xref js js-class docutils literal notranslate"><span class="pre">HostEnvironment()</span></code></a></li>
+<li><a class="reference internal" href="#HostCapabilities" title="HostCapabilities"><code class="xref js js-class docutils literal notranslate"><span class="pre">HostCapabilities()</span></code></a></li>
+<li><a class="reference internal" href="#ApiVersion" title="ApiVersion"><code class="xref js js-class docutils literal notranslate"><span class="pre">ApiVersion()</span></code></a></li>
+<li><a class="reference internal" href="#MenuItemStatus" title="MenuItemStatus"><code class="xref js js-class docutils literal notranslate"><span class="pre">MenuItemStatus()</span></code></a></li>
+<li><a class="reference internal" href="#ContextMenuItemStatus" title="ContextMenuItemStatus"><code class="xref js js-class docutils literal notranslate"><span class="pre">ContextMenuItemStatus()</span></code></a></li>
+<li><a class="reference internal" href="#CSInterface" title="CSInterface"><code class="xref js js-class docutils literal notranslate"><span class="pre">CSInterface()</span></code></a></li>
+</ul>
+</div></blockquote>
+<dl class="class">
+<dt id="Version">
+<em class="property">class </em><code class="descname">Version</code><span class="sig-paren">(</span><em>major</em>, <em>minor</em>, <em>micro</em>, <em>special</em><span class="sig-paren">)</span><a class="headerlink" href="#Version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version
+Defines a version number with major, minor, micro, and special
+components. The major, minor and micro values are numeric; the special
+value can be any string.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>major</strong> – The major version component, a positive integer up to nine digits long.</li>
+<li><strong>minor</strong> – The minor version component, a positive integer up to nine digits long.</li>
+<li><strong>micro</strong> – The micro version component, a positive integer up to nine digits long.</li>
+<li><strong>special</strong> – The special version component, an arbitrary string.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new <a class="reference internal" href="#Version" title="Version"><code class="xref js js-class docutils literal notranslate"><span class="pre">Version()</span></code></a> object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="Version.MAX_NUM">
+<code class="descclassname">Version.</code><code class="descname">MAX_NUM</code><a class="headerlink" href="#Version.MAX_NUM" title="Permalink to this definition">¶</a></dt>
+<dd><p>The maximum value allowed for a numeric version component.
+This reflects the maximum value allowed in PlugPlug and the manifest schema.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="VersionBound">
+<em class="property">class </em><code class="descname">VersionBound</code><span class="sig-paren">(</span><em>version</em>, <em>inclusive</em><span class="sig-paren">)</span><a class="headerlink" href="#VersionBound" title="Permalink to this definition">¶</a></dt>
+<dd><p>VersionBound
+Defines a boundary for a version range, which associates a <a class="reference internal" href="#Version" title="Version"><code class="xref js js-class docutils literal notranslate"><span class="pre">Version()</span></code></a> object
+with a flag for whether it is an inclusive or exclusive boundary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>version</strong> – The <a class="reference internal" href="#Version" title="Version"><code class="xref js js-class docutils literal notranslate"><span class="pre">Version()</span></code></a> object.</li>
+<li><strong>inclusive</strong> – True if this boundary is inclusive, false if it is exclusive.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new <a class="reference internal" href="#VersionBound" title="VersionBound"><code class="xref js js-class docutils literal notranslate"><span class="pre">VersionBound()</span></code></a> object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="VersionRange">
+<em class="property">class </em><code class="descname">VersionRange</code><span class="sig-paren">(</span><em>lowerBound</em>, <em>upperBound</em><span class="sig-paren">)</span><a class="headerlink" href="#VersionRange" title="Permalink to this definition">¶</a></dt>
+<dd><p>VersionRange
+Defines a range of versions using a lower boundary and optional upper boundary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>lowerBound</strong> – The :js:class: <a class="reference internal" href="#VersionBound" title="VersionBound"><code class="xref js js-class docutils literal notranslate"><span class="pre">VersionBound()</span></code></a> object.</li>
+<li><strong>upperBound</strong> – The :js:class: <a class="reference internal" href="#VersionBound" title="VersionBound"><code class="xref js js-class docutils literal notranslate"><span class="pre">VersionBound()</span></code></a> object, or null for a range with no upper boundary.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new <a class="reference internal" href="#VersionRange" title="VersionRange"><code class="xref js js-class docutils literal notranslate"><span class="pre">VersionRange()</span></code></a> object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="Runtime">
+<em class="property">class </em><code class="descname">Runtime</code><span class="sig-paren">(</span><em>name</em>, <em>versionRange</em><span class="sig-paren">)</span><a class="headerlink" href="#Runtime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runtime
+Represents a runtime related to the CEP infrastructure.
+Extensions can declare dependencies on particular
+CEP runtime versions in the extension manifest.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> – The runtime name.</li>
+<li><strong>version</strong> – A <a class="reference internal" href="#VersionRange" title="VersionRange"><code class="xref js js-class docutils literal notranslate"><span class="pre">VersionRange()</span></code></a> object that defines a range of valid versions.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new <a class="reference internal" href="#Runtime" title="Runtime"><code class="xref js js-class docutils literal notranslate"><span class="pre">Runtime()</span></code></a> object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="Extension">
+<em class="property">class </em><code class="descname">Extension</code><span class="sig-paren">(</span><em>id</em>, <em>name</em>, <em>mainPath</em>, <em>basePath</em>, <em>windowType</em>, <em>width</em>, <em>height</em>, <em>minWidth</em>, <em>minHeight</em>, <em>maxWidth</em>, <em>maxHeight</em>, <em>defaultExtensionDataXml</em>, <em>specialExtensionDataXml</em>, <em>requiredRuntimeList</em>, <em>isAutoVisible</em>, <em>isPluginExtension</em><span class="sig-paren">)</span><a class="headerlink" href="#Extension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extension
+Encapsulates a CEP-based extension to an Adobe application.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>id</strong> – The unique identifier of this extension.</li>
+<li><strong>name</strong> – The localizable display name of this extension.</li>
+<li><strong>mainPath</strong> – The path of the “index.html” file.</li>
+<li><strong>basePath</strong> – The base path of this extension.</li>
+<li><strong>windowType</strong> – The window type of the main window of this extension. Valid values are defined by <code class="xref js js-class docutils literal notranslate"><span class="pre">CSXSWindowType()</span></code>.</li>
+<li><strong>width</strong> – The default width in pixels of the main window of this extension.</li>
+<li><strong>height</strong> – The default height in pixels of the main window of this extension.</li>
+<li><strong>minWidth</strong> – The minimum width in pixels of the main window of this extension.</li>
+<li><strong>minHeight</strong> – The minimum height in pixels of the main window of this extension.</li>
+<li><strong>maxWidth</strong> – The maximum width in pixels of the main window of this extension.</li>
+<li><strong>maxHeight</strong> – The maximum height in pixels of the main window of this extension.</li>
+<li><strong>defaultExtensionDataXml</strong> – The extension data contained in the default <code class="xref js js-class docutils literal notranslate"><span class="pre">ExtensionDispatchInfo()</span></code> section of the extension manifest.</li>
+<li><strong>specialExtensionDataXml</strong> – The extension data contained in the application-specific <code class="xref js js-class docutils literal notranslate"><span class="pre">ExtensionDispatchInfo()</span></code> section of the extension manifest.</li>
+<li><strong>requiredRuntimeList</strong> – An array of <a class="reference internal" href="#Runtime" title="Runtime"><code class="xref js js-class docutils literal notranslate"><span class="pre">Runtime()</span></code></a> objects for runtimes required by this extension.</li>
+<li><strong>isAutoVisible</strong> – True if this extension is visible on loading.</li>
+<li><strong>isPluginExtension</strong> – True if this extension has been deployed in the Plugins folder of the host application.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new <a class="reference internal" href="#Extension" title="Extension"><code class="xref js js-class docutils literal notranslate"><span class="pre">Extension()</span></code></a> object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="CSEvent">
+<em class="property">class </em><code class="descname">CSEvent</code><span class="sig-paren">(</span><em>type</em>, <em>scope</em>, <em>appId</em>, <em>extensionId</em><span class="sig-paren">)</span><a class="headerlink" href="#CSEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>CSEvent
+A standard JavaScript event, the base class for CEP events.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>type</strong> – The name of the event type.</li>
+<li><strong>scope</strong> – The scope of event, can be “GLOBAL” or “APPLICATION”.</li>
+<li><strong>appId</strong> – The unique identifier of the application that generated the event.</li>
+<li><strong>extensionId</strong> – The unique identifier of the extension that generated the event.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new <a class="reference internal" href="#CSEvent" title="CSEvent"><code class="xref js js-class docutils literal notranslate"><span class="pre">CSEvent()</span></code></a> object</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="CSEvent.data">
+<code class="descclassname">CSEvent.</code><code class="descname">data</code><a class="headerlink" href="#CSEvent.data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Event-specific data.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="SystemPath">
+<em class="property">class </em><code class="descname">SystemPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SystemPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>SystemPath
+Stores operating-system-specific location constants for use in the
+<a class="reference internal" href="#CSInterface" title="CSInterface"><code class="xref js js-class docutils literal notranslate"><span class="pre">CSInterface()</span></code></a>.getSystemPath() method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A new <a class="reference internal" href="#SystemPath" title="SystemPath"><code class="xref js js-class docutils literal notranslate"><span class="pre">SystemPath()</span></code></a> object.</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="SystemPath.APPLICATION">
+<code class="descclassname">SystemPath.</code><code class="descname">APPLICATION</code><a class="headerlink" href="#SystemPath.APPLICATION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="SystemPath.COMMON_FILES">
+<code class="descclassname">SystemPath.</code><code class="descname">COMMON_FILES</code><a class="headerlink" href="#SystemPath.COMMON_FILES" title="Permalink to this definition">¶</a></dt>
+<dd><p>The path to common files for Adobe applications.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="SystemPath.EXTENSION">
+<code class="descclassname">SystemPath.</code><code class="descname">EXTENSION</code><a class="headerlink" href="#SystemPath.EXTENSION" title="Permalink to this definition">¶</a></dt>
+<dd><p>The path to current extension.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="SystemPath.HOST_APPLICATION">
+<code class="descclassname">SystemPath.</code><code class="descname">HOST_APPLICATION</code><a class="headerlink" href="#SystemPath.HOST_APPLICATION" title="Permalink to this definition">¶</a></dt>
+<dd><p>The path to hosting application’s executable.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="SystemPath.MY_DOCUMENTS">
+<code class="descclassname">SystemPath.</code><code class="descname">MY_DOCUMENTS</code><a class="headerlink" href="#SystemPath.MY_DOCUMENTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>The path to the user’s default document folder.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="SystemPath.USER_DATA">
+<code class="descclassname">SystemPath.</code><code class="descname">USER_DATA</code><a class="headerlink" href="#SystemPath.USER_DATA" title="Permalink to this definition">¶</a></dt>
+<dd><p>The path to user data.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ColorType">
+<em class="property">class </em><code class="descname">ColorType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ColorType" title="Permalink to this definition">¶</a></dt>
+<dd><p>ColorType
+Stores color-type constants.</p>
+<dl class="attribute">
+<dt id="ColorType.GRADIENT">
+<code class="descclassname">ColorType.</code><code class="descname">GRADIENT</code><a class="headerlink" href="#ColorType.GRADIENT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gradient color type.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ColorType.NONE">
+<code class="descclassname">ColorType.</code><code class="descname">NONE</code><a class="headerlink" href="#ColorType.NONE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Null color type.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ColorType.RGB">
+<code class="descclassname">ColorType.</code><code class="descname">RGB</code><a class="headerlink" href="#ColorType.RGB" title="Permalink to this definition">¶</a></dt>
+<dd><p>RGB color type.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="RGBColor">
+<em class="property">class </em><code class="descname">RGBColor</code><span class="sig-paren">(</span><em>red</em>, <em>green</em>, <em>blue</em>, <em>alpha</em><span class="sig-paren">)</span><a class="headerlink" href="#RGBColor" title="Permalink to this definition">¶</a></dt>
+<dd><p>RGBColor
+Stores an RGB color with red, green, blue, and alpha values.
+All values are in the range [0.0 to 255.0]. Invalid numeric values are
+converted to numbers within this range.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>red</strong> – The red value, in the range [0.0 to 255.0].</li>
+<li><strong>green</strong> – The green value, in the range [0.0 to 255.0].</li>
+<li><strong>blue</strong> – The blue value, in the range [0.0 to 255.0].</li>
+<li><strong>alpha</strong> – The alpha (transparency) value, in the range [0.0 to 255.0]. The default, 255.0, means that the color is fully opaque.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new RGBColor object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="Direction">
+<em class="property">class </em><code class="descname">Direction</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#Direction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Direction
+A point value  in which the y component is 0 and the x component
+is positive or negative for a right or left direction,
+or the x component is 0 and the y component is positive or negative for
+an up or down direction.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> – The horizontal component of the point.</li>
+<li><strong>y</strong> – The vertical component of the point.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new <a class="reference internal" href="#Direction" title="Direction"><code class="xref js js-class docutils literal notranslate"><span class="pre">Direction()</span></code></a> object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="GradientStop">
+<em class="property">class </em><code class="descname">GradientStop</code><span class="sig-paren">(</span><em>offset</em>, <em>rgbColor</em><span class="sig-paren">)</span><a class="headerlink" href="#GradientStop" title="Permalink to this definition">¶</a></dt>
+<dd><p>GradientStop
+Stores gradient stop information.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>offset</strong> – The offset of the gradient stop, in the range [0.0 to 1.0].</li>
+<li><strong>rgbColor</strong> – The color of the gradient at this point, an <a class="reference internal" href="#RGBColor" title="RGBColor"><code class="xref js js-class docutils literal notranslate"><span class="pre">RGBColor()</span></code></a> object.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">GradientStop object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="GradientColor">
+<em class="property">class </em><code class="descname">GradientColor</code><span class="sig-paren">(</span><em>type</em>, <em>direction</em>, <em>numStops</em>, <em>arrGradientStop</em><span class="sig-paren">)</span><a class="headerlink" href="#GradientColor" title="Permalink to this definition">¶</a></dt>
+<dd><p>GradientColor
+Stores gradient color information.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>type</strong> – The gradient type, must be “linear”.</li>
+<li><strong>direction</strong> – A <a class="reference internal" href="#Direction" title="Direction"><code class="xref js js-class docutils literal notranslate"><span class="pre">Direction()</span></code></a> object for the direction of the gradient (up, down, right, or left).</li>
+<li><strong>numStops</strong> – The number of stops in the gradient.</li>
+<li><strong>gradientStopList</strong> – An array of <a class="reference internal" href="#GradientStop" title="GradientStop"><code class="xref js js-class docutils literal notranslate"><span class="pre">GradientStop()</span></code></a> objects.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new <a class="reference internal" href="#GradientColor" title="GradientColor"><code class="xref js js-class docutils literal notranslate"><span class="pre">GradientColor()</span></code></a> object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="UIColor">
+<em class="property">class </em><code class="descname">UIColor</code><span class="sig-paren">(</span><em>type</em>, <em>antialiasLevel</em>, <em>color</em><span class="sig-paren">)</span><a class="headerlink" href="#UIColor" title="Permalink to this definition">¶</a></dt>
+<dd><p>UIColor
+Stores color information, including the type, anti-alias level, and specific color
+values in a color object of an appropriate type.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>type</strong> – The color type, 1 for “rgb” and 2 for “gradient”. The supplied color object must correspond to this type.</li>
+<li><strong>antialiasLevel</strong> – The anti-alias level constant.</li>
+<li><strong>color</strong> – A <a class="reference internal" href="#RGBColor" title="RGBColor"><code class="xref js js-class docutils literal notranslate"><span class="pre">RGBColor()</span></code></a> or <a class="reference internal" href="#GradientColor" title="GradientColor"><code class="xref js js-class docutils literal notranslate"><span class="pre">GradientColor()</span></code></a> object containing specific color information.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new <a class="reference internal" href="#UIColor" title="UIColor"><code class="xref js js-class docutils literal notranslate"><span class="pre">UIColor()</span></code></a> object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="AppSkinInfo">
+<em class="property">class </em><code class="descname">AppSkinInfo</code><span class="sig-paren">(</span><em>baseFontFamily</em>, <em>baseFontSize</em>, <em>appBarBackgroundColor</em>, <em>panelBackgroundColor</em>, <em>appBarBackgroundColorSRGB</em>, <em>panelBackgroundColorSRGB</em>, <em>systemHighlightColor</em><span class="sig-paren">)</span><a class="headerlink" href="#AppSkinInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>AppSkinInfo
+Stores window-skin properties, such as color and font. All color parameter values are <a class="reference internal" href="#UIColor" title="UIColor"><code class="xref js js-class docutils literal notranslate"><span class="pre">UIColor()</span></code></a> objects except that systemHighlightColor is <a class="reference internal" href="#RGBColor" title="RGBColor"><code class="xref js js-class docutils literal notranslate"><span class="pre">RGBColor()</span></code></a> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>baseFontFamily</strong> – The base font family of the application.</li>
+<li><strong>baseFontSize</strong> – The base font size of the application.</li>
+<li><strong>appBarBackgroundColor</strong> – The application bar background color.</li>
+<li><strong>panelBackgroundColor</strong> – The background color of the extension panel.</li>
+<li><strong>appBarBackgroundColorSRGB</strong> – The application bar background color, as sRGB.</li>
+<li><strong>panelBackgroundColorSRGB</strong> – The background color of the extension panel, as sRGB.</li>
+<li><strong>systemHighlightColor</strong> – The operating-system highlight color, as sRGB.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">AppSkinInfo object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="HostEnvironment">
+<em class="property">class </em><code class="descname">HostEnvironment</code><span class="sig-paren">(</span><em>appName</em>, <em>appVersion</em>, <em>appLocale</em>, <em>appUILocale</em>, <em>appId</em>, <em>isAppOnline</em>, <em>appSkinInfo</em><span class="sig-paren">)</span><a class="headerlink" href="#HostEnvironment" title="Permalink to this definition">¶</a></dt>
+<dd><p>HostEnvironment
+Stores information about the environment in which the extension is loaded.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>appName</strong> – The application’s name.</li>
+<li><strong>appVersion</strong> – The application’s version.</li>
+<li><strong>appLocale</strong> – The application’s current license locale.</li>
+<li><strong>appUILocale</strong> – The application’s current UI locale.</li>
+<li><strong>appId</strong> – The application’s unique identifier.</li>
+<li><strong>isAppOnline</strong> – True if the application is currently online.</li>
+<li><strong>appSkinInfo</strong> – An <a class="reference internal" href="#AppSkinInfo" title="AppSkinInfo"><code class="xref js js-class docutils literal notranslate"><span class="pre">AppSkinInfo()</span></code></a> object containing the application’s default color and font styles.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new <a class="reference internal" href="#HostEnvironment" title="HostEnvironment"><code class="xref js js-class docutils literal notranslate"><span class="pre">HostEnvironment()</span></code></a> object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="HostCapabilities">
+<em class="property">class </em><code class="descname">HostCapabilities</code><span class="sig-paren">(</span><em>EXTENDED_PANEL_MENU</em>, <em>EXTENDED_PANEL_ICONS</em>, <em>DELEGATE_APE_ENGINE</em>, <em>SUPPORT_HTML_EXTENSIONS</em>, <em>DISABLE_FLASH_EXTENSIONS</em><span class="sig-paren">)</span><a class="headerlink" href="#HostCapabilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>HostCapabilities
+Stores information about the host capabilities.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>EXTENDED_PANEL_MENU</strong> – True if the application supports panel menu.</li>
+<li><strong>EXTENDED_PANEL_ICONS</strong> – True if the application supports panel icon.</li>
+<li><strong>DELEGATE_APE_ENGINE</strong> – True if the application supports delegated APE engine.</li>
+<li><strong>SUPPORT_HTML_EXTENSIONS</strong> – True if the application supports HTML extensions.</li>
+<li><strong>DISABLE_FLASH_EXTENSIONS</strong> – True if the application disables FLASH extensions.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new <a class="reference internal" href="#HostCapabilities" title="HostCapabilities"><code class="xref js js-class docutils literal notranslate"><span class="pre">HostCapabilities()</span></code></a> object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="ApiVersion">
+<em class="property">class </em><code class="descname">ApiVersion</code><span class="sig-paren">(</span><em>major</em>, <em>minor</em>, <em>micro</em><span class="sig-paren">)</span><a class="headerlink" href="#ApiVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>ApiVersion
+Stores current api version.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">4.2.0</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>major</strong> – The major version</li>
+<li><strong>minor</strong> – The minor version.</li>
+<li><strong>micro</strong> – The micro version.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">ApiVersion object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="MenuItemStatus">
+<em class="property">class </em><code class="descname">MenuItemStatus</code><span class="sig-paren">(</span><em>menuItemLabel</em>, <em>enabled</em>, <em>checked</em><span class="sig-paren">)</span><a class="headerlink" href="#MenuItemStatus" title="Permalink to this definition">¶</a></dt>
+<dd><p>MenuItemStatus
+Stores flyout menu item status</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">5.2.0</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>menuItemLabel</strong> – The menu item label.</li>
+<li><strong>enabled</strong> – True if user wants to enable the menu item.</li>
+<li><strong>checked</strong> – True if user wants to check the menu item.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">MenuItemStatus object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="ContextMenuItemStatus">
+<em class="property">class </em><code class="descname">ContextMenuItemStatus</code><span class="sig-paren">(</span><em>menuItemID</em>, <em>enabled</em>, <em>checked</em><span class="sig-paren">)</span><a class="headerlink" href="#ContextMenuItemStatus" title="Permalink to this definition">¶</a></dt>
+<dd><p>ContextMenuItemStatus
+Stores the status of the context menu item.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">5.2.0</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>menuItemID</strong> – The menu item id.</li>
+<li><strong>enabled</strong> – True if user wants to enable the menu item.</li>
+<li><strong>checked</strong> – True if user wants to check the menu item.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">MenuItemStatus object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="CSInterface">
+<em class="property">class </em><code class="descname">CSInterface</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface" title="Permalink to this definition">¶</a></dt>
+<dd><p>CSInterface
+This is the entry point to the CEP extensibility infrastructure.
+Instantiate this object and use it to:</p>
+<ul class="simple">
+<li>Access information about the host application in which an extension is running</li>
+<li>Launch an extension</li>
+<li>Register interest in event notifications, and dispatch events</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A new <a class="reference internal" href="#CSInterface" title="CSInterface"><code class="xref js js-class docutils literal notranslate"><span class="pre">CSInterface()</span></code></a> object</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="CSInterface.THEME_COLOR_CHANGED_EVENT">
+<code class="descclassname">CSInterface.</code><code class="descname">THEME_COLOR_CHANGED_EVENT</code><a class="headerlink" href="#CSInterface.THEME_COLOR_CHANGED_EVENT" title="Permalink to this definition">¶</a></dt>
+<dd><p>User can add this event listener to handle native application theme color changes.
+Callback function gives extensions ability to fine-tune their theme color after the
+global theme color has been changed.
+The callback function should be like below:</p>
+<p><strong>Examples:</strong></p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// event is a CSEvent object, but user can ignore it.</span>
+<span class="kd">function</span> <span class="nx">OnAppThemeColorChanged</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="c1">// Should get a latest HostEnvironment object from application.</span>
+   <span class="kd">var</span> <span class="nx">skinInfo</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">__adobe_cep__</span><span class="p">.</span><span class="nx">getHostEnvironment</span><span class="p">()).</span><span class="nx">appSkinInfo</span><span class="p">;</span>
+   <span class="c1">// Gets the style information such as color info from the skinInfo,</span>
+   <span class="c1">// and redraw all UI controls of your extension according to the style info.</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.addEventListener">
+<code class="descclassname">CSInterface.</code><code class="descname">addEventListener</code><span class="sig-paren">(</span><em>type</em>, <em>listener</em>, <em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.addEventListener" title="Permalink to this definition">¶</a></dt>
+<dd><p>Registers an interest in a CEP event of a particular type, and
+assigns an event handler.
+The event infrastructure notifies your extension when events of this type occur,
+passing the event object to the registered handler function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>type</strong> – The name of the event type of interest.</li>
+<li><strong>listener</strong> – The JavaScript handler function or method.</li>
+<li><strong>obj</strong> – Optional, the object containing the handler method, if any. Default is null.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.closeExtension">
+<code class="descclassname">CSInterface.</code><code class="descname">closeExtension</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.closeExtension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Closes this extension.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.dispatchEvent">
+<code class="descclassname">CSInterface.</code><code class="descname">dispatchEvent</code><span class="sig-paren">(</span><em>event</em><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.dispatchEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Triggers a CEP event programmatically. Yoy can use it to dispatch
+an event of a predefined type, or of a type you have defined.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>event</strong> – A <a class="reference internal" href="#CSEvent" title="CSEvent"><code class="xref js js-class docutils literal notranslate"><span class="pre">CSEvent()</span></code></a> object.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.dumpInstallationInfo">
+<code class="descclassname">CSInterface.</code><code class="descname">dumpInstallationInfo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.dumpInstallationInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes installation information to a file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The file path.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.evalScript">
+<code class="descclassname">CSInterface.</code><code class="descname">evalScript</code><span class="sig-paren">(</span><em>script</em>, <em>callback</em><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.evalScript" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluates a JavaScript script, which can use the JavaScript DOM
+of the host application.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>script</strong> – The JavaScript script.</li>
+<li><strong>callback</strong> – Optional. A callback function that receives the result of execution. If execution fails, the callback function receives the error message <code class="xref js js-class docutils literal notranslate"><span class="pre">EvalScript_ErrMessage()</span></code>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.getApplicationID">
+<code class="descclassname">CSInterface.</code><code class="descname">getApplicationID</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.getApplicationID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves the unique identifier of the application.
+in which the extension is currently running.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The unique ID string.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.getCurrentApiVersion">
+<code class="descclassname">CSInterface.</code><code class="descname">getCurrentApiVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.getCurrentApiVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves current API version.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">4.2.0</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">ApiVersion object.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.getExtensionID">
+<code class="descclassname">CSInterface.</code><code class="descname">getExtensionID</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.getExtensionID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves extension ID.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">4.2.0</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">extension ID.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.getExtensions">
+<code class="descclassname">CSInterface.</code><code class="descname">getExtensions</code><span class="sig-paren">(</span><em>extensionIds</em><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.getExtensions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves the list of extensions currently loaded in the current host application.
+The extension list is initialized once, and remains the same during the lifetime
+of the CEP session.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>extensionIds</strong> – Optional, an array of unique identifiers for extensions of interest. If omitted, retrieves data for all extensions.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Zero or more <a class="reference internal" href="#Extension" title="Extension"><code class="xref js js-class docutils literal notranslate"><span class="pre">Extension()</span></code></a> objects.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.getHostCapabilities">
+<code class="descclassname">CSInterface.</code><code class="descname">getHostCapabilities</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.getHostCapabilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves host capability information for the application
+in which the extension is currently running.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A <a class="reference internal" href="#HostCapabilities" title="HostCapabilities"><code class="xref js js-class docutils literal notranslate"><span class="pre">HostCapabilities()</span></code></a> object.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.getHostEnvironment">
+<code class="descclassname">CSInterface.</code><code class="descname">getHostEnvironment</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.getHostEnvironment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves information about the host environment in which the
+extension is currently running.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A <a class="reference internal" href="#HostEnvironment" title="HostEnvironment"><code class="xref js js-class docutils literal notranslate"><span class="pre">HostEnvironment()</span></code></a> object.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.getNetworkPreferences">
+<code class="descclassname">CSInterface.</code><code class="descname">getNetworkPreferences</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.getNetworkPreferences" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves network-related preferences.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A JavaScript object containing network preferences.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.getOSInformation">
+<code class="descclassname">CSInterface.</code><code class="descname">getOSInformation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.getOSInformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves version information for the current Operating System,
+See <a class="reference external" href="http://www.useragentstring.com/pages/Chrome/">http://www.useragentstring.com/pages/Chrome/</a> for Chrome <code class="xref js js-class docutils literal notranslate"><span class="pre">navigator()</span></code>.userAgent values.</p>
+<p>If user customizes the User Agent by setting CEF command parameter “–user-agent”, only
+“Mac OS X” or “Windows” will be returned.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A string containing the OS version, or “unknown Operation System”.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.getScaleFactor">
+<code class="descclassname">CSInterface.</code><code class="descname">getScaleFactor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.getScaleFactor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves the scale factor of screen.
+On Windows platform, the value of scale factor might be different from operating system’s scale factor,
+since host application may use its self-defined scale factor.</p>
+<ul class="simple">
+<li>-1.0 when error occurs</li>
+<li>1.0 means normal screen</li>
+<li>&gt;1.0 means HiDPI screen</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">4.2.0</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Number</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.getSystemPath">
+<code class="descclassname">CSInterface.</code><code class="descname">getSystemPath</code><span class="sig-paren">(</span><em>pathType</em><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.getSystemPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves a path for which a constant is defined in the system.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>pathType</strong> – The path-type constant defined in <a class="reference internal" href="#SystemPath" title="SystemPath"><code class="xref js js-class docutils literal notranslate"><span class="pre">SystemPath()</span></code></a> ,</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The platform-specific system path string.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.getWindowTitle">
+<code class="descclassname">CSInterface.</code><code class="descname">getWindowTitle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.getWindowTitle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the title of the extension window.
+This function works with modal and modeless extensions in all Adobe products, and panel extensions in Photoshop, InDesign, InCopy, Illustrator, Flash Pro and Dreamweaver.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">6.1.0</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The window title.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="CSInterface.hostEnvironment">
+<code class="descclassname">CSInterface.</code><code class="descname">hostEnvironment</code><a class="headerlink" href="#CSInterface.hostEnvironment" title="Permalink to this definition">¶</a></dt>
+<dd><p>The host environment data object.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.initResourceBundle">
+<code class="descclassname">CSInterface.</code><code class="descname">initResourceBundle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.initResourceBundle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes the resource bundle for this extension with property values
+for the current application and locale.
+To support multiple locales, you must define a property file for each locale,
+containing keyed display-string values for that locale.
+See localization documentation for Extension Builder and related products.</p>
+<p>Keys can be in the
+form &lt;code&gt;key.value=”localized string”&lt;/code&gt;, for use in HTML text elements.
+For example, in this input element, the localized <code class="xref js js-class docutils literal notranslate"><span class="pre">key()</span></code>.value string is displayed
+instead of the empty <code class="xref js js-class docutils literal notranslate"><span class="pre">value()</span></code> string:</p>
+<p>&lt;code&gt;&lt;input type=”submit” value=”” data-locale=”key”/&gt;&lt;/code&gt;</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">An object containing the resource bundle information.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.isWindowVisible">
+<code class="descclassname">CSInterface.</code><code class="descname">isWindowVisible</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.isWindowVisible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the visibility status of an extension window.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">6.0.0</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">true if the extension window is visible; false if the extension window is hidden.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.openURLInDefaultBrowser">
+<code class="descclassname">CSInterface.</code><code class="descname">openURLInDefaultBrowser</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.openURLInDefaultBrowser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Opens a page in the default system browser.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">4.2.0</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>url</strong> – The URL of the page/file to open, or the email address. Must use HTTP/HTTPS/file/mailto protocol. For example: “<a class="reference external" href="http://www.adobe.com">http://www.adobe.com</a>” “<a class="reference external" href="https://github.com">https://github.com</a>” “<a class="reference external" href="file:///C:/log.txt">file:///C:/log.txt</a>” “<a class="reference external" href="mailto:test&#37;&#52;&#48;adobe&#46;com">mailto:test<span>&#64;</span>adobe<span>&#46;</span>com</a>”</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">One of these error codes: * NO_ERROR - 0 * ERR_UNKNOWN - 1 * ERR_INVALID_PARAMS - 2 * ERR_INVALID_URL - 201</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.registerInvalidCertificateCallback">
+<code class="descclassname">CSInterface.</code><code class="descname">registerInvalidCertificateCallback</code><span class="sig-paren">(</span><em>callback</em><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.registerInvalidCertificateCallback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register the invalid certificate callback for an extension.
+This callback will be triggered when the extension tries to access the web site that contains the invalid certificate on the main frame.
+But if the extension does not call this function and tries to access the web site containing the invalid certificate, a default error page will be shown.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">6.1.0</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>callback</strong> – the callback function</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.registerKeyEventsInterest">
+<code class="descclassname">CSInterface.</code><code class="descname">registerKeyEventsInterest</code><span class="sig-paren">(</span><em>keyEventsInterest</em><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.registerKeyEventsInterest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register an interest in some key events to prevent them from being sent to the host application.</p>
+<p>This function works with modeless extensions and panel extensions.
+Generally all the key events will be sent to the host application for these two extensions if the current focused element
+is not text input or dropdown,
+If you want to intercept some key events and want them to be handled in the extension, please call this function
+in advance to prevent them being sent to the host application.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">6.1.0</span></code></p>
+<p>This JSON string should be an array, each object has following keys:</p>
+<ul class="simple">
+<li>keyCode:  [Required] represents an OS system dependent virtual key code identifying the unmodified value of the pressed key.</li>
+<li>ctrlKey:  [optional] a Boolean that indicates if the control key was pressed (true) or not (false) when the event occurred.</li>
+<li>altKey:   [optional] a Boolean that indicates if the alt key was pressed (true) or not (false) when the event occurred.</li>
+<li>shiftKey: [optional] a Boolean that indicates if the shift key was pressed (true) or not (false) when the event occurred.</li>
+<li>metaKey:  [optional] (Mac Only) a Boolean that indicates if the Meta key was pressed (true) or not (false) when the event occurred. On Macintosh keyboards, this is the command key. To detect Windows key on Windows, please use keyCode instead.</li>
+</ul>
+<p>An example JSON string:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;keyCode&quot;</span><span class="p">:</span> <span class="mi">48</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;keyCode&quot;</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="nt">&quot;ctrlKey&quot;</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;keyCode&quot;</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="nt">&quot;ctrlKey&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;metaKey&quot;</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>keyEventsInterest</strong> – A JSON string describing those key events you are interested in. A null object or an empty string will lead to removing the interest</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.removeEventListener">
+<code class="descclassname">CSInterface.</code><code class="descname">removeEventListener</code><span class="sig-paren">(</span><em>type</em>, <em>listener</em>, <em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.removeEventListener" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes a registered event listener.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>type</strong> – The name of the event type of interest.</li>
+<li><strong>listener</strong> – The JavaScript handler function or method that was registered.</li>
+<li><strong>obj</strong> – Optional, the object containing the handler method, if any. Default is null.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.requestOpenExtension">
+<code class="descclassname">CSInterface.</code><code class="descname">requestOpenExtension</code><span class="sig-paren">(</span><em>extensionId</em>, <em>params</em><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.requestOpenExtension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads and launches another extension, or activates the extension if it is already loaded.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>extensionId</strong> – The extension’s unique identifier.</li>
+<li><strong>startupParams</strong> – Not currently used, pass “”.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples:</strong></p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>To launch the extension &quot;help&quot; with ID &quot;HLP&quot; from this extension, call:
+&lt;code&gt;requestOpenExtension(&quot;HLP&quot;, &quot;&quot;); &lt;/code&gt;
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.resizeContent">
+<code class="descclassname">CSInterface.</code><code class="descname">resizeContent</code><span class="sig-paren">(</span><em>width</em>, <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.resizeContent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resize extension’s content to the specified dimensions.
+1. Works with modal and modeless extensions in all Adobe products.
+2. Extension’s manifest min/max size constraints apply and take precedence.
+3. For panel extensions</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>3.1 This works in all Adobe products except:</dt>
+<dd><ul class="first last simple">
+<li>Premiere Pro</li>
+<li>Prelude</li>
+<li>After Effects</li>
+</ul>
+</dd>
+<dt>3.2 When the panel is in certain states (especially when being docked),</dt>
+<dd>it will not change to the desired dimensions even when the
+specified size satisfies min/max constraints.</dd>
+</dl>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">6.0.0</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>width</strong> – The new width</li>
+<li><strong>height</strong> – The new height</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.setContextMenu">
+<code class="descclassname">CSInterface.</code><code class="descname">setContextMenu</code><span class="sig-paren">(</span><em>menu</em>, <em>callback</em><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.setContextMenu" title="Permalink to this definition">¶</a></dt>
+<dd><p>An example menu XML:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Menu&gt;</span>
+  <span class="nt">&lt;MenuItem</span> <span class="na">Id=</span><span class="s">&quot;menuItemId1&quot;</span> <span class="na">Label=</span><span class="s">&quot;TestExample1&quot;</span> <span class="na">Enabled=</span><span class="s">&quot;true&quot;</span> <span class="na">Checkable=</span><span class="s">&quot;true&quot;</span> <span class="na">Checked=</span><span class="s">&quot;false&quot;</span> <span class="na">Icon=</span><span class="s">&quot;./image/small_16X16.png&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;MenuItem</span> <span class="na">Id=</span><span class="s">&quot;menuItemId2&quot;</span> <span class="na">Label=</span><span class="s">&quot;TestExample2&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;MenuItem</span> <span class="na">Id=</span><span class="s">&quot;menuItemId2-1&quot;</span> <span class="na">Label=</span><span class="s">&quot;TestExample2-1&quot;</span> <span class="nt">&gt;</span>
+      <span class="nt">&lt;MenuItem</span> <span class="na">Id=</span><span class="s">&quot;menuItemId2-1-1&quot;</span> <span class="na">Label=</span><span class="s">&quot;TestExample2-1-1&quot;</span> <span class="na">Enabled=</span><span class="s">&quot;false&quot;</span> <span class="na">Checkable=</span><span class="s">&quot;true&quot;</span> <span class="na">Checked=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/MenuItem&gt;</span>
+    <span class="nt">&lt;MenuItem</span> <span class="na">Id=</span><span class="s">&quot;menuItemId2-2&quot;</span> <span class="na">Label=</span><span class="s">&quot;TestExample2-2&quot;</span> <span class="na">Enabled=</span><span class="s">&quot;true&quot;</span> <span class="na">Checkable=</span><span class="s">&quot;true&quot;</span> <span class="na">Checked=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/MenuItem&gt;</span>
+  <span class="nt">&lt;MenuItem</span> <span class="na">Label=</span><span class="s">&quot;---&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;MenuItem</span> <span class="na">Id=</span><span class="s">&quot;menuItemId3&quot;</span> <span class="na">Label=</span><span class="s">&quot;TestExample3&quot;</span> <span class="na">Enabled=</span><span class="s">&quot;false&quot;</span> <span class="na">Checkable=</span><span class="s">&quot;true&quot;</span> <span class="na">Checked=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/Menu&gt;&lt;/code&gt;</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>menu</strong> – A XML string which describes menu structure.</li>
+<li><strong>callback</strong> – The callback function which is called when a menu item is clicked. The only parameter is the returned ID of clicked menu item.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.setContextMenuByJSON">
+<code class="descclassname">CSInterface.</code><code class="descname">setContextMenuByJSON</code><span class="sig-paren">(</span><em>menu</em>, <em>callback</em><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.setContextMenuByJSON" title="Permalink to this definition">¶</a></dt>
+<dd><p>An example menu JSON:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+     <span class="nt">&quot;menu&quot;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="p">{</span>
+             <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;menuItemId1&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;testExample1&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+             <span class="nt">&quot;checkable&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+             <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+             <span class="nt">&quot;icon&quot;</span><span class="p">:</span> <span class="s2">&quot;./image/small_16X16.png&quot;</span>
+         <span class="p">},</span>
+         <span class="p">{</span>
+             <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;menuItemId2&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;testExample2&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;menu&quot;</span><span class="p">:</span> <span class="p">[</span>
+                 <span class="p">{</span>
+                     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;menuItemId2-1&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;testExample2-1&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;menu&quot;</span><span class="p">:</span> <span class="p">[</span>
+                         <span class="p">{</span>
+                             <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;menuItemId2-1-1&quot;</span><span class="p">,</span>
+                             <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;testExample2-1-1&quot;</span><span class="p">,</span>
+                             <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                             <span class="nt">&quot;checkable&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                             <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">true</span>
+                         <span class="p">}</span>
+                     <span class="p">]</span>
+                 <span class="p">},</span>
+                 <span class="p">{</span>
+                     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;menuItemId2-2&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;testExample2-2&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                     <span class="nt">&quot;checkable&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                     <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">true</span>
+                 <span class="p">}</span>
+             <span class="p">]</span>
+         <span class="p">},</span>
+         <span class="p">{</span>
+             <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;---&quot;</span>
+         <span class="p">},</span>
+         <span class="p">{</span>
+             <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;menuItemId3&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;testExample3&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+             <span class="nt">&quot;checkable&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+             <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">false</span>
+         <span class="p">}</span>
+     <span class="p">]</span>
+ <span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>menu</strong> – A JSON string which describes menu structure.</li>
+<li><strong>callback</strong> – The callback function which is called when a menu item is clicked. The only parameter is the returned ID of clicked menu item.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.setPanelFlyoutMenu">
+<code class="descclassname">CSInterface.</code><code class="descname">setPanelFlyoutMenu</code><span class="sig-paren">(</span><em>menu</em><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.setPanelFlyoutMenu" title="Permalink to this definition">¶</a></dt>
+<dd><p>An example menu XML:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Menu&gt;</span>
+  <span class="nt">&lt;MenuItem</span> <span class="na">Id=</span><span class="s">&quot;menuItemId1&quot;</span> <span class="na">Label=</span><span class="s">&quot;TestExample1&quot;</span> <span class="na">Enabled=</span><span class="s">&quot;true&quot;</span> <span class="na">Checked=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;MenuItem</span> <span class="na">Label=</span><span class="s">&quot;TestExample2&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;MenuItem</span> <span class="na">Label=</span><span class="s">&quot;TestExample2-1&quot;</span> <span class="nt">&gt;</span>
+      <span class="nt">&lt;MenuItem</span> <span class="na">Label=</span><span class="s">&quot;TestExample2-1-1&quot;</span> <span class="na">Enabled=</span><span class="s">&quot;false&quot;</span> <span class="na">Checked=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/MenuItem&gt;</span>
+    <span class="nt">&lt;MenuItem</span> <span class="na">Label=</span><span class="s">&quot;TestExample2-2&quot;</span> <span class="na">Enabled=</span><span class="s">&quot;true&quot;</span> <span class="na">Checked=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/MenuItem&gt;</span>
+  <span class="nt">&lt;MenuItem</span> <span class="na">Label=</span><span class="s">&quot;---&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;MenuItem</span> <span class="na">Label=</span><span class="s">&quot;TestExample3&quot;</span> <span class="na">Enabled=</span><span class="s">&quot;false&quot;</span> <span class="na">Checked=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/Menu&gt;</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>menu</strong> – A XML string which describes menu structure.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.setScaleFactorChangedHandler">
+<code class="descclassname">CSInterface.</code><code class="descname">setScaleFactorChangedHandler</code><span class="sig-paren">(</span><em>handler</em><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.setScaleFactorChangedHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a handler to detect any changes of scale factor. This only works on Mac.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">4.2.0</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>handler</strong> – The function to be called when scale factor is changed.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.setWindowTitle">
+<code class="descclassname">CSInterface.</code><code class="descname">setWindowTitle</code><span class="sig-paren">(</span><em>title</em><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.setWindowTitle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the title of the extension window.
+This function works with modal and modeless extensions in all Adobe products, and panel extensions in Photoshop, InDesign, InCopy, Illustrator, Flash Pro and Dreamweaver.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">6.1.0</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>title</strong> – The window title.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.updateContextMenuItem">
+<code class="descclassname">CSInterface.</code><code class="descname">updateContextMenuItem</code><span class="sig-paren">(</span><em>menuItemID</em>, <em>enabled</em>, <em>checked</em><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.updateContextMenuItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates a context menu item by setting the enabled and selection status.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">5.2.0</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>menuItemID</strong> – The menu item ID.</li>
+<li><strong>enabled</strong> – True to enable the item, false to disable it (gray it out).</li>
+<li><strong>checked</strong> – True to select the item, false to deselect it.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="CSInterface.updatePanelMenuItem">
+<code class="descclassname">CSInterface.</code><code class="descname">updatePanelMenuItem</code><span class="sig-paren">(</span><em>menuItemLabel</em>, <em>enabled</em>, <em>checked</em><span class="sig-paren">)</span><a class="headerlink" href="#CSInterface.updatePanelMenuItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates a menu item in the extension window’s flyout menu, by setting the enabled
+and selection status.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Since</span> <span class="pre">5.2.0</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first simple">
+<li><strong>menuItemLabel</strong> – The menu item label.</li>
+<li><strong>enabled</strong> – True to enable the item, false to disable it (gray it out).</li>
+<li><strong>checked</strong> – True to select the item, false to deselect it.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">false when the host application does not support this functionality (HostCapabilities.EXTENDED_PANEL_MENU is false). Fails silently if menu label is invalid.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="event_codes.html" class="btn btn-neutral float-right" title="Event Codes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../cep.html" class="btn btn-neutral" title="Extension SDK Documentation (CEP)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Brett Dixon.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

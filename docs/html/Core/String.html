@@ -1,0 +1,425 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>String &mdash; Photoshop Scripting Reference  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="String.length" href="String/length.html" />
+    <link rel="prev" title="Socket.Socket" href="Socket/Socket.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Photoshop Scripting Reference
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../scripting.html">Photoshop Scripting Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Core</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="$.html">$</a></li>
+<li class="toctree-l4"><a class="reference internal" href="AliasArray.html">AliasArray</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Array.html">Array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Boolean.html">Boolean</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Date.html">Date</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Error.html">Error</a></li>
+<li class="toctree-l4"><a class="reference internal" href="File.html">File</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FileArray.html">FileArray</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Folder.html">Folder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Function.html">Function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Math.html">Math</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Namespace.html">Namespace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Number.html">Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Object.html">Object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QName.html">QName</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Reflection.html">Reflection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReflectionInfo.html">ReflectionInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RegExp.html">RegExp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Socket.html">Socket</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">String</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UnitPoint.html">UnitPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UnitRect.html">UnitRect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UnitValue.html">UnitValue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="XML.html">XML</a></li>
+<li class="toctree-l4"><a class="reference internal" href="XMLList.html">XMLList</a></li>
+<li class="toctree-l4"><a class="reference internal" href="global.html">global</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#module-index">Module Index</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Photoshop/index.html">Photoshop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ScriptUI/index.html">Scriptui</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cep.html">Extension SDK Documentation (CEP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Photoshop Scripting Resources</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Photoshop Scripting Reference</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../scripting.html">Photoshop Scripting Documentation</a> &raquo;</li>
+        
+          <li><a href="index.html">Core</a> &raquo;</li>
+        
+      <li>String</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Core/String.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="string">
+<span id="id1"></span><h1>String<a class="headerlink" href="#string" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>A character string. Each character is adressable by index.</p>
+<div class="section" id="properties">
+<h3>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="59%" />
+<col width="41%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="String/length.html#string-length"><span class="std std-ref">length</span></a> readonly</td>
+<td>The length of the string.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="constructors">
+<h3>Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="String/String.html#string-string"><span class="std std-ref">String</span></a></td>
+<td>Returns a string representation of the value given as an argument.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="methods">
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="String/anchor.html#string-anchor"><span class="std std-ref">anchor</span></a></td>
+<td>Returns a string consisting of this string enclosed in a &lt;a&gt; tag.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="String/big.html#string-big"><span class="std std-ref">big</span></a></td>
+<td>Returns a string consisting of this string enclosed in a &lt;big&gt; tag.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="String/blink.html#string-blink"><span class="std std-ref">blink</span></a></td>
+<td>Returns a string consisting of this string enclosed in a &lt;blink&gt; tag.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="String/bold.html#string-bold"><span class="std std-ref">bold</span></a></td>
+<td>Returns a string consisting of this string enclosed in a &lt;b&gt; tag.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="String/charAt.html#string-charat"><span class="std std-ref">charAt</span></a></td>
+<td>Returns the character at the specified index.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="String/charCodeAt.html#string-charcodeat"><span class="std std-ref">charCodeAt</span></a></td>
+<td>Returns the Unicode value of the character at the given index.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="String/concat.html#string-concat"><span class="std std-ref">concat</span></a></td>
+<td>If necessary, converts the one or more given values to strings.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="String/fixed.html#string-fixed"><span class="std std-ref">fixed</span></a></td>
+<td>Returns a string consisting of this string enclosed in a &lt;tt&gt; tag.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="String/fontcolor.html#string-fontcolor"><span class="std std-ref">fontcolor</span></a></td>
+<td>Returns a string consisting of this string enclosed in a &lt;font&gt; tag.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="String/fontsize.html#string-fontsize"><span class="std std-ref">fontsize</span></a></td>
+<td>Returns a string consisting of this string enclosed in a &lt;font&gt; tag.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="String/indexOf.html#string-indexof"><span class="std std-ref">indexOf</span></a></td>
+<td>Returns the index within the string of the first occurrence of the specified string, starting the search at fromIndex if provided.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="String/italics.html#string-italics"><span class="std std-ref">italics</span></a></td>
+<td>Returns a string consisting of this string enclosed in a &lt;i&gt; tag.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="String/lastIndexOf.html#string-lastindexof"><span class="std std-ref">lastIndexOf</span></a></td>
+<td>Returns the index within the string of the last occurrence of the specified value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="String/link.html#string-link"><span class="std std-ref">link</span></a></td>
+<td>Returns a string consisting of this string enclosed in a &lt;a&gt; tag.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="String/localeCompare.html#string-localecompare"><span class="std std-ref">localeCompare</span></a></td>
+<td>Performs a localized comparison of two strings.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="String/match.html#string-match"><span class="std std-ref">match</span></a></td>
+<td>Matches a string against a regular expression.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="String/replace.html#string-replace"><span class="std std-ref">replace</span></a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="String/search.html#string-search"><span class="std std-ref">search</span></a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="String/slice.html#string-slice"><span class="std std-ref">slice</span></a></td>
+<td>Extracts a substring of the given string and returns it as a new string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="String/small.html#string-small"><span class="std std-ref">small</span></a></td>
+<td>Returns a string consisting of this string enclosed in a &lt;small&gt; tag.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="String/split.html#string-split"><span class="std std-ref">split</span></a></td>
+<td>Splits a string into a group of substrings, places those strings in an array, and returns the array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="String/strike.html#string-strike"><span class="std std-ref">strike</span></a></td>
+<td>Returns a string consisting of this string enclosed in a &lt;strike&gt; tag.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="String/sub.html#string-sub"><span class="std std-ref">sub</span></a></td>
+<td>Returns a string consisting of this string enclosed in a &lt;sub&gt; tag.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="String/substr.html#string-substr"><span class="std std-ref">substr</span></a></td>
+<td>Returns a string containing the characters beginning at the specified index, start, through the specified number of characters.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="String/substring.html#string-substring"><span class="std std-ref">substring</span></a></td>
+<td>Returns a substring of the given string by extracting characters from indexA up to but not including indexB.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="String/sup.html#string-sup"><span class="std std-ref">sup</span></a></td>
+<td>Returns a string consisting of this string enclosed in a &lt;sup&gt; tag.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="String/toLocaleLowerCase.html#string-tolocalelowercase"><span class="std std-ref">toLocaleLowerCase</span></a></td>
+<td>Returns a new string which contains all the characters of the original string converted to lowercase (localized).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="String/toLocaleUpperCase.html#string-tolocaleuppercase"><span class="std std-ref">toLocaleUpperCase</span></a></td>
+<td>Returns a new string which contains all the characters of the original string converted to uppercase (localized).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="String/toLowerCase.html#string-tolowercase"><span class="std std-ref">toLowerCase</span></a></td>
+<td>Returns a new string which contains all the characters of the original string converted to lowercase.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="String/toSource.html#string-tosource"><span class="std std-ref">toSource</span></a></td>
+<td>Creates a string representation of this object that can be fed back to&nbsp;eval()&nbsp;to re-create an object. Works only with built-in classes.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="String/toString.html#string-tostring"><span class="std std-ref">toString</span></a></td>
+<td>Returns itself.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="String/toUpperCase.html#string-touppercase"><span class="std std-ref">toUpperCase</span></a></td>
+<td>Returns a new string which contains all the characters of the original string converted to uppercase.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="String/valueOf.html#string-valueof"><span class="std std-ref">valueOf</span></a></td>
+<td>Returns itself.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="static-methods">
+<h3>Static Methods<a class="headerlink" href="#static-methods" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="String/fromCharCode.html#string-fromcharcode"><span class="std std-ref">fromCharCode</span></a></td>
+<td>Returns a string created by concatenation one or more characters specified as ASCII values.</td>
+</tr>
+</tbody>
+</table>
+<div class="hide docutils container">
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="String/length.html" class="btn btn-neutral float-right" title="String.length" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Socket/Socket.html" class="btn btn-neutral" title="Socket.Socket" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Brett Dixon.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

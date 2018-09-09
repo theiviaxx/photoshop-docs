@@ -1,0 +1,564 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Application &mdash; Photoshop Scripting Reference  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Application.parent" href="Application/parent.html" />
+    <link rel="prev" title="ActionReference" href="ActionReference.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Photoshop Scripting Reference
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../scripting.html">Photoshop Scripting Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Core/index.html">Core</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Photoshop</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ActionDescriptor.html">ActionDescriptor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ActionList.html">ActionList</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ActionReference.html">ActionReference</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Application</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ArtLayer.html">ArtLayer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ArtLayers.html">ArtLayers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BMPSaveOptions.html">BMPSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BatchOptions.html">BatchOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BitmapConversionOptions.html">BitmapConversionOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CMYKColor.html">CMYKColor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CameraRAWOpenOptions.html">CameraRAWOpenOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Channel.html">Channel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Channels.html">Channels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Color.html">Color</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ColorSampler.html">ColorSampler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ColorSamplers.html">ColorSamplers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ContactSheetOptions.html">ContactSheetOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CountItem.html">CountItem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CountItems.html">CountItems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DCS1_SaveOptions.html">DCS1_SaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DCS2_SaveOptions.html">DCS2_SaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DICOMOpenOptions.html">DICOMOpenOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Document.html">Document</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DocumentConversionOptions.html">DocumentConversionOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DocumentInfo.html">DocumentInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DocumentPrintSettings.html">DocumentPrintSettings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Documents.html">Documents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EPSSaveOptions.html">EPSSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ExportOptions.html">ExportOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ExportOptionsIllustrator.html">ExportOptionsIllustrator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ExportOptionsSaveForWeb.html">ExportOptionsSaveForWeb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GIFSaveOptions.html">GIFSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GalleryBannerOptions.html">GalleryBannerOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GalleryCustomColorOptions.html">GalleryCustomColorOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GalleryImagesOptions.html">GalleryImagesOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GalleryOptions.html">GalleryOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GallerySecurityOptions.html">GallerySecurityOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GalleryThumbnailOptions.html">GalleryThumbnailOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GenericEPSOpenOptions.html">GenericEPSOpenOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GenericPDFOpenOptions.html">GenericPDFOpenOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GrayColor.html">GrayColor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Guide.html">Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Guides.html">Guides</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HSBColor.html">HSBColor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HistoryState.html">HistoryState</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HistoryStates.html">HistoryStates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IndexedConversionOptions.html">IndexedConversionOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="JPEGSaveOptions.html">JPEGSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LabColor.html">LabColor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Layer.html">Layer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LayerComp.html">LayerComp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LayerComps.html">LayerComps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LayerSet.html">LayerSet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LayerSets.html">LayerSets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Layers.html">Layers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MeasurementLog.html">MeasurementLog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MeasurementScale.html">MeasurementScale</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NoColor.html">NoColor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Notifier.html">Notifier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Notifiers.html">Notifiers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="OpenOptions.html">OpenOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PDFSaveOptions.html">PDFSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PICTFileSaveOptions.html">PICTFileSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PICTResourceSaveOptions.html">PICTResourceSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PNGSaveOptions.html">PNGSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PathItem.html">PathItem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PathItems.html">PathItems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PathPoint.html">PathPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PathPointInfo.html">PathPointInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PathPoints.html">PathPoints</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PhotoCDOpenOptions.html">PhotoCDOpenOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PhotoshopSaveOptions.html">PhotoshopSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PicturePackageOptions.html">PicturePackageOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PixarSaveOptions.html">PixarSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Preferences.html">Preferences</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PresentationOptions.html">PresentationOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RGBColor.html">RGBColor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RawFormatOpenOptions.html">RawFormatOpenOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RawSaveOptions.html">RawSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Rectangle.html">Rectangle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SGIRGBSaveOptions.html">SGIRGBSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SaveOptions.html">SaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Selection.html">Selection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SolidColor.html">SolidColor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SubPathInfo.html">SubPathInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SubPathItem.html">SubPathItem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SubPathItems.html">SubPathItems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TargaSaveOptions.html">TargaSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TextFont.html">TextFont</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TextFonts.html">TextFonts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TextItem.html">TextItem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TiffSaveOptions.html">TiffSaveOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="XMPMetadata.html">XMPMetadata</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#enumerations">Enumerations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ScriptUI/index.html">Scriptui</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cep.html">Extension SDK Documentation (CEP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Photoshop Scripting Resources</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Photoshop Scripting Reference</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../scripting.html">Photoshop Scripting Documentation</a> &raquo;</li>
+        
+          <li><a href="index.html">Photoshop</a> &raquo;</li>
+        
+      <li>Application</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Photoshop/Application.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="application">
+<span id="id1"></span><h1>Application<a class="headerlink" href="#application" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The Adobe Photoshop application object, which contains all other Adobe Photoshop objects.</p>
+<p>This is the root of the object model, and provides access to all other objects. To access the properties and methods, you can use the pre-defined global variable app. For example:  var currentDoc = app.activeDocument;</p>
+<div class="section" id="properties">
+<h3>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="Application/activeDocument.html#application-activedocument"><span class="std std-ref">activeDocument</span></a></td>
+<td>The frontmost document.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/backgroundColor.html#application-backgroundcolor"><span class="std std-ref">backgroundColor</span></a></td>
+<td>The default background color (used to paint, fill, and stroke selections).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/build.html#application-build"><span class="std std-ref">build</span></a> readonly</td>
+<td>The build number of Adobe Photoshop application.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/colorSettings.html#application-colorsettings"><span class="std std-ref">colorSettings</span></a></td>
+<td>The name of the selected color setting’s set.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/currentTool.html#application-currenttool"><span class="std std-ref">currentTool</span></a></td>
+<td>Name of the current tool.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/displayDialogs.html#application-displaydialogs"><span class="std std-ref">displayDialogs</span></a></td>
+<td>The dialog mode for the document, which indicates whether or not Photoshop displays dialogs when the script runs.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/documents.html#application-documents"><span class="std std-ref">documents</span></a> readonly</td>
+<td>The collection of open documents.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/fonts.html#application-fonts"><span class="std std-ref">fonts</span></a> readonly</td>
+<td>The fonts installed on this system.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/foregroundColor.html#application-foregroundcolor"><span class="std std-ref">foregroundColor</span></a></td>
+<td>The default foreground color (used to paint, fill, and stroke selections).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/freeMemory.html#application-freememory"><span class="std std-ref">freeMemory</span></a> readonly</td>
+<td>The amount of unused memory available to Photoshop.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/locale.html#application-locale"><span class="std std-ref">locale</span></a> readonly</td>
+<td>The language locale of the application.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/macintoshFileTypes.html#application-macintoshfiletypes"><span class="std std-ref">macintoshFileTypes</span></a> readonly</td>
+<td>A list of the image file types Photoshop can open.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/measurementLog.html#application-measurementlog"><span class="std std-ref">measurementLog</span></a> readonly</td>
+<td>The log of measurements taken.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/name.html#application-name"><span class="std std-ref">name</span></a> readonly</td>
+<td>The application name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/notifiers.html#application-notifiers"><span class="std std-ref">notifiers</span></a> readonly</td>
+<td>The notifiers currently configured (in the Scripts Events Manager menu in the application).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/notifiersEnabled.html#application-notifiersenabled"><span class="std std-ref">notifiersEnabled</span></a></td>
+<td>If true, notifiers are enabled.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/parent.html#application-parent"><span class="std std-ref">parent</span></a> readonly</td>
+<td>The object’s container.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/path.html#application-path"><span class="std std-ref">path</span></a> readonly</td>
+<td>The full path of the location of the Adobe Photoshop application.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/playbackDisplayDialogs.html#application-playbackdisplaydialogs"><span class="std std-ref">playbackDisplayDialogs</span></a></td>
+<td>The dialog mode for playback mode, which indicates whether or not Photoshop displays dialogs in playback mode.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/playbackParameters.html#application-playbackparameters"><span class="std std-ref">playbackParameters</span></a></td>
+<td>The playback options, which indicate the speed at which Photoshop plays actions.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/preferences.html#application-preferences"><span class="std std-ref">preferences</span></a> readonly</td>
+<td>The application preference settings (equivalent to selecting Edit &gt; Preferences in the Adobe Photoshop application in Windows or Photoshop &gt; Preferences in Mac OS).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/preferencesFolder.html#application-preferencesfolder"><span class="std std-ref">preferencesFolder</span></a> readonly</td>
+<td>The full path to the preferences folder.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/recentFiles.html#application-recentfiles"><span class="std std-ref">recentFiles</span></a> readonly</td>
+<td>Files in the Recent Files list.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/scriptingBuildDate.html#application-scriptingbuilddate"><span class="std std-ref">scriptingBuildDate</span></a> readonly</td>
+<td>The build date of the scripting interface.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/scriptingVersion.html#application-scriptingversion"><span class="std std-ref">scriptingVersion</span></a> readonly</td>
+<td>The version of the Scripting interface.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/systemInformation.html#application-systeminformation"><span class="std std-ref">systemInformation</span></a> readonly</td>
+<td>System information of the host application and machine.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/typename.html#application-typename"><span class="std std-ref">typename</span></a> readonly</td>
+<td>The class name of the object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/version.html#application-version"><span class="std std-ref">version</span></a> readonly</td>
+<td>The version of Adobe Photoshop application that you are running.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/windowsFileTypes.html#application-windowsfiletypes"><span class="std std-ref">windowsFileTypes</span></a> readonly</td>
+<td>A list of the image file extensions Photoshop can open.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="methods">
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="Application/batch.html#application-batch"><span class="std std-ref">batch</span></a></td>
+<td>Runs the batch automation routine; analogous to using the Batch command in Photoshop.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/beep.html#application-beep"><span class="std std-ref">beep</span></a></td>
+<td>Alerts the user.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/bringToFront.html#application-bringtofront"><span class="std std-ref">bringToFront</span></a></td>
+<td>Makes Photoshop the active application.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/changeProgressText.html#application-changeprogresstext"><span class="std std-ref">changeProgressText</span></a></td>
+<td>Changes the text that appears in the progress window.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/charIDToTypeID.html#application-charidtotypeid"><span class="std std-ref">charIDToTypeID</span></a></td>
+<td>Converts from a four character code to a runtime ID.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/doAction.html#application-doaction"><span class="std std-ref">doAction</span></a></td>
+<td>Plays the specified action from the Actions palette.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/doForcedProgress.html#application-doforcedprogress"><span class="std std-ref">doForcedProgress</span></a></td>
+<td>Performs a task with a progress bar. Forces progress bar to display, ignoring the normal heuristics that keep it from showing unnecessarily (e.g. during very short tasks). Other progress APIs must be called periodically to update the progress bar and allow cancelling.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/doProgress.html#application-doprogress"><span class="std std-ref">doProgress</span></a></td>
+<td>Performs a task with a progress bar. Other progress APIs must be called periodically to update the progress bar and allow cancelling.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/doProgressSegmentTask.html#application-doprogresssegmenttask"><span class="std std-ref">doProgressSegmentTask</span></a></td>
+<td>Sections off a portion of the unused progress bar for execution of a subtask. Returns false on cancel. Use when iterating a list of tasks with unequal run times.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/doProgressSubTask.html#application-doprogresssubtask"><span class="std std-ref">doProgressSubTask</span></a></td>
+<td>Sections off a portion of the unused progress bar for execution of a subtask. Returns false on cancel. Use when iterating a simple list of tasks with equal run times.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/doProgressTask.html#application-doprogresstask"><span class="std std-ref">doProgressTask</span></a></td>
+<td>Sections off a portion of the unused progress bar for execution of a subtask. Returns false on cancel.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/eraseCustomOptions.html#application-erasecustomoptions"><span class="std std-ref">eraseCustomOptions</span></a></td>
+<td>Removes the specified user objects from the Photoshop registry.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/executeAction.html#application-executeaction"><span class="std std-ref">executeAction</span></a></td>
+<td>Plays an ActionManager event.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/executeActionGet.html#application-executeactionget"><span class="std std-ref">executeActionGet</span></a></td>
+<td>Obtains an action descriptor.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/featureEnabled.html#application-featureenabled"><span class="std std-ref">featureEnabled</span></a></td>
+<td>If true, the specified feature is enabled.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/getCustomOptions.html#application-getcustomoptions"><span class="std std-ref">getCustomOptions</span></a></td>
+<td>Retrieves user objects from the Photoshop registry for the ID with value key.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/isQuicktimeAvailable.html#application-isquicktimeavailable"><span class="std std-ref">isQuicktimeAvailable</span></a></td>
+<td>Returns true if Quicktime is installed.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/load.html#application-load"><span class="std std-ref">load</span></a></td>
+<td>Loads a support document.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/makeContactSheet.html#application-makecontactsheet"><span class="std std-ref">makeContactSheet</span></a></td>
+<td>Creates a contact sheet from multiple files.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/makePDFPresentation.html#application-makepdfpresentation"><span class="std std-ref">makePDFPresentation</span></a></td>
+<td>Creates a PDF presentation file.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/makePhotoGallery.html#application-makephotogallery"><span class="std std-ref">makePhotoGallery</span></a></td>
+<td>DEPRECATED. Creates a web photo gallery.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/makePhotomerge.html#application-makephotomerge"><span class="std std-ref">makePhotomerge</span></a></td>
+<td>DEPRECATED. Merges multiple files into one, user interaction required.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/makePicturePackage.html#application-makepicturepackage"><span class="std std-ref">makePicturePackage</span></a></td>
+<td>Creates a picture package from multiple files.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/open.html#application-open"><span class="std std-ref">open</span></a></td>
+<td>Opens the specified document file(s).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/openDialog.html#application-opendialog"><span class="std std-ref">openDialog</span></a></td>
+<td>Uses the Photoshop open dialog to select files.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/purge.html#application-purge"><span class="std std-ref">purge</span></a></td>
+<td>Purges one or more caches.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/putCustomOptions.html#application-putcustomoptions"><span class="std std-ref">putCustomOptions</span></a></td>
+<td>Save user objects in the Photoshop registry.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/refresh.html#application-refresh"><span class="std std-ref">refresh</span></a></td>
+<td>Pauses the script until the application refreshes.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/refreshFonts.html#application-refreshfonts"><span class="std std-ref">refreshFonts</span></a></td>
+<td>Force the font list to get refreshed.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/runMenuItem.html#application-runmenuitem"><span class="std std-ref">runMenuItem</span></a></td>
+<td>Run a menu item.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/showColorPicker.html#application-showcolorpicker"><span class="std std-ref">showColorPicker</span></a></td>
+<td>Display color picker dialog. Returns false if dialog is cancelled, true otherwise.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/stringIDToTypeID.html#application-stringidtotypeid"><span class="std std-ref">stringIDToTypeID</span></a></td>
+<td>Converts from a string ID to a runtime ID.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/system.html#application-system"><span class="std std-ref">system</span></a></td>
+<td>Perform a system call.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/togglePalettes.html#application-togglepalettes"><span class="std std-ref">togglePalettes</span></a></td>
+<td>Toggle palette visibility.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/toolSupportsBrushes.html#application-toolsupportsbrushes"><span class="std std-ref">toolSupportsBrushes</span></a></td>
+<td>Check if the specified tool supports brushes.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/typeIDToCharID.html#application-typeidtocharid"><span class="std std-ref">typeIDToCharID</span></a></td>
+<td>Converts from a runtime ID to a character ID.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Application/typeIDToStringID.html#application-typeidtostringid"><span class="std std-ref">typeIDToStringID</span></a></td>
+<td>Converts from a runtime ID to a string ID.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Application/updateProgress.html#application-updateprogress"><span class="std std-ref">updateProgress</span></a></td>
+<td>Updates the progress bar started by doProgress. Use for manual non-task based progress updating. Returns false on cancel.</td>
+</tr>
+</tbody>
+</table>
+<div class="hide docutils container">
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Application/parent.html" class="btn btn-neutral float-right" title="Application.parent" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ActionReference.html" class="btn btn-neutral" title="ActionReference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Brett Dixon.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,420 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Slider &mdash; Photoshop Scripting Reference  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Slider.value" href="Slider/value.html" />
+    <link rel="prev" title="Scrollbar.onShortcutKey" href="Scrollbar/onShortcutKey.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Photoshop Scripting Reference
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../scripting.html">Photoshop Scripting Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Core/index.html">Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Photoshop/index.html">Photoshop</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Scriptui</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Bounds.html">Bounds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Button.html">Button</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Checkbox.html">Checkbox</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Dimension.html">Dimension</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DrawState.html">DrawState</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DropDownList.html">DropDownList</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EditText.html">EditText</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Environment.html">Environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Event.html">Event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Events.html">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FlashPlayer.html">FlashPlayer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Group.html">Group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IconButton.html">IconButton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="KeyboardState.html">KeyboardState</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LayoutManager.html">LayoutManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ListBox.html">ListBox</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ListItem.html">ListItem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Panel.html">Panel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Point.html">Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Progressbar.html">Progressbar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RadioButton.html">RadioButton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ScriptUI.html">ScriptUI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ScriptUIBrush.html">ScriptUIBrush</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ScriptUIFont.html">ScriptUIFont</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ScriptUIGraphics.html">ScriptUIGraphics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ScriptUIImage.html">ScriptUIImage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ScriptUIPath.html">ScriptUIPath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ScriptUIPen.html">ScriptUIPen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Scrollbar.html">Scrollbar</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Slider</a></li>
+<li class="toctree-l4"><a class="reference internal" href="StaticText.html">StaticText</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TreeView.html">TreeView</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UIEvent.html">UIEvent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Window.html">Window</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#module-index">Module Index</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cep.html">Extension SDK Documentation (CEP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Photoshop Scripting Resources</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Photoshop Scripting Reference</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../scripting.html">Photoshop Scripting Documentation</a> &raquo;</li>
+        
+          <li><a href="index.html">Scriptui</a> &raquo;</li>
+        
+      <li>Slider</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ScriptUI/Slider.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="slider">
+<span id="id1"></span><h1>Slider<a class="headerlink" href="#slider" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>A slider bar that indicates a numeric value with a moveable position indicator.</p>
+<p>All slider controls have a horizontal orientation. Calls the&nbsp;onChange()&nbsp;callback after the position of the indicator is changed or if its&nbsp;notify()&nbsp;method is called. Calls the&nbsp;onChanging()&nbsp;callback repeatedly while the user is moving the indicator. The&nbsp;value&nbsp;property contains the current position of the indicator within the range of&nbsp;minvalue&nbsp;to&nbsp;maxvalue.</p>
+<div class="section" id="properties">
+<h3>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="Slider/active.html#slider-active"><span class="std std-ref">active</span></a></td>
+<td>True if this element is active.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Slider/alignment.html#slider-alignment"><span class="std std-ref">alignment</span></a></td>
+<td>The alignment style for this element. If defined, this value overrides the alignChildren setting for the parent container.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Slider/bounds.html#slider-bounds"><span class="std std-ref">bounds</span></a></td>
+<td>The boundaries of the element, in parent-relative coordinates.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Slider/children.html#slider-children"><span class="std std-ref">children</span></a> readonly</td>
+<td>An array of child elements.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Slider/enabled.html#slider-enabled"><span class="std std-ref">enabled</span></a></td>
+<td>True if this element is enabled.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Slider/graphics.html#slider-graphics"><span class="std std-ref">graphics</span></a> readonly</td>
+<td>The graphics object that can be used to customize the element’s appearance, in response to the&nbsp;onDraw()&nbsp;event.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Slider/helpTip.html#slider-helptip"><span class="std std-ref">helpTip</span></a></td>
+<td>The help text that is displayed when the mouse hovers over the element.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Slider/indent.html#slider-indent"><span class="std std-ref">indent</span></a></td>
+<td>The number of pixels to indent the element during automatic layout.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Slider/location.html#slider-location"><span class="std std-ref">location</span></a></td>
+<td>The upper left corner of this element relative to its parent.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Slider/maximumSize.html#slider-maximumsize"><span class="std std-ref">maximumSize</span></a></td>
+<td>The maximum height and width to which the element can be resized.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Slider/maxvalue.html#slider-maxvalue"><span class="std std-ref">maxvalue</span></a></td>
+<td>The maximum value allowed in the&nbsp;value&nbsp;property.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Slider/minimumSize.html#slider-minimumsize"><span class="std std-ref">minimumSize</span></a></td>
+<td>The minimum height and width to which the element can be resized.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Slider/minvalue.html#slider-minvalue"><span class="std std-ref">minvalue</span></a></td>
+<td>The minimum value allowed in the&nbsp;value&nbsp;property.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Slider/parent.html#slider-parent"><span class="std std-ref">parent</span></a> readonly</td>
+<td>The parent element.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Slider/preferredSize.html#slider-preferredsize"><span class="std std-ref">preferredSize</span></a></td>
+<td>The preferred size, used by layout managers to determine the best size for each element.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Slider/properties.html#slider-properties"><span class="std std-ref">properties</span></a></td>
+<td>An object that contains one or more creation properties of the container (properties used only when the element is created).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Slider/shortcutKey.html#slider-shortcutkey"><span class="std std-ref">shortcutKey</span></a></td>
+<td>The key sequence that invokes the&nbsp;onShortcutKey()&nbsp;callback for this element (in Windows only).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Slider/size.html#slider-size"><span class="std std-ref">size</span></a></td>
+<td>The current dimensions of this element.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Slider/type.html#slider-type"><span class="std std-ref">type</span></a> readonly</td>
+<td>The element type, “slider”.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Slider/value.html#slider-value"><span class="std std-ref">value</span></a></td>
+<td>The current position of the indicator.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Slider/visible.html#slider-visible"><span class="std std-ref">visible</span></a></td>
+<td>True if this element is shown, false if it is hidden.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Slider/window.html#slider-window"><span class="std std-ref">window</span></a> readonly</td>
+<td>The window that this element belongs to.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Slider/windowBounds.html#slider-windowbounds"><span class="std std-ref">windowBounds</span></a> readonly</td>
+<td>The bounds of this element relative to the top-level parent window.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="methods">
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="Slider/addEventListener.html#slider-addeventlistener"><span class="std std-ref">addEventListener</span></a></td>
+<td>Registers an event handler for a particular type of event occuring in this element.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Slider/dispatchEvent.html#slider-dispatchevent"><span class="std std-ref">dispatchEvent</span></a></td>
+<td>Simulates the occurrence of an event in this target.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Slider/hide.html#slider-hide"><span class="std std-ref">hide</span></a></td>
+<td>Hides this element.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Slider/notify.html#slider-notify"><span class="std std-ref">notify</span></a></td>
+<td>Sends a notification message, simulating the specified user interaction event.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Slider/removeEventListener.html#slider-removeeventlistener"><span class="std std-ref">removeEventListener</span></a></td>
+<td>Unregisters an event handler for a particular type of event occuring in this element.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Slider/show.html#slider-show"><span class="std std-ref">show</span></a></td>
+<td>Shows this element.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="events">
+<h3>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="Slider/onActivate.html#slider-onactivate"><span class="std std-ref">onActivate</span></a></td>
+<td>An event-handler callback function, called when the element acquires the keyboard focus.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Slider/onChange.html#slider-onchange"><span class="std std-ref">onChange</span></a></td>
+<td>An event-handler callback function, called when the user has finished dragging the position indicator, or has clicked the control.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Slider/onChanging.html#slider-onchanging"><span class="std std-ref">onChanging</span></a></td>
+<td>An event-handler callback function, called when the content of the element is in the process of changing</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Slider/onDeactivate.html#slider-ondeactivate"><span class="std std-ref">onDeactivate</span></a></td>
+<td>An event-handler callback function, called when the element loses the keyboard focus.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Slider/onDraw.html#slider-ondraw"><span class="std std-ref">onDraw</span></a></td>
+<td>An event-handler callback function, called when the window is about to be drawn.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Slider/onShortcutKey.html#slider-onshortcutkey"><span class="std std-ref">onShortcutKey</span></a></td>
+<td>An event-handler callback function, called when the element’s&nbsp;shortcutKey&nbsp;sequence is typed in the active window.</td>
+</tr>
+</tbody>
+</table>
+<div class="hide docutils container">
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Slider/value.html" class="btn btn-neutral float-right" title="Slider.value" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Scrollbar/onShortcutKey.html" class="btn btn-neutral" title="Scrollbar.onShortcutKey" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Brett Dixon.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

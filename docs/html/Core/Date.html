@@ -1,0 +1,450 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Date &mdash; Photoshop Scripting Reference  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Date.getDate" href="Date/getDate.html" />
+    <link rel="prev" title="Boolean.Boolean" href="Boolean/Boolean.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Photoshop Scripting Reference
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../scripting.html">Photoshop Scripting Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Core</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="$.html">$</a></li>
+<li class="toctree-l4"><a class="reference internal" href="AliasArray.html">AliasArray</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Array.html">Array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Boolean.html">Boolean</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Date</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Error.html">Error</a></li>
+<li class="toctree-l4"><a class="reference internal" href="File.html">File</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FileArray.html">FileArray</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Folder.html">Folder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Function.html">Function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Math.html">Math</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Namespace.html">Namespace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Number.html">Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Object.html">Object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QName.html">QName</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Reflection.html">Reflection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReflectionInfo.html">ReflectionInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RegExp.html">RegExp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Socket.html">Socket</a></li>
+<li class="toctree-l4"><a class="reference internal" href="String.html">String</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UnitPoint.html">UnitPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UnitRect.html">UnitRect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UnitValue.html">UnitValue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="XML.html">XML</a></li>
+<li class="toctree-l4"><a class="reference internal" href="XMLList.html">XMLList</a></li>
+<li class="toctree-l4"><a class="reference internal" href="global.html">global</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#module-index">Module Index</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Photoshop/index.html">Photoshop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ScriptUI/index.html">Scriptui</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cep.html">Extension SDK Documentation (CEP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Photoshop Scripting Resources</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Photoshop Scripting Reference</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../scripting.html">Photoshop Scripting Documentation</a> &raquo;</li>
+        
+          <li><a href="index.html">Core</a> &raquo;</li>
+        
+      <li>Date</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Core/Date.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="date">
+<span id="id1"></span><h1>Date<a class="headerlink" href="#date" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>A date/time object.</p>
+<div class="section" id="constructors">
+<h3>Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="Date/Date.html#date-date"><span class="std std-ref">Date</span></a></td>
+<td>Returns a new Date object holding the current date and time.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="methods">
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="Date/getDate.html#date-getdate"><span class="std std-ref">getDate</span></a></td>
+<td>Returns the day of the month of the specified Date object in local time.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Date/getDay.html#date-getday"><span class="std std-ref">getDay</span></a></td>
+<td>Returns the day of the week for the specified Date object in local time.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Date/getFullYear.html#date-getfullyear"><span class="std std-ref">getFullYear</span></a></td>
+<td>Returns the four digit year of the specified Date object in local time.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Date/getHours.html#date-gethours"><span class="std std-ref">getHours</span></a></td>
+<td>Returns the hour of the specified Date object in local time.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Date/getMilliseconds.html#date-getmilliseconds"><span class="std std-ref">getMilliseconds</span></a></td>
+<td>Returns the milliseconds of the specified Date object in local time.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Date/getMinutes.html#date-getminutes"><span class="std std-ref">getMinutes</span></a></td>
+<td>Returns the minutes of the specified Date object in local time.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Date/getMonth.html#date-getmonth"><span class="std std-ref">getMonth</span></a></td>
+<td>Returns the month of the specified Date object in local time.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Date/getSeconds.html#date-getseconds"><span class="std std-ref">getSeconds</span></a></td>
+<td>Returns the seconds of the specified Date object in local time.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Date/getTime.html#date-gettime"><span class="std std-ref">getTime</span></a></td>
+<td>Returns the number of milliseconds since midnight January 1,1970 UTC for the specified Date object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Date/getTimezoneOffset.html#date-gettimezoneoffset"><span class="std std-ref">getTimezoneOffset</span></a></td>
+<td>Returns the difference in minutes between the computer’s local time and UTC.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Date/getUTCDate.html#date-getutcdate"><span class="std std-ref">getUTCDate</span></a></td>
+<td>Returns the day of the month of the specified Date object according to UTC.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Date/getUTCDay.html#date-getutcday"><span class="std std-ref">getUTCDay</span></a></td>
+<td>Returns the day of the week for the specified Date object according to UTC.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Date/getUTCFullYear.html#date-getutcfullyear"><span class="std std-ref">getUTCFullYear</span></a></td>
+<td>Returns the four digit year of the specified Date object according to UTC.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Date/getUTCHours.html#date-getutchours"><span class="std std-ref">getUTCHours</span></a></td>
+<td>Returns the hour of the specified Date object according to UTC.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Date/getUTCMilliseconds.html#date-getutcmilliseconds"><span class="std std-ref">getUTCMilliseconds</span></a></td>
+<td>Returns the milliseconds of the specified Date object according to UTC.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Date/getUTCMinutes.html#date-getutcminutes"><span class="std std-ref">getUTCMinutes</span></a></td>
+<td>Returns the minutes of the specified Date object according to UTC.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Date/getUTCMonth.html#date-getutcmonth"><span class="std std-ref">getUTCMonth</span></a></td>
+<td>Returns the month of the specified Date object according to UTC.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Date/getUTCSeconds.html#date-getutcseconds"><span class="std std-ref">getUTCSeconds</span></a></td>
+<td>Returns the seconds of the specified Date object according to UTC.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Date/getYear.html#date-getyear"><span class="std std-ref">getYear</span></a></td>
+<td>Returns the year of the specified Date object, as a difference from 1900, in local time.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Date/setDate.html#date-setdate"><span class="std std-ref">setDate</span></a></td>
+<td>Sets the day of the month of a specified Date object according to local time.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Date/setFullYear.html#date-setfullyear"><span class="std std-ref">setFullYear</span></a></td>
+<td>Sets the year of a specified Date object according to local time.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Date/setHours.html#date-sethours"><span class="std std-ref">setHours</span></a></td>
+<td>Sets the hours of a specified Date object according to local time.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Date/setMilliseconds.html#date-setmilliseconds"><span class="std std-ref">setMilliseconds</span></a></td>
+<td>Sets the milliseconds of a specified Date object according to local time.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Date/setMinutes.html#date-setminutes"><span class="std std-ref">setMinutes</span></a></td>
+<td>Sets the minutes of a specified Date object according to local time.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Date/setMonth.html#date-setmonth"><span class="std std-ref">setMonth</span></a></td>
+<td>Sets the month of a specified Date object according to local time.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Date/setSeconds.html#date-setseconds"><span class="std std-ref">setSeconds</span></a></td>
+<td>Sets the seconds of a specified Date object according to local time.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Date/setTime.html#date-settime"><span class="std std-ref">setTime</span></a></td>
+<td>Sets the date of a specified Date object in milliseconds since midnight, January 1, 1970.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Date/setUTCDate.html#date-setutcdate"><span class="std std-ref">setUTCDate</span></a></td>
+<td>Sets the date of a specified Date object according to universal time.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Date/setUTCFullYear.html#date-setutcfullyear"><span class="std std-ref">setUTCFullYear</span></a></td>
+<td>Sets the year of a specified Date object according to UTC, can also set the month and date.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Date/setUTCHours.html#date-setutchours"><span class="std std-ref">setUTCHours</span></a></td>
+<td>Sets the hours of a specified Date object according to UTC.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Date/setUTCMilliseconds.html#date-setutcmilliseconds"><span class="std std-ref">setUTCMilliseconds</span></a></td>
+<td>Sets the milliseconds of a specified Date object according to UTC.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Date/setUTCMinutes.html#date-setutcminutes"><span class="std std-ref">setUTCMinutes</span></a></td>
+<td>Sets the minutes of a specified Date object according to UTC.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Date/setUTCMonth.html#date-setutcmonth"><span class="std std-ref">setUTCMonth</span></a></td>
+<td>Sets the month of a specified Date object according to UTC.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Date/setUTCSeconds.html#date-setutcseconds"><span class="std std-ref">setUTCSeconds</span></a></td>
+<td>Sets the seconds of a specified Date object according to UTC.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Date/setYear.html#date-setyear"><span class="std std-ref">setYear</span></a></td>
+<td>Sets the year of a specified Date object according to local time, as a difference between the current year and 1900.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Date/toDateString.html#date-todatestring"><span class="std std-ref">toDateString</span></a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Date/toGMTString.html#date-togmtstring"><span class="std std-ref">toGMTString</span></a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Date/toLocaleDateString.html#date-tolocaledatestring"><span class="std std-ref">toLocaleDateString</span></a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Date/toLocaleString.html#date-tolocalestring"><span class="std std-ref">toLocaleString</span></a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Date/toLocaleTimeString.html#date-tolocaletimestring"><span class="std std-ref">toLocaleTimeString</span></a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Date/toSource.html#date-tosource"><span class="std std-ref">toSource</span></a></td>
+<td>Creates a string representation of this object that can be fed back to&nbsp;eval()&nbsp;to re-create an object. Works only with built-in classes.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Date/toString.html#date-tostring"><span class="std std-ref">toString</span></a></td>
+<td>Returns a string value representing the date and time stored in the Date object in human readable format.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Date/toTimeString.html#date-totimestring"><span class="std std-ref">toTimeString</span></a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Date/toUTCString.html#date-toutcstring"><span class="std std-ref">toUTCString</span></a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="Date/valueOf.html#date-valueof"><span class="std std-ref">valueOf</span></a></td>
+<td>The valueOf() method returns the number of milliseconds that have passed since midnight, Returns an integer.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="static-methods">
+<h3>Static Methods<a class="headerlink" href="#static-methods" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="Date/UTC.html#date-utc"><span class="std std-ref">UTC</span></a></td>
+<td>Returns the number of milliseconds between midnight January 1, 1970, UTC, and the specified time.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="Date/parse.html#date-parse"><span class="std std-ref">parse</span></a></td>
+<td>Parses a string, returning a new Date object. The string should be similar to the string returned bt toString().</td>
+</tr>
+</tbody>
+</table>
+<div class="hide docutils container">
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Date/getDate.html" class="btn btn-neutral float-right" title="Date.getDate" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Boolean/Boolean.html" class="btn btn-neutral" title="Boolean.Boolean" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Brett Dixon.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>
